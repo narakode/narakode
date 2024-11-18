@@ -1,5 +1,6 @@
 ---
-
+import Navbar from "../components/Navbar.astro"
+import Header from '../components/Header.astro'
 ---
 
 <html lang="en">
@@ -11,19 +12,7 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<nav>
-			<a href="">Home</a>
-			<div>
-				<a href="">Services</a>
-				<a href="">Products</a>
-				<a href="">Blogs</a>
-				<a href="">About</a>
-				<a href="">Contact</a>
-			</div>
-		</nav>
-		<header>
-			<h1>Narakode</h1>
-			<p>Menerima jasa pembuatan website dan aplikasi untuk kebutuhan digital anda, kami juga memiliki produk-produk digital yang menarik.</p>
-		</header>
+		<Navbar />
+		<Header />
 	</body>
 </html>
