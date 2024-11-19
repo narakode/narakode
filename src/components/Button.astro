@@ -1,0 +1,12 @@
+---
+const color = {
+    yellow: 'bg-amber-500 hover:bg-amber-600 text-white'
+}[Astro.props.color]
+const size = {
+    sm: 'h-8 text-sm px-3 rounded-md'
+}[Astro.props.size]
+---
+
+<button class={`flex items-center font-bold ${color} ${size}`}>
+    <slot />
+</button>

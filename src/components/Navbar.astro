@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from './Button.astro'
+
+const menus = [
+    {
+        name: 'Layanan'
+    },
+    {
+        name: 'Produk'
+    },
+    {
+        name: 'Fitur'
+    }
+]
+---
+
+<nav class="h-16 flex items-center fixed top-0 left-0 w-full">
+    <div class="wrapper flex items-center justify-between">
+        <a href="" class="text-blue-600">
+            <Icon name="tabler/rocket" class="w-8 h-8" />
+        </a>
+        <div class="flex items-center gap-8">
+            {menus.map(menu => <a href="" class="text-neutral-900 hover:text-blue-600">{menu.name}</a>)}
+            <Button color="yellow" size="sm">Hubungi Kami</Button>
+        </div>
+    </div>
+</nav>
