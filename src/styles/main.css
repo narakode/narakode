@@ -1,0 +1,10 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .wrapper {
+        @apply max-w-screen-lg w-full mx-auto px-4;
+    }
+}
