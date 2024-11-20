@@ -158,11 +158,20 @@ import Header from '../components/Header.astro'
 		<script>
 			document.querySelectorAll('[data-toggle]')
 				.forEach(el => {
+					const target = document.querySelector((el as HTMLElement).dataset.toggle)
+					
 					el.addEventListener('click', () => {
-						const target = document.querySelector((el as HTMLElement).dataset.toggle)
-
 						el.classList.toggle('active')
 						target.classList.toggle('hidden')
+					})
+
+					document.addEventListener('click', e => {
+						const eventTarget = e.target as HTMLElement
+
+						if (!target.classList.contains('hidden') && !el.contains(eventTarget) && !target.contains(eventTarget)) {
+							el.classList.remove('active')
+							target.classList.add('hidden')
+						}
 					})
 				})
 		</script>
