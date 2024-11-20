@@ -3,10 +3,13 @@ const color = {
     yellow: 'bg-amber-500 hover:bg-amber-600 text-white'
 }[Astro.props.color]
 const size = {
-    sm: 'h-8 text-sm px-3 rounded-md'
+    md: 'h-10 px-5 rounded-lg'
 }[Astro.props.size]
+const smSize = {
+    sm: 'sm:h-8 sm:text-sm sm:px-3 sm:rounded-md',
+}[Astro.props.smSize]
 ---
 
-<button class={`flex items-center font-bold ${color} ${size}`}>
+<button class={`w-fit flex items-center font-bold ${color} ${size} ${smSize}`}>
     <slot />
 </button>
