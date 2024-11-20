@@ -154,5 +154,16 @@ import Header from '../components/Header.astro'
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			document.querySelectorAll('[data-toggle]')
+				.forEach(el => {
+					el.addEventListener('click', () => {
+						const target = document.querySelector((el as HTMLElement).dataset.toggle)
+
+						target.classList.toggle('hidden')
+					})
+				})
+		</script>
 	</body>
 </html>
