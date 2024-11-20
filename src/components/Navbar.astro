@@ -37,7 +37,7 @@ const menus = [
             <Icon name="tabler/menu" class="block w-6 h-6 text-neutral-600 hover:text-neutral-900 group-[.active]:hidden" />
             <Icon name="tabler/x" class="hidden w-6 h-6 text-neutral-600 hover:text-neutral-900 group-[.active]:block" />
         </button>
-        <div id="mobile-navbar-menu" class="hidden absolute sm:static top-full left-0 flex sm:flex flex-col sm:flex-row w-full sm:w-auto sm:items-center gap-4 sm:gap-8 p-4 pt-0 sm:p-0 bg-white border-b border-neutral-200 sm:border-0">
+        <div id="mobile-navbar-menu" class="hidden absolute sm:static top-full left-0 flex sm:flex flex-col sm:flex-row w-full sm:w-auto sm:items-center gap-4 sm:gap-8 p-4 pt-0 sm:p-0 bg-white shadow-lg sm:shadow-none">
             {menus.map(menu => {
                 return <div class="relative">
                     <a href="#" class="group flex items-center justify-between sm:justify-start gap-2 text-neutral-900 hover:text-blue-600" data-toggle={menu.children && `#${menu.id}-children`}>
