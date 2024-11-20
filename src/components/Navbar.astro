@@ -33,16 +33,17 @@ const menus = [
         <a href="" class="text-blue-600 hover:text-blue-700">
             <Icon name="tabler/rocket" class="w-8 h-8" />
         </a>
-        <button class="sm:hidden" data-toggle="#mobile-navbar-menu">
-            <Icon name="tabler/menu" class="w-6 h-6 text-neutral-600 hover:text-neutral-900" />
+        <button class="group sm:hidden" data-toggle="#mobile-navbar-menu">
+            <Icon name="tabler/menu" class="block w-6 h-6 text-neutral-600 hover:text-neutral-900 group-[.active]:hidden" />
+            <Icon name="tabler/x" class="hidden w-6 h-6 text-neutral-600 hover:text-neutral-900 group-[.active]:block" />
         </button>
-        <div id="mobile-navbar-menu" class="hidden absolute sm:static top-full left-0 flex sm:flex flex-col sm:flex-row w-full sm:w-auto sm:items-center gap-4 sm:gap-8 p-4 pt-0 sm:p-0 bg-white border-neutral-200 sm:border-0">
+        <div id="mobile-navbar-menu" class="hidden absolute sm:static top-full left-0 flex sm:flex flex-col sm:flex-row w-full sm:w-auto sm:items-center gap-4 sm:gap-8 p-4 pt-0 sm:p-0 bg-white border-b border-neutral-200 sm:border-0">
             {menus.map(menu => {
                 return <div class="relative">
-                    <a href="#" class="flex items-center justify-between sm:justify-start gap-2 text-neutral-900 hover:text-blue-600" data-toggle={menu.children && `#${menu.id}-children`}>
+                    <a href="#" class="group flex items-center justify-between sm:justify-start gap-2 text-neutral-900 hover:text-blue-600" data-toggle={menu.children && `#${menu.id}-children`}>
                         {menu.name}
-                        {menu.children && <Icon name="tabler/chevron-up" class="hidden" />}
-                        {menu.children && <Icon name="tabler/chevron-down" class="block" />}
+                        {menu.children && <Icon name="tabler/chevron-up" class="hidden group-[.active]:block" />}
+                        {menu.children && <Icon name="tabler/chevron-down" class="block group-[.active]:hidden" />}
                     </a>
                     {menu.children && <div id={`${menu.id}-children`} class="hidden dev:flex dev:flex-col absolute z-10 top-8 left-0 w-full sm:w-fit py-2 bg-white shadow-lg rounded-lg border border-neutral-100">
                         {menu.children.map(child => <a href="" class="group/child flex items-center gap-4 py-4 px-6 hover:bg-neutral-50 whitespace-nowrap">

@@ -161,6 +161,7 @@ import Header from '../components/Header.astro'
 					el.addEventListener('click', () => {
 						const target = document.querySelector((el as HTMLElement).dataset.toggle)
 
+						el.classList.toggle('active')
 						target.classList.toggle('hidden')
 					})
 				})
