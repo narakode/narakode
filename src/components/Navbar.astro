@@ -8,11 +8,13 @@ const menus = [
         children: [
             {
                 name: 'Pembuatan Website',
-                icon: 'tabler/desktop'
+                icon: 'tabler/desktop',
+                description: 'Mulai dari 100k'
             },
             {
                 name: 'Pembuatan Aplikasi',
-                icon: 'tabler/mobile'
+                icon: 'tabler/mobile',
+                description: 'Mulai dari 200k'
             }
         ]
     },
@@ -43,7 +45,7 @@ const menus = [
                             <Icon name={child.icon} class="w-8 h-8 text-blue-600" />
                             <div>
                                 <span class="font-bold group-hover/child:text-blue-600">{child.name}</span>
-                                <p class="text-sm text-neutral-600">Mulai dari 100k</p>
+                                <p class="text-sm text-neutral-600">{child.description}</p>
                             </div>
                         </a>)}
                     </div>}
