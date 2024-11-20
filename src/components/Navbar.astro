@@ -4,7 +4,17 @@ import Button from './Button.astro'
 
 const menus = [
     {
-        name: 'Layanan'
+        name: 'Layanan',
+        children: [
+            {
+                name: 'Pembuatan Website',
+                icon: 'tabler/desktop'
+            },
+            {
+                name: 'Pembuatan Aplikasi',
+                icon: 'tabler/mobile'
+            }
+        ]
     },
     {
         name: 'Produk'
@@ -15,13 +25,30 @@ const menus = [
 ]
 ---
 
-<nav class="h-16 flex items-center fixed top-0 left-0 w-full">
-    <div class="wrapper flex items-center justify-between">
-        <a href="" class="text-blue-600">
+<nav class="fixed top-0 left-0 h-20 w-full flex items-center">
+    <div class="wrapper h-full flex items-center justify-between">
+        <a href="" class="text-blue-600 hover:text-blue-700">
             <Icon name="tabler/rocket" class="w-8 h-8" />
         </a>
-        <div class="flex items-center gap-8">
-            {menus.map(menu => <a href="" class="text-neutral-900 hover:text-blue-600">{menu.name}</a>)}
+        <div class="h-full flex items-center gap-8">
+            {menus.map(menu => {
+                return <div class="relative group/parent h-full">
+                    <a href="" class="h-full flex items-center gap-2 text-neutral-900 group-hover/parent:text-blue-600">
+                        {menu.name}
+                        {menu.children && <Icon name="tabler/chevron-up" class="hidden group-hover/parent:block" />}
+                        {menu.children && <Icon name="tabler/chevron-down" class="block group-hover/parent:hidden" />}
+                    </a>
+                    {menu.children && <div class="hidden group-hover/parent:flex group-hover/parent:flex-col absolute z-10 top-16 left-0 w-fit py-2 bg-white shadow-lg rounded-lg border border-neutral-100">
+                        {menu.children.map(child => <a href="" class="group/child flex items-center gap-x-4 py-4 px-6 hover:bg-neutral-50 whitespace-nowrap">
+                            <Icon name={child.icon} class="w-8 h-8 text-blue-600" />
+                            <div>
+                                <span class="font-bold group-hover/child:text-blue-600">{child.name}</span>
+                                <p class="text-sm text-neutral-600">Mulai dari 100k</p>
+                            </div>
+                        </a>)}
+                    </div>}
+                </div>
+            })}
             <Button color="yellow" size="sm">Hubungi Kami</Button>
         </div>
     </div>
