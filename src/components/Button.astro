@@ -4,10 +4,11 @@ const { tag: Element = 'button', color: propsColor, size: propsSize, smSize: pro
 const color = {
     yellow: 'bg-amber-500 hover:bg-amber-600 text-white',
     blue: 'bg-blue-600 hover:bg-blue-700 text-white',
-    'transparent-white': 'bg-white text-neutral-900 border border-neutral-200'
+    'transparent': 'bg-white hover:bg-neutral-200'
 }[propsColor]
 const size = {
-    md: 'h-10 px-5 rounded-lg'
+    md: 'h-10 px-5 rounded-lg',
+    lg: 'h-12 px-6 rounded-lg',
 }[propsSize]
 const smSize = {
     sm: 'sm:h-8 sm:text-sm sm:px-3 sm:rounded-md',
