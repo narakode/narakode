@@ -6,34 +6,34 @@ import Link from "./Link.astro";
 const menus = [
     {
         id: 'layanan',
-        name: 'Layanan',
+        name: 'Layanan Kami',
         children: [
             {
-                name: 'Pembuatan Website',
-                href: '/services/web-development',
+                name: 'Pembuatan Website Profesional',
+                href: '/layanan/pembuatan-website',
                 icon: 'tabler/desktop',
-                description: 'Pembuatan Website Mulai dari 100k'
+                description: 'Website profesional mulai dari Rp100k.'
             },
             {
-                name: 'Pembuatan Aplikasi',
-                href: '/services/mobile-development',
+                name: 'Pengembangan Aplikasi Mobile',
+                href: '/layanan/pembuatan-aplikasi-mobile',
                 icon: 'tabler/mobile',
-                description: 'Pembuatan Aplikasi Mulai dari 200k'
+                description: 'Aplikasi mobile mulai dari Rp200k.'
             },
             {
-                name: 'Lihat Semua Layanan',
+                name: 'Lihat Semua Layanan Kami',
                 custom: true,
-                href: '/services'
+                href: '/layanan'
             }
         ]
     },
     {
-        name: 'Produk',
-        href: '/products',
+        name: 'Produk Kami',
+        href: '/produk',
     },
     {
-        name: 'Fitur',
-        href: '/#features',
+        name: 'Fitur Unggulan',
+        href: '/#fitur',
     }
 ]
 ---
@@ -60,7 +60,7 @@ const menus = [
                             if (child.custom) {
                                 return <div class="px-4 py-2">
                                     <Link href={child.href} class="flex items-center gap-2" color="blue">
-                                        Lihat Semua Layanan
+                                        {child.name}
                                         <Icon name="tabler/arrow-right" />
                                     </Link>
                                 </div>
@@ -68,7 +68,7 @@ const menus = [
 
                             return <div class="px-5 py-3">
                                 <a href={child.href} class="group/child flex items-center gap-4 whitespace-nowrap">
-                                    <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-md">
+                                    <div class="w-10 h-10 flex items-center justify-center bg-blue-50 group-hover/child:bg-blue-100 rounded-md">
                                         <Icon name={child.icon} class="w-5 h-5 text-blue-600" />
                                     </div>
                                     <div>

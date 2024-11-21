@@ -14,4 +14,4 @@ const color = {
 }[propsColor]
 ---
 
-<a {...props} href={href} class={`${propClass} ${color} ${underline && 'hover:underline'}`}><slot /></a>
+<a {...props} href={href} class={`${propClass} ${color} ${underline ? 'hover:underline' : ''}`}><slot /></a>
