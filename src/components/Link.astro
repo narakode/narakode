@@ -1,0 +1,17 @@
+---
+
+const {
+    color: propsColor,
+    href,
+    underline = true,
+    class: propClass = '',
+    ...props
+} = Astro.props
+
+const color = {
+    blue: 'text-blue-600 hover:text-blue-700',
+    black: 'text-neutral-900 hover:text-blue-600'
+}[propsColor]
+---
+
+<a {...props} href={href} class={`${propClass} ${color} ${underline ? 'hover:underline' : ''}`}><slot /></a>
