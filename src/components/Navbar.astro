@@ -11,13 +11,18 @@ const menus = [
                 name: 'Pembuatan Website',
                 href: '/services/web-development',
                 icon: 'tabler/desktop',
-                description: 'Mulai dari 100k'
+                description: 'Pembuatan Website Mulai dari 100k'
             },
             {
                 name: 'Pembuatan Aplikasi',
                 href: '/services/mobile-development',
                 icon: 'tabler/mobile',
-                description: 'Mulai dari 200k'
+                description: 'Pembuatan Aplikasi Mulai dari 200k'
+            },
+            {
+                name: 'Lihat Semua Layanan',
+                custom: true,
+                href: '/services'
             }
         ]
     },
@@ -49,14 +54,29 @@ const menus = [
                         {menu.children && <Icon name="tabler/chevron-up" class="hidden group-[.active]:block" />}
                         {menu.children && <Icon name="tabler/chevron-down" class="block group-[.active]:hidden" />}
                     </a>
-                    {menu.children && <div id={`${menu.id}-children`} class="hidden dev:flex dev:flex-col absolute z-10 top-8 left-0 w-full sm:w-fit py-2 bg-white shadow-lg rounded-lg border border-neutral-100">
-                        {menu.children.map(child => <a href={child.href} class="group/child flex items-center gap-4 py-4 px-6 hover:bg-neutral-50 whitespace-nowrap">
-                            <Icon name={child.icon} class="w-8 h-8 text-blue-600" />
-                            <div>
-                                <span class="font-semibold group-hover/child:text-blue-600">{child.name}</span>
-                                <p class="text-sm text-neutral-600">{child.description}</p>
+                    {menu.children && <div id={`${menu.id}-children`} class="hidden dev:flex dev:flex-col absolute z-10 top-8 left-0 w-full sm:w-fit bg-white py-2 shadow-lg rounded-lg border border-neutral-100">
+                        {menu.children.map(child => {
+                            if (child.custom) {
+                                return <div class="px-4 py-2">
+                                    <a href={child.href} class="flex items-center gap-2 text-blue-600 ">
+                                        Lihat Semua Layanan
+                                        <Icon name="tabler/arrow-right" />
+                                    </a>
+                                </div>
+                            }
+
+                            return <div class="px-5 py-3">
+                                <a href={child.href} class="group/child flex items-center gap-4 whitespace-nowrap">
+                                    <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-md">
+                                        <Icon name={child.icon} class="w-5 h-5 text-blue-600" />
+                                    </div>
+                                    <div>
+                                        <span class="font-semibold group-hover/child:text-blue-600">{child.name}</span>
+                                        <p class="text-sm text-neutral-600">{child.description}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>)}
+                        })}
                     </div>}
                 </div>
             })}
