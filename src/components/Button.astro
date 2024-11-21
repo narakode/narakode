@@ -1,6 +1,8 @@
 ---
 const color = {
-    yellow: 'bg-amber-500 hover:bg-amber-600 text-white'
+    yellow: 'bg-amber-500 hover:bg-amber-600 text-white',
+    blue: 'bg-blue-600 hover:bg-blue-700 text-white',
+    'transparent-white': 'bg-white text-neutral-900 border border-neutral-200'
 }[Astro.props.color]
 const size = {
     md: 'h-10 px-5 rounded-lg'
@@ -12,6 +14,6 @@ const smSize = {
 const { tag: Element = 'button', attr: props } = Astro.props
 ---
 
-<Element {...props} class={`w-fit flex items-center font-bold ${color} ${size} ${smSize}`}>
+<Element {...props} class={`${Astro.props.expand ? 'w-full' : 'w-fit'} flex justify-center items-center font-semibold text-center ${color} ${size} ${smSize}`}>
     <slot />
 </Element>
