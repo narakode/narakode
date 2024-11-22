@@ -9,13 +9,15 @@ const services = [
         icon: 'tabler/desktop',
         name: 'Pembuatan Website Profesional',
         description: 'Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional.',
-        startFrom: '100k'
+        startFrom: '100k',
+        link: '/layanan/pembuatan-website#pesan'
     },
     {
         icon: 'tabler/mobile',
         name: 'Pengembangan Aplikasi Mobile',
         description: 'Layanan pengembangan aplikasi Android dan iOS untuk kebutuhan bisnis, edukasi, atau e-commerce Anda.',
-        startFrom: '200k'
+        startFrom: '200k',
+        link: '/layanan/pembuatan-aplikasi-mobile#pesan'
     }
 ]
 ---
@@ -33,7 +35,7 @@ const services = [
                 <p class="text-neutral-600">Mulai Dari</p>
                 <div class="flex items-center justify-between">
                     <p class="text-5xl font-bold text-red-600 leading-none">{service.startFrom}</p>
-                    <Button color="red" size="md">Pesan Sekarang</Button>
+                    <Button tag="a" href={service.link} color="red" size="md">Pesan Sekarang</Button>
                 </div>
             </div>)}
         </div>

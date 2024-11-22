@@ -6,29 +6,36 @@ const menus = [
             links: [
                 {
                     name: 'Tentang Perusahaan Kami',
+                    href: '/about'
                 },
                 {
                     name: 'Hubungi Kami',
+                    href: '/contact'
                 },
                 {
                     name: 'Kebijakan Privasi',
+                    href: '/privacy'
                 },
                 {
-                    name: 'Blog Perusahaan'
+                    name: 'Blog Perusahaan',
+                    href: '/blog'
                 }
             ]
         },
         {
-            name: 'Menu',
+            name: 'Bantuan',
             links: [
                 {
-                    name: 'Cara Melakukan Pemesanan'
+                    name: 'Informasi Harga',
+                    href: '/bantuan/harga'
                 },
                 {
-                    name: 'Metode Pembayaran'
+                    name: 'Cara Melakukan Pemesanan',
+                    href: '/bantuan/pemesanan'
                 },
                 {
-                    name: 'Informasi Harga'
+                    name: 'Metode Pembayaran',
+                    href: 'bantuan/pembayaran'
                 },
             ]
         }
@@ -38,10 +45,12 @@ const menus = [
             name: 'Layanan Kami',
             links: [
                 {
-                    name: 'Layanan Pengembangan Website'
+                    name: 'Layanan Pengembangan Website',
+                    href: '/layanan/pembuatan-website'
                 },
                 {
-                    name: 'Layanan Pengembangan Aplikasi'
+                    name: 'Layanan Pengembangan Aplikasi',
+                    href: '/layanan/pembuatan-aplikasi-mobile'
                 }
             ]
         },
@@ -49,19 +58,24 @@ const menus = [
             name: 'Produk Kami',
             links: [
                 {
-                    name: 'Solusi ERP (Enterprise Resource Planning)'
+                    name: 'Solusi ERP (Enterprise Resource Planning)',
+                    href: '/produk/erp'
                 },
                 {
-                    name: 'Solusi LMS (Learning Management System)'
+                    name: 'Solusi LMS (Learning Management System)',
+                    href: '/produk/lms'
                 },
                 {
-                    name: 'Software HRM (Human Resource Management)'
+                    name: 'Software HRM (Human Resource Management)',
+                    href: '/produk/hrm'
                 },
                 {
-                    name: 'Sistem Manajemen Inventaris'
+                    name: 'Sistem Manajemen Inventaris',
+                    href: '/produk/inventaris'
                 },
                 {
-                    name: 'Solusi PPDP (Pendaftaran Peserta Didik Baru)'
+                    name: 'Solusi PPDP (Pendaftaran Peserta Didik Baru)',
+                    href: '/produk/ppdb'
                 },
             ]
         }
@@ -76,11 +90,11 @@ const menus = [
             <ul class="space-y-4">
                 <li class="space-y-1">
                     <p class="font-bold">Email</p>
-                    <p class="text-neutral-400">admin@narakode.com</p>
+                    <a href="mailto:admin@narakode.com" target="_blank" class="text-neutral-400 hover:text-white">admin@narakode.com</a>
                 </li>
                 <li class="space-y-1">
                     <p class="font-bold">Whatsapp</p>
-                    <p class="text-neutral-400">082236654884</p>
+                    <a href="https://wa.me/6282236654884" target="_blank" class="text-neutral-400 hover:text-white">082236654884</a>
                 </li>
             </ul>
         </div>
@@ -88,7 +102,7 @@ const menus = [
             {menu.map(item => <div class="space-y-2">
                 <p class="font-bold">{item.name}</p>
                 <nav class="flex flex-col space-y-1	text-neutral-400">
-                    {item.links.map(link => <a href="" class="hover:text-white">{link.name}</a>)}
+                    {item.links.map(link => <a href={link.href} class="hover:text-white">{link.name}</a>)}
                 </nav>
             </div>
             )}
