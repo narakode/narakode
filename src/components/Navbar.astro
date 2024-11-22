@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Button from './Button.astro'
 import Link from "./Link.astro";
+import Logo from "./Logo.astro";
 
 const menus = [
     {
@@ -40,9 +41,7 @@ const menus = [
 
 <nav class="sm:h-20 w-full py-4 sm:p-0 flex items-center bg-white relative">
     <div class="wrapper flex items-center justify-between">
-        <Link href="/" color="blue">
-            <Icon name="tabler/rocket" class="w-8 h-8" />
-        </Link>
+        <Logo color="blue" />
         <button class="group sm:hidden" data-toggle="#mobile-navbar-menu">
             <Icon name="tabler/menu" class="block w-6 h-6 text-neutral-600 hover:text-neutral-900 group-[.active]:hidden" />
             <Icon name="tabler/x" class="hidden w-6 h-6 text-neutral-600 hover:text-neutral-900 group-[.active]:block" />
