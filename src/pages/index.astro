@@ -1,6 +1,7 @@
 ---
 import "../styles/main.css"
 import '@fontsource/plus-jakarta-sans';
+import { SEO } from 'astro-seo'
 import Navbar from "../components/Navbar.astro"
 import Header from '../components/landing/Header.astro'
 import Footer from "../components/Footer.astro";
@@ -9,16 +10,36 @@ import SectionFeature from "../components/landing/SectionFeature.astro";
 import SectionContact from "../components/landing/SectionContact.astro";
 ---
 
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 	<head>
-		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content={Astro.generator} />
+
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 		<link rel="manifest" href="/favicon/site.webmanifest">
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Narakode</title>
+		<SEO
+			title="Narakode: Jasa Pembuatan Web dan Pengembangan Aplikasi Mobile"
+			description="Kami menerima jasa pembuatan website dan pengembangan aplikasi mobile untuk mendukung bisnis Anda. Professional, cepat, dan terpercaya"
+			charset="utf-8"
+			openGraph={{
+				basic: {
+					title: 'Narakode: Jasa Pembuatan Web dan Pengembangan Aplikasi Mobile',
+					type: 'website',
+					image: 'https://www.narakode.com/images/thumbnail.jpg'
+				},
+				optional: {
+					description: 'Kami menerima jasa pembuatan website dan pengembangan aplikasi mobile untuk mendukung bisnis Anda. Professional, cepat, dan terpercaya'
+				}
+			}}
+			twitter={{
+				card: 'summary_large_image',
+				title: 'Narakode: Jasa Pembuatan Web dan Pengembangan Aplikasi Mobile',
+				description: 'Kami menerima jasa pembuatan website dan pengembangan aplikasi mobile untuk mendukung bisnis Anda. Professional, cepat, dan terpercaya',
+				image: 'https://www.narakode.com/images/thumbnail.jpg'
+			}}
+		/>
 	</head>
 	<body>
 		<Navbar />
