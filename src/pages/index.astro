@@ -3,6 +3,7 @@ import "../styles/main.css"
 import '@fontsource/plus-jakarta-sans';
 import Navbar from "../components/Navbar.astro"
 import Header from '../components/landing/Header.astro'
+import Footer from "../components/Footer.astro";
 import SectionService from "../components/landing/SectionService.astro";
 import SectionFeature from "../components/landing/SectionFeature.astro";
 import SectionContact from "../components/landing/SectionContact.astro";
@@ -26,60 +27,7 @@ import SectionContact from "../components/landing/SectionContact.astro";
 			<SectionContact />
 		</main>
 
-		<footer class="bg-neutral-900 text-white py-24">
-			<div class="wrapper grid grid-cols-3">
-				<div class="space-y-6">
-					<p class="text-2xl font-bold">Narakode</p>
-					<ul class="space-y-4">
-						<li class="space-y-1">
-							<p class="font-bold">Email</p>
-							<p class="text-neutral-400">admin@narakode.com</p>
-						</li>
-						<li class="space-y-1">
-							<p class="font-bold">Whatsapp</p>
-							<p class="text-neutral-400">082236654884</p>
-						</li>
-					</ul>
-				</div>
-				<div class="space-y-6">
-					<div class="space-y-2">
-						<p class="font-bold">Company</p>
-						<nav class="flex flex-col space-y-1	text-neutral-400">
-							<a href="" class="hover:text-white">Tentang Kami</a>
-							<a href="" class="hover:text-white">Hubungi Kami</a>
-							<a href="" class="hover:text-white">Privacy</a>
-							<a href="" class="hover:text-white">Blog</a>
-						</nav>
-					</div>
-					<div class="space-y-2">
-						<p class="font-bold">Menu</p>
-						<nav class="flex flex-col space-y-1	text-neutral-400">
-							<a href="" class="hover:text-white">Cara Pemesanan</a>
-							<a href="" class="hover:text-white">Cara Pembayaran</a>
-							<a href="" class="hover:text-white">Harga</a>
-						</nav>
-					</div>
-				</div>
-				<div class="space-y-6">
-					<div class="space-y-2">
-						<p class="font-bold">Layanan Kami</p>
-						<nav class="flex flex-col space-y-1	text-neutral-400">
-							<a href="" class="hover:text-white">Pembuatan Website</a>
-							<a href="" class="hover:text-white">Pembuatan Aplikasi</a>
-						</nav>
-					</div>
-					<div class="space-y-2">
-						<p class="font-bold">Produk Kami</p>
-						<nav class="flex flex-col space-y-1	text-neutral-400">
-							<a href="" class="hover:text-white">ERP Multistore</a>
-							<a href="" class="hover:text-white">Learning Management System</a>
-							<a href="" class="hover:text-white">Inventory Website</a>
-							<a href="" class="hover:text-white">PPDP</a>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<Footer />
 
 		<script>
 			document.querySelectorAll('[data-toggle]')
