@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.astro"
 import Header from '../components/landing/Header.astro'
 import SectionService from "../components/landing/SectionService.astro";
 import SectionFeature from "../components/landing/SectionFeature.astro";
+import SectionContact from "../components/landing/SectionContact.astro";
 ---
 
 <html lang="en">
@@ -22,25 +23,7 @@ import SectionFeature from "../components/landing/SectionFeature.astro";
 		<main>
 			<SectionService />
 			<SectionFeature />
-	
-			<section class="pb-24">
-				<div class="sm:p-24 wrapper bg-neutral-900 text-white rounded-2xl flex items-center justify-between">
-					<div class="space-y-4">
-						<h2 class="font-bold text-4xl tracking-tight">Hubungi Kami Segera</h2>
-						<div class="flex flex-col text-xl space-y-2">
-							<a href="" class="flex gap-2 items-center text-green-400 font-semibold">
-								<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></g></svg>
-								082236654884
-							</a>
-							<a href="" class="flex gap-2 items-center text-amber-400 font-semibold">
-								<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6l9-6"></path></g></svg>
-								admin@narakode.com
-							</a>
-						</div>
-					</div>
-					<a href="" class="inline-flex items-center bg-blue-600 text-white h-12 px-6 rounded-lg font-bold">Kirim Pesan</a>
-				</div>
-			</section>
+			<SectionContact />
 		</main>
 
 		<footer class="bg-neutral-900 text-white py-24">
