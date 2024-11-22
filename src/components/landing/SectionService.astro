@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components"
+
+const services = [
+    {
+        icon: 'tabler/desktop',
+        name: 'Pembuatan Website Profesional',
+        description: 'Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional.',
+        startFrom: '100k'
+    },
+    {
+        icon: 'tabler/mobile',
+        name: 'Pengembangan Aplikasi Mobile',
+        description: 'Layanan pengembangan aplikasi Android dan iOS untuk kebutuhan bisnis, edukasi, atau e-commerce Anda.',
+        startFrom: '200k'
+    }
+]
+---
+
+<section class="py-24 bg-blue-600">
+    <div class="wrapper space-y-8">
+        <header class="text-center max-w-3xl mx-auto space-y-2">
+            <h2 class="font-bold text-white text-4xl tracking-tight">Layanan Kami</h2>
+            <p class="text-xl text-white leading-normal">Layanan terbaik dan terlengkap yang kami tawarkan untuk memenuhi segala kebutuhan pembuatan website dan aplikasi</p>
+        </header>
+        <div class="grid sm:grid-cols-2 gap-8">
+            {services.map(service => <div class="bg-white p-6 rounded-lg space-y-4">
+                <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center">
+                    <Icon name={service.icon} class="w-8 h-8 text-red-600" />
+                </div>
+                <h3 class="font-bold text-neutral-900 text-2xl">{service.name}</h3>
+                <p class="leading-normal text-neutral-600">{service.description}</p>
+                <p class="text-neutral-600">Mulai Dari</p>
+                <div class="flex items-center justify-between">
+                    <p class="text-5xl font-bold text-red-600 leading-none">{service.startFrom}</p>
+                    <a href="" class="inline-flex items-center justify-center h-10 px-4 bg-red-600 text-white text-sm rounded-lg font-bold">Pesan Sekarang</a>
+                </div>
+            </div>)}
+        </div>
+    </div>
+</section>
