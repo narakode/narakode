@@ -25,9 +25,9 @@ const features = [
 
 <Section>
     <div class="wrapper space-y-8">
-        <SectionHeader title="Fitur Kami" description="Layanan terlengkap dan terbaik yang kami sediakan untuk segala kebutuhan pembuatan website dan aplikasi" color="black" />
+        <SectionHeader title="Fitur Kami" description="Kami menghadirkan fitur unggulan untuk mendukung kebutuhan pembuatan website dan aplikasi Anda secara profesional, cepat, dan aman" color="black" />
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map(feature => <div class="min-h-40 bg-neutral-50 p-6 rounded-lg flex flex-col items-center justify-center text-center gap-2">
+            {features.map(feature => <div class="min-h-40 flex flex-col items-center justify-center gap-2 p-6 bg-neutral-50 rounded-lg text-center">
                 <Icon name={feature.icon} class="w-12 h-12 text-blue-600" />
                 <p class="text-lg text-neutral-900 font-semibold">{feature.name}</p>
             </div>)}
