@@ -1,5 +1,5 @@
 ---
-const { class: propsClass } = Astro.props
+const { class: propsClass, ...props } = Astro.props
 ---
 
-<section class={`${propsClass} py-24`}><slot /></section>
+<section {...props} class={`${propsClass} py-24`}><slot /></section>
