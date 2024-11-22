@@ -1,5 +1,8 @@
 ---
 import { Icon } from "astro-icon/components"
+import Section from '../Section.astro'
+import SectionHeader from "../SectionHeader.astro"
+import Button from "../Button.astro"
 
 const services = [
     {
@@ -17,15 +20,12 @@ const services = [
 ]
 ---
 
-<section class="py-24 bg-blue-600">
+<Section class="bg-blue-600">
     <div class="wrapper space-y-8">
-        <header class="text-center max-w-3xl mx-auto space-y-2">
-            <h2 class="font-bold text-white text-4xl tracking-tight">Layanan Kami</h2>
-            <p class="text-xl text-white leading-normal">Layanan terbaik dan terlengkap yang kami tawarkan untuk memenuhi segala kebutuhan pembuatan website dan aplikasi</p>
-        </header>
-        <div class="grid sm:grid-cols-2 gap-8">
-            {services.map(service => <div class="bg-white p-6 rounded-lg space-y-4">
-                <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center">
+        <SectionHeader color="white" title="Layanan Kami" description="Layanan terbaik dan terlengkap yang kami tawarkan untuk memenuhi segala kebutuhan pembuatan website dan aplikasi" />
+        <div class="grid md:grid-cols-2 gap-8">
+            {services.map(service => <div class="p-6 space-y-4 bg-white rounded-lg">
+                <div class="w-14 h-14 flex items-center justify-center bg-red-50 rounded-full">
                     <Icon name={service.icon} class="w-8 h-8 text-red-600" />
                 </div>
                 <h3 class="font-bold text-neutral-900 text-2xl">{service.name}</h3>
@@ -33,9 +33,9 @@ const services = [
                 <p class="text-neutral-600">Mulai Dari</p>
                 <div class="flex items-center justify-between">
                     <p class="text-5xl font-bold text-red-600 leading-none">{service.startFrom}</p>
-                    <a href="" class="inline-flex items-center justify-center h-10 px-4 bg-red-600 text-white text-sm rounded-lg font-bold">Pesan Sekarang</a>
+                    <Button color="red" size="md">Pesan Sekarang</Button>
                 </div>
             </div>)}
         </div>
     </div>
-</section>
+</Section>

@@ -1,0 +1,15 @@
+---
+const { title, description, color } = Astro.props
+
+const titleColorClass = {
+    white: 'text-white'
+}[color]
+const subtitleColorClass = {
+    white: 'text-white'
+}[color]
+---
+
+<header class="max-w-3xl mx-auto space-y-2 text-center">
+    <h2 class={`font-bold text-3xl md:text-4xl tracking-tight ${titleColorClass}`}>{title}</h2>
+    <p class={`text-lg md:text-xl leading-normal ${subtitleColorClass}`}>{description}</p>
+</header>
