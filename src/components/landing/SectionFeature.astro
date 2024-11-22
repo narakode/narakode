@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+import Section from "../Section.astro";
+import SectionHeader from "../SectionHeader.astro";
+
+const features = [
+    {
+        name: 'Layanan Gratis Konsultasi',
+        icon: 'tabler/chat'
+    },
+    {
+        name: 'Pengerjaan Cepat dan Profesional',
+        icon: 'tabler/rocket'
+    },
+    {
+        name: 'Desain Berkualitas dan Responsif',
+        icon: 'tabler/text-square'
+    },
+    {
+        name: 'Garansi Layanan dan Keamanan',
+        icon: 'tabler/shield'
+    }
+]
+---
+
+<Section id="fitur">
+    <div class="wrapper space-y-8">
+        <SectionHeader title="Fitur Kami" description="Kami menghadirkan fitur unggulan untuk mendukung kebutuhan pembuatan website dan aplikasi Anda secara profesional, cepat, dan aman" color="black" />
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map(feature => <div class="min-h-40 flex flex-col items-center justify-center gap-2 p-6 bg-neutral-50 rounded-lg text-center">
+                <Icon name={feature.icon} class="w-12 h-12 text-blue-600" />
+                <p class="text-lg text-neutral-900 font-semibold">{feature.name}</p>
+            </div>)}
+        </div>
+    </div>
+</Section>

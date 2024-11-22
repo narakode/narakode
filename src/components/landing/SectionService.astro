@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components"
+import Section from '../Section.astro'
+import SectionHeader from "../SectionHeader.astro"
+import Button from "../Button.astro"
+
+const services = [
+    {
+        icon: 'tabler/desktop',
+        name: 'Pembuatan Website Profesional',
+        description: 'Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional.',
+        startFrom: '100k',
+        link: '/layanan/pembuatan-website#pesan'
+    },
+    {
+        icon: 'tabler/mobile',
+        name: 'Pengembangan Aplikasi Mobile',
+        description: 'Layanan pengembangan aplikasi Android dan iOS untuk kebutuhan bisnis, edukasi, atau e-commerce Anda.',
+        startFrom: '200k',
+        link: '/layanan/pembuatan-aplikasi-mobile#pesan'
+    }
+]
+---
+
+<Section class="bg-blue-600">
+    <div class="wrapper space-y-8">
+        <SectionHeader color="white" title="Layanan Kami" description="Layanan terbaik dan terlengkap yang kami tawarkan untuk memenuhi segala kebutuhan pembuatan website dan aplikasi" />
+        <div class="grid md:grid-cols-2 gap-8">
+            {services.map(service => <div class="p-6 space-y-4 bg-white rounded-lg">
+                <div class="w-14 h-14 flex items-center justify-center bg-red-50 rounded-full">
+                    <Icon name={service.icon} class="w-8 h-8 text-red-600" />
+                </div>
+                <h3 class="font-bold text-neutral-900 text-2xl">{service.name}</h3>
+                <p class="leading-normal text-neutral-600">{service.description}</p>
+                <p class="text-neutral-600">Mulai Dari</p>
+                <div class="flex items-center justify-between">
+                    <p class="text-5xl font-bold text-red-600 leading-none">{service.startFrom}</p>
+                    <Button tag="a" href={service.link} color="red" size="md">Pesan Sekarang</Button>
+                </div>
+            </div>)}
+        </div>
+    </div>
+</Section>
