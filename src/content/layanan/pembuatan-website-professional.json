@@ -1,0 +1,56 @@
+{
+    "title": "Pembuatan Website Professional",
+    "description": "Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional",
+    "thumbnail": "test",
+    "items": [
+        {
+            "icon": "tabler/building-skyscraper",
+            "name": "Website Perusahaan",
+            "link": "/layanan/pembuatan-website/website-perusahaan",
+            "description": "Solusi profesional untuk meningkatkan citra dan kehadiran online perusahaan Anda.",
+            "startFrom": "100rb"
+        },
+        {
+            "icon": "tabler/building-community",
+            "name": "Website Sekolah",
+            "link": "/layanan/pembuatan-website/website-sekolah",
+            "description": "Platform informatif untuk mendukung kegiatan belajar mengajar dan komunikasi sekolah.",
+            "startFrom": "100rb"
+        },
+        {
+            "icon": "tabler/news",
+            "name": "Website Berita",
+            "link": "/layanan/pembuatan-website/website-berita",
+            "description": "Media online untuk menyampaikan informasi terkini dan terpercaya.",
+            "startFrom": "200rb"
+        },
+        {
+            "icon": "tabler/chart-area",
+            "name": "Website Sistem Informasi",
+            "link": "/layanan/pembuatan-website/website-sistem-informasi",
+            "description": "Sistem terintegrasi untuk mengelola data dan informasi secara efisien.",
+            "startFrom": "500rb"
+        },
+        {
+            "icon": "tabler/building-store",
+            "name": "Website Toko Online",
+            "link": "/layanan/pembuatan-website/website-toko-online",
+            "description": "Toko digital lengkap dengan fitur transaksi dan katalog produk.",
+            "startFrom": "1jt"
+        },
+        {
+            "icon": "tabler/table",
+            "name": "Website PPDB",
+            "link": "/layanan/pembuatan-website/website-ppdb",
+            "description": "Portal penerimaan peserta didik baru yang mudah digunakan dan terstruktur.",
+            "startFrom": "1jt"
+        },
+        {
+            "icon": "tabler/video",
+            "name": "Website LMS",
+            "link": "/layanan/pembuatan-website/website-lms",
+            "description": "Platform pembelajaran daring untuk mendukung pendidikan modern.",
+            "startFrom": "1jt"
+        }
+    ]
+}
