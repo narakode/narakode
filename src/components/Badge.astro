@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { icon, color, size, circle } = Astro.props
+
+const bgColorClass = {
+    red: 'bg-red-50'
+}[color]
+const txtColorClass = {
+    red: 'text-red-600'
+}[color]
+const bgSizeClass = {
+    lg: 'w-14 h-14',
+    md: 'w-10 h-10'
+}[size]
+const txtSizeClass = {
+    lg: 'w-8 h-8',
+    md: 'w-6 h-6'
+}[size]
+---
+
+<div class={`${bgSizeClass} ${bgColorClass} flex items-center justify-center ${circle ? 'rounded-full' : ''}`}>
+    {icon && <Icon name={icon} class={`${txtSizeClass} ${txtColorClass}`} />}
+</div>
