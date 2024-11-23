@@ -1,0 +1,94 @@
+---
+import { Icon } from "astro-icon/components"
+import Section from '../Section.astro'
+import SectionHeader from "../SectionHeader.astro"
+import Button from "../Button.astro"
+
+const { title = 'Layanan Kami', startLevel = 2 } = Astro.props
+const ServiceTitleElement = `h${parseInt(startLevel) + 1}`
+
+const services = [
+    {
+        icon: 'tabler/desktop',
+        name: 'Pembuatan Website Profesional',
+        description: 'Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional.',
+        startFrom: '100k',
+        link: '/layanan/pembuatan-website',
+        children: [
+            {
+                icon: 'tabler/building-skyscraper',
+                name: 'Website Perusahaan'
+            },
+            {
+                icon: 'tabler/building-community',
+                name: 'Website Sekolah'
+            },
+            {
+                icon: 'tabler/news',
+                name: 'Website Berita'
+            },
+            {
+                icon: 'tabler/chart-area',
+                name: 'Website Sistem Informasi'
+            },
+            {
+                icon: 'tabler/building-store',
+                name: 'Website Toko Online'
+            },
+            {
+                icon: 'tabler/table',
+                name: 'Website PPDB'
+            },
+            {
+                icon: 'tabler/video',
+                name: 'Website LMS'
+            }
+        ]
+    },
+    {
+        icon: 'tabler/mobile',
+        name: 'Pengembangan Aplikasi Mobile',
+        description: 'Layanan pengembangan aplikasi Android dan iOS untuk kebutuhan bisnis, edukasi, atau e-commerce Anda.',
+        startFrom: '200k',
+        link: '/layanan/pembuatan-aplikasi-mobile',
+        children: [
+            { icon: 'tabler/building-store', name: 'Aplikasi Toko Online' },
+            { icon: 'tabler/building-skyscraper', name: 'Aplikasi Perusahaan' },
+            { icon: 'tabler/video', name: 'Aplikasi LMS' },
+            { icon: 'tabler/building-community', name: 'Aplikasi Sekolah' },
+            { icon: 'tabler/chart-area', name: 'Aplikasi Sistem Informasi' },
+            { icon: 'tabler/table', name: 'Aplikasi PPDB' },
+            { icon: 'tabler/news', name: 'Aplikasi Berita' }
+        ]
+    }
+]
+---
+
+<Section class="bg-blue-600">
+    <div class="wrapper space-y-8">
+        <SectionHeader color="white" title={title} level={startLevel} description="Layanan terbaik dan terlengkap yang kami tawarkan untuk memenuhi segala kebutuhan pembuatan website dan aplikasi" />
+        <div class="grid md:grid-cols-2 gap-8">
+            {services.map(service => <div class="p-6 space-y-4 bg-white rounded-lg">
+                <div class="w-14 h-14 flex items-center justify-center bg-red-50 rounded-full">
+                    <Icon name={service.icon} class="w-8 h-8 text-red-600" />
+                </div>
+                <ServiceTitleElement {...{ class: "font-bold text-neutral-900 text-2xl" }}>
+                    <a href={service.link}>{service.name}</a>
+                </ServiceTitleElement>
+                <p class="leading-normal text-neutral-600">{service.description}</p>
+                <ul class="space-y-1 text-neutral-600">
+                    {service.children.map(child => <li class="flex items-center gap-x-2.5">
+                        <Icon name={child.icon} class="w-4 h-4" />
+                        {child.name}
+                    </li>)}
+                </ul>
+                <p class="text-neutral-600">Mulai Dari</p>
+                <div class="flex items-center justify-between">
+                    <p class="text-5xl font-bold text-red-600 leading-none">{service.startFrom}</p>
+                    <Button tag="a" href={`${service.link}#pesan`} color="red" size="md">Pesan Sekarang</Button>
+                </div>
+            </div>)}
+        </div>
+        <slot name="footer" />
+    </div>
+</Section>
