@@ -1,0 +1,68 @@
+---
+import "../styles/main.css"
+import '@fontsource/plus-jakarta-sans';
+import { SEO } from 'astro-seo'
+import Navbar from "../components/Navbar.astro"
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="id" class="scroll-smooth">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/site.webmanifest">
+		<SEO
+			title={Astro.props.title}
+			description={Astro.props.description}
+			charset="utf-8"
+			openGraph={{
+				basic: {
+					title: Astro.props.title,
+					type: 'website',
+					image: Astro.props.thumbnail
+				},
+				optional: {
+					description: Astro.props.description
+				}
+			}}
+			twitter={{
+				card: 'summary_large_image',
+				title: Astro.props.title,
+				description: Astro.props.description,
+				image: Astro.props.thumbnail
+			}}
+		/>
+	</head>
+	<body>
+		<Navbar />
+		
+        <slot />
+
+        <Footer />
+
+		<script>
+			document.querySelectorAll('[data-toggle]')
+				.forEach(el => {
+					const target = document.querySelector((el as HTMLElement).dataset.toggle)
+					
+					el.addEventListener('click', () => {
+						el.classList.toggle('active')
+						target.classList.toggle('hidden')
+					})
+
+					document.addEventListener('click', e => {
+						const eventTarget = e.target as HTMLElement
+
+						if (!target.classList.contains('hidden') && !el.contains(eventTarget) && !target.contains(eventTarget)) {
+							el.classList.remove('active')
+							target.classList.add('hidden')
+						}
+					})
+				})
+		</script>
+	</body>
+</html>
