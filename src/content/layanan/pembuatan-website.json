@@ -1,34 +1,34 @@
 {
     "title": "Pembuatan Website Professional",
-    "description": "Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional",
+    "description": "Layanan pembuatan website untuk berbagai kebutuhan, dengan desain profesional dan fitur lengkap.",
     "thumbnail": "test",
     "items": [
         {
             "icon": "tabler/building-skyscraper",
             "name": "Website Perusahaan",
             "link": "/layanan/pembuatan-website/website-perusahaan",
-            "description": "Solusi profesional untuk meningkatkan citra dan kehadiran online perusahaan Anda.",
+            "description": "Tingkatkan citra perusahaan dengan website profesional dan desain elegan.",
             "startFrom": "100rb"
         },
         {
             "icon": "tabler/building-community",
             "name": "Website Sekolah",
             "link": "/layanan/pembuatan-website/website-sekolah",
-            "description": "Platform informatif untuk mendukung kegiatan belajar mengajar dan komunikasi sekolah.",
+            "description": "Platform lengkap untuk mendukung kegiatan belajar dan komunikasi sekolah.",
             "startFrom": "100rb"
         },
         {
             "icon": "tabler/news",
             "name": "Website Berita",
             "link": "/layanan/pembuatan-website/website-berita",
-            "description": "Media online untuk menyampaikan informasi terkini dan terpercaya.",
+            "description": "Media online untuk menyampaikan berita terkini dan terpercaya.",
             "startFrom": "200rb"
         },
         {
             "icon": "tabler/chart-area",
             "name": "Website Sistem Informasi",
             "link": "/layanan/pembuatan-website/website-sistem-informasi",
-            "description": "Sistem terintegrasi untuk mengelola data dan informasi secara efisien.",
+            "description": "Solusi terintegrasi untuk pengelolaan data yang efisien dan praktis.",
             "startFrom": "500rb"
         },
         {
@@ -42,29 +42,29 @@
             "icon": "tabler/table",
             "name": "Website PPDB",
             "link": "/layanan/pembuatan-website/website-ppdb",
-            "description": "Portal penerimaan peserta didik baru yang mudah digunakan dan terstruktur.",
+            "description": "Portal penerimaan siswa baru dengan sistem pendaftaran yang rapi.",
             "startFrom": "1jt"
         },
         {
             "icon": "tabler/video",
             "name": "Website LMS",
             "link": "/layanan/pembuatan-website/website-lms",
-            "description": "Platform pembelajaran daring untuk mendukung pendidikan modern.",
+            "description": "Platform pembelajaran daring modern dengan fitur interaktif.",
             "startFrom": "1jt"
         },
         {
             "icon": "tabler/code",
             "name": "Website Custom",
             "link": "/layanan/pembuatan-website/website-custom",
-            "description": "Platform pembelajaran daring untuk mendukung pendidikan modern.",
+            "description": "Website unik yang dirancang sesuai kebutuhan khusus Anda.",
             "startFrom": "1jt"
         }
     ],
-    "featureDescription": "Dengan menggunakan Jasa Pembuatan Website Kami, Anda akan mendapatkan berbagai benefit yang sangat bermanfaat",
+    "featureDescription": "Dengan layanan kami, dapatkan berbagai keunggulan yang mendukung bisnis Anda.",
     "features": [
         {
             "icon": "tabler/world",
-            "name": "Free Hosting dan Domain"
+            "name": "Gratis Hosting dan Domain"
         },
         {
             "icon": "tabler/text-square",
@@ -72,7 +72,7 @@
         },
         {
             "icon": "tabler/rocket",
-            "name": "Pengerjaan Cepat dan Professional"
+            "name": "Pengerjaan Cepat dan Profesional"
         },
         {
             "icon": "tabler/shield",
