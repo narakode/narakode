@@ -1,3 +1,12 @@
-<div class="p-6 space-y-4 bg-white rounded-lg">
+---
+const { color = 'white', class: propsClass = '' } = Astro.props
+
+const colorClass = {
+    white: 'bg-white',
+    gray: 'bg-neutral-50'
+}[color]
+---
+
+<div class=`p-6 space-y-4 ${colorClass} rounded-lg ${propsClass}`>
     <slot />
 </div>
