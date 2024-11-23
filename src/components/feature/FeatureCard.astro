@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+import Card from "../Card.astro";
+
+const { icon, name, size = 'md' } = Astro.props
+
+const sizeClass = {
+    md: 'text-lg',
+    sm: 'text-base'
+}[size]
+---
+
+<Card color="gray" class="min-h-40">
+    <div class="flex flex-col items-center justify-center gap-2 text-center">
+        <Icon name={icon} class="w-12 h-12 text-blue-600" />
+        <p class=`${sizeClass} text-neutral-900 font-semibold`>{name}</p>
+    </div>
+</Card>
