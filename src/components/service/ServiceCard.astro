@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+import Badge from "../Badge.astro";
+import Card from "../Card.astro";
+import Button from "../Button.astro";
+
+const { level = 3, icon, link, name, description, items, startFrom, size = 'md' } = Astro.props
+
+const Title = `h${level}`
+
+const badgeSize = {
+    md: 'lg',
+    sm: 'md'
+}[size]
+const titleSize = {
+    md: 'text-2xl',
+    sm: 'text-xl'
+}[size]
+const priceSize = {
+    md: 'text-5xl',
+    sm: 'text-4xl'
+}[size]
+---
+
+<Card>
+    <div class="h-full flex flex-col justify-between gap-4">
+        <div class="space-y-4">
+            <Badge icon={icon} circle size={badgeSize} color="red" />
+            <Title {...{ class: `font-bold text-neutral-900 ${titleSize}` }}>
+                <a href={link}>{name}</a>
+            </Title>
+            <p class="leading-normal text-neutral-600">{description}</p>
+            {items && <ul class="space-y-1 text-neutral-600">
+                {items.map(item => <li class="flex items-center gap-x-2.5">
+                    <Icon name={item.icon} class="w-4 h-4" />
+                    {item.name}
+                </li>)}
+            </ul>}
+        </div>
+        <div class="space-y-4">
+            <p class="text-neutral-600">Mulai Dari</p>
+            <div class="flex items-center justify-between">
+                <p class={`${priceSize} font-bold text-red-600 leading-none`}>{startFrom}</p>
+                <Button tag="a" href={`${link}#pesan`} color="red" size={size}>Pesan Sekarang</Button>
+            </div>
+        </div>
+    </div>
+</Card>
