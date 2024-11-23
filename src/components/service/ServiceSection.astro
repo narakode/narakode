@@ -1,79 +1,28 @@
 ---
+import { getCollection } from 'astro:content'
 import Section from '../Section.astro'
 import SectionHeader from "../SectionHeader.astro"
 import ServiceCard from "./ServiceCard.astro"
 
-const { title = 'Layanan Kami', startLevel = 2 } = Astro.props
+const { title = 'Layanan Kami', startLevel = 2, description = 'Kami menawarkan layanan terbaik dan terlengkap untuk memenuhi segala kebutuhan pembuatan website dan aplikasi Anda.' } = Astro.props
 
-const services = [
-    {
-        icon: 'tabler/desktop',
-        name: 'Pembuatan Website Profesional',
-        description: 'Layanan pembuatan website untuk landing page, berita, toko online, dan lainnya dengan desain profesional.',
-        startFrom: '100rb',
-        link: '/layanan/pembuatan-website',
-        items: [
-            {
-                icon: 'tabler/building-skyscraper',
-                name: 'Website Perusahaan'
-            },
-            {
-                icon: 'tabler/building-community',
-                name: 'Website Sekolah'
-            },
-            {
-                icon: 'tabler/news',
-                name: 'Website Berita'
-            },
-            {
-                icon: 'tabler/chart-area',
-                name: 'Website Sistem Informasi'
-            },
-            {
-                icon: 'tabler/building-store',
-                name: 'Website Toko Online'
-            },
-            {
-                icon: 'tabler/table',
-                name: 'Website PPDB'
-            },
-            {
-                icon: 'tabler/video',
-                name: 'Website LMS'
-            }
-        ]
-    },
-    {
-        icon: 'tabler/mobile',
-        name: 'Pengembangan Aplikasi Mobile',
-        description: 'Layanan pengembangan aplikasi Android dan iOS untuk kebutuhan bisnis, edukasi, atau e-commerce Anda.',
-        startFrom: '200rb',
-        link: '/layanan/pembuatan-aplikasi-mobile',
-        items: [
-            { icon: 'tabler/building-store', name: 'Aplikasi Toko Online' },
-            { icon: 'tabler/building-skyscraper', name: 'Aplikasi Perusahaan' },
-            { icon: 'tabler/video', name: 'Aplikasi LMS' },
-            { icon: 'tabler/building-community', name: 'Aplikasi Sekolah' },
-            { icon: 'tabler/chart-area', name: 'Aplikasi Sistem Informasi' },
-            { icon: 'tabler/table', name: 'Aplikasi PPDB' },
-            { icon: 'tabler/news', name: 'Aplikasi Berita' }
-        ]
-    }
-]
+const services = await getCollection('layanan')
+
+services.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <Section class="bg-blue-600">
     <div class="wrapper space-y-8">
-        <SectionHeader color="white" title={title} level={startLevel} description="Layanan terbaik dan terlengkap yang kami tawarkan untuk memenuhi segala kebutuhan pembuatan website dan aplikasi" />
+        <SectionHeader color="white" title={title} level={startLevel} description={description} />
         <div class="grid md:grid-cols-2 gap-8">
             {services.map(service => <ServiceCard
                 level={parseInt(startLevel) + 1}
-                icon={service.icon}
-                link={service.link}
-                name={service.name}
-                description={service.description}
-                startFrom={service.startFrom}
-                items={service.items}
+                icon={service.data.icon}
+                link={`/layanan/${service.id}`}
+                name={service.data.title}
+                description={service.data.description}
+                startFrom={service.data.startFrom}
+                items={service.data.items}
             />)}
         </div>
         <slot name="footer" />

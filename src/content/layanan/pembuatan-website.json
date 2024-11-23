@@ -1,7 +1,11 @@
 {
+    "order": 1,
     "title": "Pembuatan Website Professional",
+    "icon": "tabler/desktop",
+    "simpleDescription": "Website profesional mulai dari Rp100rb",
     "description": "Layanan pembuatan website untuk berbagai kebutuhan, dengan desain profesional dan fitur lengkap.",
     "thumbnail": "test",
+    "startFrom": "100rb",
     "items": [
         {
             "icon": "tabler/building-skyscraper",

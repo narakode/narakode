@@ -1,7 +1,11 @@
 {
+    "order": 2,
     "title": "Pembuatan Aplikasi Mobile",
+    "icon": "tabler/mobile",
+    "simpleDescription": "Aplikasi mobile mulai dari Rp200rb",
     "description": "Layanan pengembangan aplikasi mobile untuk berbagai kebutuhan dengan desain modern dan fitur lengkap.",
     "thumbnail": "test",
+    "startFrom": "200rb",
     "items": [
         {
             "icon": "tabler/building-skyscraper",
