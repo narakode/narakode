@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import ServiceCard from '../../components/service/ServiceCard.astro';
+import FeatureCard from '../../components/feature/FeatureCard.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('layanan');
@@ -18,7 +19,7 @@ const { entry } = Astro.props;
 <BaseLayout title={entry.data.title} description={entry.data.description} thumbnail={entry.data.thumbnail}>
   <Section class="bg-blue-600">
     <div class="wrapper space-y-8">
-      <SectionHeader color="white" title={entry.data.title} description={entry.data.description} />
+      <SectionHeader level="1" color="white" title={entry.data.title} description={entry.data.description} />
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {entry.data.items.map(item => <ServiceCard
           size="sm"
@@ -28,6 +29,14 @@ const { entry } = Astro.props;
           description={item.description}
           startFrom={item.startFrom}
         />)}
+      </div>
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper space-y-8">
+      <SectionHeader color="black" size="sm" title="Kenapa Memilih Kami" description={entry.data.featureDescription} />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {entry.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
       </div>
     </div>
   </Section>

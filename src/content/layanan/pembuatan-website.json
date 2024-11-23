@@ -51,6 +51,32 @@
             "link": "/layanan/pembuatan-website/website-lms",
             "description": "Platform pembelajaran daring untuk mendukung pendidikan modern.",
             "startFrom": "1jt"
+        },
+        {
+            "icon": "tabler/code",
+            "name": "Website Custom",
+            "link": "/layanan/pembuatan-website/website-custom",
+            "description": "Platform pembelajaran daring untuk mendukung pendidikan modern.",
+            "startFrom": "1jt"
+        }
+    ],
+    "featureDescription": "Dengan menggunakan Jasa Pembuatan Website Kami, Anda akan mendapatkan berbagai benefit yang sangat bermanfaat",
+    "features": [
+        {
+            "icon": "tabler/world",
+            "name": "Free Hosting dan Domain"
+        },
+        {
+            "icon": "tabler/text-square",
+            "name": "Desain Responsif dan Berkualitas"
+        },
+        {
+            "icon": "tabler/rocket",
+            "name": "Pengerjaan Cepat dan Professional"
+        },
+        {
+            "icon": "tabler/shield",
+            "name": "Garansi Layanan dan Keamanan"
         }
     ]
 }
