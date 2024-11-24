@@ -2,5 +2,6 @@
     "icon": "tabler/video",
     "title": "Website LMS",
     "description": "Platform pembelajaran daring modern dengan fitur interaktif.",
-    "startFrom": "1jt"
+    "startFrom": "1jt",
+    "thumbnail": "test"
 }

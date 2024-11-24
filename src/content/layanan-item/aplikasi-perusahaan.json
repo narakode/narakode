@@ -2,5 +2,6 @@
     "icon": "tabler/building-skyscraper",
     "title": "Aplikasi Perusahaan",
     "description": "Tingkatkan citra perusahaan dengan aplikasi profesional dan fitur canggih.",
-    "startFrom": "100rb"
+    "startFrom": "100rb",
+    "thumbnail": "test"
 }

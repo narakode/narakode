@@ -2,5 +2,6 @@
     "icon": "tabler/news",
     "title": "Website Berita",
     "description": "Media online untuk menyampaikan berita terkini dan terpercaya.",
-    "startFrom": "200rb"
+    "startFrom": "200rb",
+    "thumbnail": "test"
 }

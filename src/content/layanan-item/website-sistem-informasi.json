@@ -2,5 +2,6 @@
     "icon": "tabler/chart-area",
     "title": "Website Sistem Informasi",
     "description": "Solusi terintegrasi untuk pengelolaan data yang efisien dan praktis.",
-    "startFrom": "500rb"
+    "startFrom": "500rb",
+    "thumbnail": "test"
 }

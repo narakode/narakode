@@ -2,5 +2,6 @@
     "icon": "tabler/building-community",
     "title": "Aplikasi Sekolah",
     "description": "Platform digital untuk mendukung kegiatan belajar dan komunikasi sekolah.",
-    "startFrom": "100rb"
+    "startFrom": "100rb",
+    "thumbnail": "test"
 }

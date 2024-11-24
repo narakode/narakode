@@ -9,35 +9,35 @@
     "items": [
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-perusahaan"
+            "id": "website-perusahaan"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-sekolah"
+            "id": "website-sekolah"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-berita"
+            "id": "website-berita"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-sistem-informasi"
+            "id": "website-sistem-informasi"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-toko-online"
+            "id": "website-toko-online"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-ppdb"
+            "id": "website-ppdb"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-lms"
+            "id": "website-lms"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-website-custom"
+            "id": "website-custom"
         }
     ],
     "featureDescription": "Dengan layanan kami, dapatkan berbagai keunggulan yang mendukung bisnis Anda.",

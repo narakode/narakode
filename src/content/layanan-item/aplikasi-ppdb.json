@@ -2,5 +2,6 @@
     "icon": "tabler/table",
     "title": "Aplikasi PPDB",
     "description": "Portal penerimaan siswa baru dengan sistem pendaftaran praktis.",
-    "startFrom": "1jt"
+    "startFrom": "1jt",
+    "thumbnail": "test"
 }

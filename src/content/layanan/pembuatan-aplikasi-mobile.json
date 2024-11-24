@@ -9,35 +9,35 @@
     "items": [
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-perusahaan"
+            "id": "aplikasi-perusahaan"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-sekolah"
+            "id": "aplikasi-sekolah"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-berita"
+            "id": "aplikasi-berita"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-sistem-informasi"
+            "id": "aplikasi-sistem-informasi"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-toko-online"
+            "id": "aplikasi-toko-online"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-ppdb"
+            "id": "aplikasi-ppdb"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-lms"
+            "id": "aplikasi-lms"
         },
         {
             "collection": "layanan-item",
-            "id": "pembuatan-aplikasi-custom"
+            "id": "aplikasi-custom"
         }
     ],
     "featureDescription": "Dengan layanan kami, dapatkan berbagai keunggulan untuk aplikasi mobile Anda.",
