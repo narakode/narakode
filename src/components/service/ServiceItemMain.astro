@@ -1,0 +1,43 @@
+---
+import Section from '../../components/Section.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
+
+const { service } = Astro.props;
+---
+
+<main>
+        <Section class="bg-blue-600">
+          <div class="wrapper">
+            <div class="grid md:grid-cols-2 items-center gap-8">
+              <SectionHeader class="text-center md:text-left" centered={false} level="1" color="white" title={service.data.title} description={service.data.description}>
+                <div class="flex justify-center md:justify-start" slot={'cta'}>
+                    <Button color="yellow" size="md">Pesan Sekarang</Button>
+                </div>
+              </SectionHeader>
+            <img src={service.data.image} alt={service.data.title} class="rounded-md">
+            </div>
+          </div>
+        </Section>
+        <!-- <Section>
+          <div class="wrapper">
+            <div class="wrapper space-y-8">
+              <SectionHeader color="black" size="sm" title="Fitur Utama" description={service.data.description} />
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {service.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Section class="bg-neutral-50">
+          <div class="wrapper">
+            <div class="wrapper space-y-8">
+              <SectionHeader color="black" size="sm" title="Harga" description={service.data.description} />
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {service.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
+              </div>
+            </div>
+          </div>
+        </Section> -->
+      </main>

@@ -25,6 +25,7 @@ export const collection = {
         schema: z.object({
             icon: z.string(),
             title: z.string(),
+            image: z.string(),
             description: z.string(),
             startFrom: z.number(),
         })

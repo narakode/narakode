@@ -1,0 +1,50 @@
+---
+import Section from "../../components/Section.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import FeatureCard from "../../components/feature/FeatureCard.astro";
+import { getEntries } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ServiceCard from "../../components/service/ServiceCard.astro";
+
+const { parent, service } = Astro.props;
+const items: CollectionEntry<"layanan-item">[] = parent
+  ? []
+  : await getEntries(service.data.items);
+---
+
+<main>
+  <Section class="bg-blue-600">
+    <div class="wrapper space-y-8">
+      <SectionHeader
+        level="1"
+        color="white"
+        title={service.data.title}
+        description={service.data.description}
+      />
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          items.map((item) => (
+            <ServiceCard size="sm" service={item} parent={service} />
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+  <Section>
+    <div class="wrapper space-y-8">
+      <SectionHeader
+        color="black"
+        size="sm"
+        title="Kenapa Memilih Kami"
+        description={service.data.featureDescription}
+      />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          service.data.features.map((feature) => (
+            <FeatureCard icon={feature.icon} name={feature.name} />
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+</main>
