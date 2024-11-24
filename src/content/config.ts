@@ -28,6 +28,10 @@ export const collection = {
             image: z.string(),
             description: z.string(),
             startFrom: z.number(),
+            features: z.array(z.object({
+                icon: z.string(),
+                name: z.string(),
+            })),
         })
     })
 }

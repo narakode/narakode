@@ -3,6 +3,7 @@ import Section from '../../components/Section.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import Card from '../../components/Card.astro';
 import Button from '../../components/Button.astro';
+import FeatureCard from '../feature/FeatureCard.astro';
 
 const { service } = Astro.props;
 ---
@@ -20,17 +21,17 @@ const { service } = Astro.props;
             </div>
           </div>
         </Section>
-        <!-- <Section>
+        <Section>
           <div class="wrapper">
             <div class="wrapper space-y-8">
-              <SectionHeader color="black" size="sm" title="Fitur Utama" description={service.data.description} />
+              <SectionHeader color="black" size="sm" title="Fitur Utama" description="Beragam fitur yang sudah akan anda dapatkan dengan menggunakan layanan ini" />
               <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {service.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
               </div>
             </div>
           </div>
         </Section>
-        <Section class="bg-neutral-50">
+        <!-- <Section class="bg-neutral-50">
           <div class="wrapper">
             <div class="wrapper space-y-8">
               <SectionHeader color="black" size="sm" title="Harga" description={service.data.description} />
