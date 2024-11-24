@@ -2,8 +2,9 @@
 const { color = 'white', class: propsClass = '' } = Astro.props
 
 const colorClass = {
-    white: 'bg-white',
-    gray: 'bg-neutral-50'
+    white: 'bg-white text-neutral-900',
+    gray: 'bg-neutral-50',
+    blue: 'bg-blue-600 text-white'
 }[color]
 ---
 
