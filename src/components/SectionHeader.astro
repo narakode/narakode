@@ -1,5 +1,5 @@
 ---
-const { title, description, color, level = 2, size = 'md' } = Astro.props
+const { title, description, color, level = 2, size = 'md', centered = true } = Astro.props
 
 const TitleElement = `h${level}`
 
@@ -21,7 +21,10 @@ const subtitleSizeClass = {
 }[size]
 ---
 
-<header class="max-w-3xl mx-auto space-y-2 text-center">
-    <TitleElement {...{ class: `font-bold ${titleSizeClass} tracking-tight ${titleColorClass}` }}>{title}</TitleElement>
-    <p class={`${subtitleSizeClass} md:leading-normal ${subtitleColorClass}`}>{description}</p>
+<header class=`max-w-3xl mx-auto space-y-4 ${centered && 'text-center'}`>
+    <div class="space-y-2">
+        <TitleElement {...{ class: `font-bold ${titleSizeClass} tracking-tight ${titleColorClass}` }}>{title}</TitleElement>
+        <p class={`${subtitleSizeClass} md:leading-normal ${subtitleColorClass}`}>{description}</p>
+    </div>
+    <slot name="cta" />
 </header>
