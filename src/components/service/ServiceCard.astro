@@ -3,8 +3,16 @@ import { Icon } from "astro-icon/components";
 import Badge from "../Badge.astro";
 import Card from "../Card.astro";
 import Button from "../Button.astro";
+import { getEntries } from "astro:content";
+import type { CollectionEntry } from 'astro:content';
 
-const { level = 3, icon, link, name, description, items, startFrom, size = 'md' } = Astro.props
+interface Props {
+  service: CollectionEntry<'layanan' | 'layanan-item'>;
+  level?: number,
+  size?: 'md' | 'sm'
+}
+
+const { level = 3, size = 'md', service } = Astro.props
 
 const Title = `h${level}`
 
@@ -20,28 +28,32 @@ const priceSize = {
     md: 'text-5xl',
     sm: 'text-4xl'
 }[size]
+
+const items: CollectionEntry<'layanan-item'>[] = service.data.items
+    ? await getEntries(service.data.items)
+    : []
 ---
 
 <Card>
     <div class="h-full flex flex-col justify-between gap-4">
         <div class="space-y-4">
-            <Badge icon={icon} circle size={badgeSize} color="red" />
+            <Badge icon={service.data.icon} circle size={badgeSize} color="red" />
             <Title {...{ class: `font-bold text-neutral-900 ${titleSize}` }}>
-                <a href={link}>{name}</a>
+                <a href=`/layanan/${service.id}`>{service.data.title}</a>
             </Title>
-            <p class="leading-normal text-neutral-600">{description}</p>
+            <p class="leading-normal text-neutral-600">{service.data.description}</p>
             {items && <ul class="space-y-1 text-neutral-600">
                 {items.map(item => <li class="flex items-center gap-x-2.5">
-                    <Icon name={item.icon} class="w-4 h-4" />
-                    {item.name}
+                    <Icon name={item.data.icon} class="w-4 h-4" />
+                    {item.data.title}
                 </li>)}
             </ul>}
         </div>
         <div class="space-y-4">
             <p class="text-neutral-600">Mulai Dari</p>
             <div class="flex items-center justify-between">
-                <p class={`${priceSize} font-bold text-red-600 leading-none`}>{startFrom}</p>
-                <Button tag="a" href={`${link}#pesan`} color="red" size={size}>Pesan Sekarang</Button>
+                <p class={`${priceSize} font-bold text-red-600 leading-none`}>{service.data.startFrom}</p>
+                <Button tag="a" href={`${service.data.link}#pesan`} color="red" size={size}>Pesan Sekarang</Button>
             </div>
         </div>
     </div>

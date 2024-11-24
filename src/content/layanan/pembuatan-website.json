@@ -8,60 +8,36 @@
     "startFrom": "100rb",
     "items": [
         {
-            "icon": "tabler/building-skyscraper",
-            "name": "Website Perusahaan",
-            "link": "/layanan/pembuatan-website/website-perusahaan",
-            "description": "Tingkatkan citra perusahaan dengan website profesional dan desain elegan.",
-            "startFrom": "100rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-perusahaan"
         },
         {
-            "icon": "tabler/building-community",
-            "name": "Website Sekolah",
-            "link": "/layanan/pembuatan-website/website-sekolah",
-            "description": "Platform lengkap untuk mendukung kegiatan belajar dan komunikasi sekolah.",
-            "startFrom": "100rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-sekolah"
         },
         {
-            "icon": "tabler/news",
-            "name": "Website Berita",
-            "link": "/layanan/pembuatan-website/website-berita",
-            "description": "Media online untuk menyampaikan berita terkini dan terpercaya.",
-            "startFrom": "200rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-berita"
         },
         {
-            "icon": "tabler/chart-area",
-            "name": "Website Sistem Informasi",
-            "link": "/layanan/pembuatan-website/website-sistem-informasi",
-            "description": "Solusi terintegrasi untuk pengelolaan data yang efisien dan praktis.",
-            "startFrom": "500rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-sistem-informasi"
         },
         {
-            "icon": "tabler/building-store",
-            "name": "Website Toko Online",
-            "link": "/layanan/pembuatan-website/website-toko-online",
-            "description": "Toko digital lengkap dengan fitur transaksi dan katalog produk.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-toko-online"
         },
         {
-            "icon": "tabler/table",
-            "name": "Website PPDB",
-            "link": "/layanan/pembuatan-website/website-ppdb",
-            "description": "Portal penerimaan siswa baru dengan sistem pendaftaran yang rapi.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-ppdb"
         },
         {
-            "icon": "tabler/video",
-            "name": "Website LMS",
-            "link": "/layanan/pembuatan-website/website-lms",
-            "description": "Platform pembelajaran daring modern dengan fitur interaktif.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-lms"
         },
         {
-            "icon": "tabler/code",
-            "name": "Website Custom",
-            "link": "/layanan/pembuatan-website/website-custom",
-            "description": "Website unik yang dirancang sesuai kebutuhan khusus Anda.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-website-custom"
         }
     ],
     "featureDescription": "Dengan layanan kami, dapatkan berbagai keunggulan yang mendukung bisnis Anda.",

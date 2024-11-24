@@ -8,60 +8,36 @@
     "startFrom": "200rb",
     "items": [
         {
-            "icon": "tabler/building-skyscraper",
-            "name": "Aplikasi Perusahaan",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-perusahaan",
-            "description": "Tingkatkan citra perusahaan dengan aplikasi profesional dan fitur canggih.",
-            "startFrom": "100rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-perusahaan"
         },
         {
-            "icon": "tabler/building-community",
-            "name": "Aplikasi Sekolah",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-sekolah",
-            "description": "Platform digital untuk mendukung kegiatan belajar dan komunikasi sekolah.",
-            "startFrom": "100rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-sekolah"
         },
         {
-            "icon": "tabler/news",
-            "name": "Aplikasi Berita",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-berita",
-            "description": "Media online untuk menyampaikan berita terkini secara praktis.",
-            "startFrom": "200rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-berita"
         },
         {
-            "icon": "tabler/chart-area",
-            "name": "Aplikasi Sistem Informasi",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-sistem-informasi",
-            "description": "Solusi mobile untuk pengelolaan data yang efisien dan terintegrasi.",
-            "startFrom": "500rb"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-sistem-informasi"
         },
         {
-            "icon": "tabler/building-store",
-            "name": "Aplikasi Toko Online",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-toko-online",
-            "description": "Toko digital lengkap dengan fitur transaksi dan katalog produk.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-toko-online"
         },
         {
-            "icon": "tabler/table",
-            "name": "Aplikasi PPDB",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-ppdb",
-            "description": "Portal penerimaan siswa baru dengan sistem pendaftaran praktis.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-ppdb"
         },
         {
-            "icon": "tabler/video",
-            "name": "Aplikasi LMS",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-lms",
-            "description": "Platform pembelajaran daring modern dengan fitur interaktif.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-lms"
         },
         {
-            "icon": "tabler/code",
-            "name": "Aplikasi Custom",
-            "link": "/layanan/pembuatan-aplikasi-mobile/aplikasi-custom",
-            "description": "Aplikasi unik yang dirancang sesuai kebutuhan khusus Anda.",
-            "startFrom": "1jt"
+            "collection": "layanan-item",
+            "id": "pembuatan-aplikasi-custom"
         }
     ],
     "featureDescription": "Dengan layanan kami, dapatkan berbagai keunggulan untuk aplikasi mobile Anda.",

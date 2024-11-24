@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 import Section from '../Section.astro'
 import SectionHeader from "../SectionHeader.astro"
-import ServiceCard from "./ServiceCard.astro"
+import ServiceCard from './ServiceCard.astro'
 
 const { title = 'Layanan Kami', startLevel = 2, description = 'Kami menawarkan layanan terbaik dan terlengkap untuk memenuhi segala kebutuhan pembuatan website dan aplikasi Anda.' } = Astro.props
 
@@ -17,12 +17,7 @@ services.sort((a, b) => a.data.order - b.data.order)
         <div class="grid md:grid-cols-2 gap-8">
             {services.map(service => <ServiceCard
                 level={parseInt(startLevel) + 1}
-                icon={service.data.icon}
-                link={`/layanan/${service.id}`}
-                name={service.data.title}
-                description={service.data.description}
-                startFrom={service.data.startFrom}
-                items={service.data.items}
+                service={service}
             />)}
         </div>
         <slot name="footer" />
