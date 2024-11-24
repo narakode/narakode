@@ -4,5 +4,15 @@
     "title": "Aplikasi Perusahaan",
     "description": "Tingkatkan citra perusahaan dengan aplikasi profesional dan fitur canggih.",
     "startFrom": "100rb",
-    "thumbnail": "test"
+    "thumbnail": "test",
+    "features": [
+        {
+            "icon": "tabler/building-skyscraper",
+            "name": "Beragam Pilihan Desain"
+        },
+        {
+            "icon": "tabler/building-skyscraper",
+            "name": "Bisa Custom Desain"
+        }
+    ]
 }

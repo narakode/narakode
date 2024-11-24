@@ -4,5 +4,39 @@
     "title": "Website Perusahaan",
     "description": "Tingkatkan citra perusahaan dengan website profesional dan desain elegan.",
     "startFrom": "100rb",
-    "thumbnail": "test"
+    "thumbnail": "test",
+    "features": [
+        {
+            "icon": "tabler/paint",
+            "name": "Beragam Pilihan Desain"
+        },
+        {
+            "icon": "tabler/text-square",
+            "name": "Bisa Custom Desain"
+        },
+        {
+            "icon": "tabler/world",
+            "name": "Gratis Hosting, Domain dan SSL"
+        },
+        {
+            "icon": "tabler/mobile",
+            "name": "Responsif Di Semua Perangkat"
+        },
+        {
+            "icon": "tabler/file",
+            "name": "Bisa Banyak Halaman"
+        },
+        {
+            "icon": "tabler/report-search",
+            "name": "Optimasi Mesin Pencari (SEO)"
+        },
+        {
+            "icon": "tabler/device-analytic",
+            "name": "Laporan Pengunjung Website"
+        },
+        {
+            "icon": "tabler/shield",
+            "name": "Garansi Layanan dan Keamanan"
+        }
+    ]
 }
