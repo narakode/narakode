@@ -7,38 +7,88 @@ import FeatureCard from '../../components/feature/FeatureCard.astro';
 import { getEntries } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import ServiceCard from '../../components/service/ServiceCard.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('layanan');
-  return entries.map(entry => ({
-    params: { id: entry.id }, props: { entry },
-  }));
+  const layanan = await getCollection('layanan');
+  
+  const paths = await Promise.all(layanan.map(async entry => {
+    const items: CollectionEntry<'layanan-item'>[] = await getEntries(entry.data.items)
+
+    return [
+      { params: { id: entry.id }, props: { entry } },
+      ...items.map(item => ({
+        params: { id: `${entry.id}/${item.id}` }, props: { entry: item, parent: entry }
+      }))
+    ]
+  }))
+  
+  return paths.flat();
 }
 
-const { entry } = Astro.props;
-const items: CollectionEntry<'layanan-item'>[] = await getEntries(entry.data.items)
+const { entry, parent } = Astro.props;
+const items: CollectionEntry<'layanan-item'>[] = parent ? [] : await getEntries(entry.data.items)
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description} thumbnail={entry.data.thumbnail}>
-  <main>
-    <Section class="bg-blue-600">
-      <div class="wrapper space-y-8">
-        <SectionHeader level="1" color="white" title={entry.data.title} description={entry.data.description} />
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map(item => <ServiceCard
-            size="sm"
-            service={item}
-          />)}
-        </div>
-      </div>
-    </Section>
-    <Section>
-      <div class="wrapper space-y-8">
-        <SectionHeader color="black" size="sm" title="Kenapa Memilih Kami" description={entry.data.featureDescription} />
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {entry.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
-        </div>
-      </div>
-    </Section>
+    {!parent
+      ? <main>
+          <Section class="bg-blue-600">
+            <div class="wrapper space-y-8">
+              <SectionHeader level="1" color="white" title={entry.data.title} description={entry.data.description} />
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {items.map(item => <ServiceCard
+                  size="sm"
+                  service={item}
+                  parent={entry}
+                />)}
+              </div>
+            </div>
+          </Section>
+          <Section>
+            <div class="wrapper space-y-8">
+              <SectionHeader color="black" size="sm" title="Kenapa Memilih Kami" description={entry.data.featureDescription} />
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {entry.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
+              </div>
+            </div>
+          </Section>
+        </main>
+      : <main>
+        <Section class="bg-blue-600">
+          <div class="wrapper">
+            <div class="grid grid-cols-2 items-center gap-8">
+              <SectionHeader centered={false} level="1" color="white" title={entry.data.title} description={entry.data.description}>
+                <Button slot={'cta'} color="yellow" size="md">Pesan Sekarang</Button>
+              </SectionHeader>
+              <Card color="gray">
+                <img src="/layanan/website.png" class="rounded-md">
+              </Card>
+            </div>
+          </div>
+        </Section>
+        <Section>
+          <div class="wrapper">
+            <div class="wrapper space-y-8">
+              <SectionHeader color="black" size="sm" title="Fitur Utama" description={entry.data.description} />
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {parent.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Section class="bg-neutral-50">
+          <div class="wrapper">
+            <div class="wrapper space-y-8">
+              <SectionHeader color="black" size="sm" title="Harga" description={entry.data.description} />
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {parent.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
+              </div>
+            </div>
+          </div>
+        </Section>
+      </main>
+    }
   </main>
 </BaseLayout>

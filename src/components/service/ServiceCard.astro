@@ -7,12 +7,13 @@ import { getEntries } from "astro:content";
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  service: CollectionEntry<'layanan' | 'layanan-item'>;
-  level?: number,
-  size?: 'md' | 'sm'
+    parent?: CollectionEntry<'layanan'>
+    service: CollectionEntry<'layanan' | 'layanan-item'>;
+    level?: number,
+    size?: 'md' | 'sm'
 }
 
-const { level = 3, size = 'md', service } = Astro.props
+const { level = 3, size = 'md', service, parent } = Astro.props
 
 const Title = `h${level}`
 
@@ -39,7 +40,7 @@ const items: CollectionEntry<'layanan-item'>[] = service.data.items
         <div class="space-y-4">
             <Badge icon={service.data.icon} circle size={badgeSize} color="red" />
             <Title {...{ class: `font-bold text-neutral-900 ${titleSize}` }}>
-                <a href=`/layanan/${service.id}`>{service.data.title}</a>
+                <a href={parent ? `/layanan/${parent.id}/${service.id}` : `/layanan/${service.id}`}>{service.data.title}</a>
             </Title>
             <p class="leading-normal text-neutral-600">{service.data.description}</p>
             {items && <ul class="space-y-1 text-neutral-600">

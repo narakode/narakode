@@ -13,9 +13,11 @@ const thumbnail = 'https://www.narakode.com/images/thumbnail.jpg'
     description={description},
     thumbnail={thumbnail}
 >
-    <SectionService title={title} startLevel="1" description={description}>
-        <p slot="footer" class="text-white text-center text-lg md:text-xl md:leading-normal">
-            Butuh layanan lain? <Link href="konsultasi" color="yellow-light">Konsultasikan dengan kami</Link>
-        </p>
-    </SectionService>
+    <main>
+        <SectionService title={title} startLevel="1" description={description}>
+            <p slot="footer" class="text-white text-center text-lg md:text-xl md:leading-normal">
+                Butuh layanan lain? <Link href="konsultasi" color="yellow-light">Konsultasikan dengan kami</Link>
+            </p>
+        </SectionService>
+    </main>
 </BaseLayout>
