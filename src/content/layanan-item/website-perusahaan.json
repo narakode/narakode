@@ -38,5 +38,137 @@
             "icon": "tabler/shield",
             "name": "Garansi Layanan dan Keamanan"
         }
-    ]
+    ],
+    "packets": [
+        {
+          "title": "Paket Standar",
+          "description": "UMKM dan Pemula",
+          "price": "1 juta",
+          "features": [
+            {
+              "name": "Instalasi",
+              "value": "Gratis"
+            },
+            {
+              "name": "Domain",
+              "value": "Gratis"
+            },
+            {
+              "name": "SSL / HTTPS",
+              "value": "Gratis"
+            },
+            {
+              "name": "Hosting",
+              "value": "Gratis"
+            },
+            {
+              "name": "Bandwidth",
+              "value": "40GB"
+            },
+            {
+              "name": "Desain",
+              "value": "Dari Template"
+            },
+            {
+              "name": "Halaman",
+              "value": "5-10"
+            },
+            {
+              "name": "SEO",
+              "value": "Lengkap"
+            },
+            {
+              "name": "Garansi",
+              "value": "Selamanya"
+            }
+          ]
+        },
+        {
+          "title": "Paket Medium",
+          "description": "Organisasi dan Sekolah",
+          "price": "3 juta",
+          "featured": true,
+          "features": [
+            {
+              "name": "Instalasi",
+              "value": "Gratis"
+            },
+            {
+              "name": "Domain",
+              "value": "Gratis"
+            },
+            {
+              "name": "SSL / HTTPS",
+              "value": "Gratis"
+            },
+            {
+              "name": "Hosting",
+              "value": "Gratis"
+            },
+            {
+              "name": "Bandwidth",
+              "value": "Unlimited"
+            },
+            {
+              "name": "Desain",
+              "value": "Template Custom"
+            },
+            {
+              "name": "Halaman",
+              "value": "10-20"
+            },
+            {
+              "name": "SEO",
+              "value": "Lengkap"
+            },
+            {
+              "name": "Garansi",
+              "value": "Selamanya"
+            }
+          ]
+        },
+        {
+          "title": "Paket Custom",
+          "description": "Perusahaan dan Bisnis",
+          "price": "5 juta",
+          "features": [
+            {
+              "name": "Instalasi",
+              "value": "Gratis"
+            },
+            {
+              "name": "Domain",
+              "value": "Gratis"
+            },
+            {
+              "name": "SSL / HTTPS",
+              "value": "Gratis"
+            },
+            {
+              "name": "Hosting",
+              "value": "Gratis"
+            },
+            {
+              "name": "Bandwidth",
+              "value": "Unlimited"
+            },
+            {
+              "name": "Desain",
+              "value": "Custom"
+            },
+            {
+              "name": "Halaman",
+              "value": "Unlimited"
+            },
+            {
+              "name": "SEO",
+              "value": "Lengkap"
+            },
+            {
+              "name": "Garansi",
+              "value": "Selamanya"
+            }
+          ]
+        }
+      ]
 }

@@ -37,234 +37,26 @@ const { service } = Astro.props;
             <div class="wrapper space-y-8">
               <SectionHeader color="black" size="sm" title="Daftar Harga" description="Beragam harga yang dapat anda pilih sesuai kebutuhan bisnis anda" />
               <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Card class="space-y-6">
+                {service.data.packets.map(packet => <Card class="space-y-6" color={packet.featured ? 'blue' : 'white'}>
                   <div class="text-center space-y-1">
-                    <h3 class="font-bold text-xl uppercase tracking-tight">Paket Standar</h3>
-                    <p class="text-neutral-600 text-sm">UMKM dan Pemula</p>
+                    <h3 class="font-bold text-xl uppercase tracking-tight">{packet.title}</h3>
+                    <p class={`${packet.featured ? '' : 'text-neutral-600'} text-sm`}>{packet.description}</p>
                   </div>
-                  <div class="text-center space-y-2 text-red-600">
+                  <div class={`text-center space-y-2 ${packet.featured ? '' : 'text-red-600'}`}>
                     <p class="text-center text-sm font-semibold">Mulai Dari</p>
-                    <h3 class="text-4xl font-bold">Rp 1 juta</h3>
+                    <h3 class="text-4xl font-bold">Rp {packet.price}</h3>
                   </div>
                   <ul class="space-y-1 text-sm">
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
+                    {packet.features.map(feature => <li class="flex items-center justify-between">
+                      <p class={`flex items-center gap-x-2 ${packet.featured ? '' : 'text-neutral-600'}`}>
                         <Icon name="tabler/circle-check" />
-                        Instalasi
+                        {feature.name}
                       </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Domain
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        SSL / HTTPS
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Hosting
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Bandwidth
-                      </p>
-                      <p class="text-neutral-900">40GB</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Desain
-                      </p>
-                      <p class="text-neutral-900">Dari Template</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Halaman
-                      </p>
-                      <p class="text-neutral-900">5-10</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        SEO
-                      </p>
-                      <p class="text-neutral-900">Lengkap</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Garansi
-                      </p>
-                      <p class="text-neutral-900">Selamanya</p>
-                    </li>
+                      <p class={packet.featured ? '' : '"text-neutral-900"'}>{feature.value}</p>
+                    </li>)}
                   </ul>
                   <Button expand color="yellow" size="md">Pesan Sekarang</Button>
-                </Card>
-                <Card class="space-y-6" color="blue">
-                  <div class="text-center space-y-1">
-                    <h3 class="font-bold text-xl uppercase tracking-tight">Paket Medium</h3>
-                    <p class="text-sm">Organisasi dan Sekolah</p>
-                  </div>
-                  <div class="text-center space-y-2 text-white">
-                    <p class="text-center text-sm font-semibold">Mulai Dari</p>
-                    <h3 class="text-4xl font-bold">Rp 3 juta</h3>
-                  </div>
-                  <ul class="space-y-1 text-sm">
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Instalasi
-                      </p>
-                      <p class="">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Domain
-                      </p>
-                      <p class="">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        SSL / HTTPS
-                      </p>
-                      <p class="">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Hosting
-                      </p>
-                      <p class="">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Bandwidth
-                      </p>
-                      <p class="">Unlimited</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Desain
-                      </p>
-                      <p class="">Template Custom</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Halaman
-                      </p>
-                      <p class="">10-20</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        SEO
-                      </p>
-                      <p class="">Lengkap</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 ">
-                        <Icon name="tabler/circle-check" />
-                        Garansi
-                      </p>
-                      <p class="">Selamanya</p>
-                    </li>
-                  </ul>
-                  <Button expand color="yellow" size="md">Pesan Sekarang</Button>
-                </Card>
-                <Card class="space-y-6 col-span-full lg:col-span-1">
-                  <div class="text-center space-y-1">
-                    <h3 class="font-bold text-xl uppercase tracking-tight">Paket Custom</h3>
-                    <p class="text-neutral-600 text-sm">Perusahaan dan Bisnis</p>
-                  </div>
-                  <div class="text-center space-y-2 text-red-600">
-                    <p class="text-center text-sm font-semibold">Mulai Dari</p>
-                    <h3 class="text-4xl font-bold">Rp 5 juta</h3>
-                  </div>
-                  <ul class="space-y-1 text-sm">
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Instalasi
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Domain
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        SSL / HTTPS
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Hosting
-                      </p>
-                      <p class="text-neutral-900">Gratis</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Bandwidth
-                      </p>
-                      <p class="text-neutral-900">Unlimited</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Desain
-                      </p>
-                      <p class="text-neutral-900">Custom</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Halaman
-                      </p>
-                      <p class="text-neutral-900">Unlimited</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        SEO
-                      </p>
-                      <p class="text-neutral-900">Lengkap</p>
-                    </li>
-                    <li class="flex items-center justify-between">
-                      <p class="flex items-center gap-x-2 text-neutral-600">
-                        <Icon name="tabler/circle-check" />
-                        Garansi
-                      </p>
-                      <p class="text-neutral-900">Selamanya</p>
-                    </li>
-                  </ul>
-                  <Button expand color="yellow" size="md">Pesan Sekarang</Button>
-                </Card>
+                </Card>)}
               </div>
             </div>
           </div>

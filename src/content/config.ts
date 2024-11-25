@@ -32,6 +32,16 @@ export const collection = {
                 icon: z.string(),
                 name: z.string(),
             })),
+            packets: z.array(z.object({
+                title: z.string(),
+                description: z.string(),
+                price: z.string(),
+                featured: z.boolean(),
+                features: z.array(z.object({
+                    name: z.string(),
+                    value: z.string()
+                })),
+            })),
         })
     })
 }
