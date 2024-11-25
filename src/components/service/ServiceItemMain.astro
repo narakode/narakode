@@ -95,4 +95,15 @@ const { service } = Astro.props;
             </div>
           </div>
         </Section>
+        <Section class="bg-neutral-50">
+          <div class="wrapper space-y-8">
+            <SectionHeader color="black" size="sm" title="Pilihan Template" description="Beragam harga yang dapat anda pilih sesuai kebutuhan bisnis anda" />
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {Array.from({ length: 6 }).map(i => <img src="/layanan/website.png" class="rounded-md" />)}
+            </div>
+            <div class="flex justify-center">
+              <Button color="blue" size="md">Lihat Lebih Banyak</Button>
+            </div>
+          </div>
+        </Section>
       </main>

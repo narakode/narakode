@@ -6,3 +6,4 @@
 2. Warna base : 600 kecuali amber / kuning 500
 3. Judul : tracking tight
 4. Subtitle / text : text-neutral-600
+5. leading text : normal
