@@ -4,10 +4,12 @@ import { Icon } from "astro-icon/components";
 const { icon, color, size, circle } = Astro.props
 
 const bgColorClass = {
-    red: 'bg-red-50'
+    red: 'bg-red-50',
+    green: 'bg-green-50'
 }[color]
 const txtColorClass = {
-    red: 'text-red-600'
+    red: 'text-red-600',
+    green: 'text-green-600'
 }[color]
 const bgSizeClass = {
     lg: 'w-14 h-14',

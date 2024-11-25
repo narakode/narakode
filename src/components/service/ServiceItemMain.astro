@@ -5,6 +5,7 @@ import Card from '../../components/Card.astro';
 import Button from '../../components/Button.astro';
 import FeatureCard from '../feature/FeatureCard.astro';
 import { Icon } from 'astro-icon/components';
+import Badge from '../Badge.astro';
 
 const { service } = Astro.props;
 ---
@@ -23,41 +24,74 @@ const { service } = Astro.props;
           </div>
         </Section>
         <Section>
-          <div class="wrapper">
-            <div class="wrapper space-y-8">
-              <SectionHeader color="black" size="sm" title="Fitur Utama" description="Beragam fitur yang sudah akan anda dapatkan dengan menggunakan layanan ini" />
-              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {service.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
-              </div>
+          <div class="wrapper space-y-8">
+            <SectionHeader color="black" size="sm" title="Fitur Utama" description="Beragam fitur yang sudah akan anda dapatkan dengan menggunakan layanan ini" />
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {service.data.features.map(feature => <FeatureCard icon={feature.icon} name={feature.name} />)}
             </div>
           </div>
         </Section>
         <Section class="bg-neutral-50">
-          <div class="wrapper">
-            <div class="wrapper space-y-8">
-              <SectionHeader color="black" size="sm" title="Daftar Harga" description="Beragam harga yang dapat anda pilih sesuai kebutuhan bisnis anda" />
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {service.data.packets.map(packet => <Card class="space-y-6" color={packet.featured ? 'blue' : 'white'}>
-                  <div class="text-center space-y-1">
-                    <h3 class="font-bold text-xl uppercase tracking-tight">{packet.title}</h3>
-                    <p class={`${packet.featured ? '' : 'text-neutral-600'} text-sm`}>{packet.description}</p>
-                  </div>
-                  <div class={`text-center space-y-2 ${packet.featured ? '' : 'text-red-600'}`}>
-                    <p class="text-center text-sm font-semibold">Mulai Dari</p>
-                    <h3 class="text-4xl font-bold">Rp {packet.price}</h3>
-                  </div>
-                  <ul class="space-y-1 text-sm">
-                    {packet.features.map(feature => <li class="flex items-center justify-between">
-                      <p class={`flex items-center gap-x-2 ${packet.featured ? '' : 'text-neutral-600'}`}>
-                        <Icon name="tabler/circle-check" />
-                        {feature.name}
-                      </p>
-                      <p class={packet.featured ? '' : '"text-neutral-900"'}>{feature.value}</p>
-                    </li>)}
-                  </ul>
-                  <Button expand color="yellow" size="md">Pesan Sekarang</Button>
-                </Card>)}
-              </div>
+          <div class="wrapper space-y-8">
+            <SectionHeader color="black" size="sm" title="Daftar Harga" description="Beragam harga yang dapat anda pilih sesuai kebutuhan bisnis anda" />
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {service.data.packets.map(packet => <Card class="space-y-6" color={packet.featured ? 'blue' : 'white'}>
+                <div class="text-center space-y-1">
+                  <h3 class="font-bold text-xl uppercase tracking-tight">{packet.title}</h3>
+                  <p class={`${packet.featured ? '' : 'text-neutral-600'} text-sm`}>{packet.description}</p>
+                </div>
+                <div class={`text-center space-y-2 ${packet.featured ? '' : 'text-red-600'}`}>
+                  <p class="text-center text-sm font-semibold">Mulai Dari</p>
+                  <h3 class="text-4xl font-bold">Rp {packet.price}</h3>
+                </div>
+                <ul class="space-y-1 text-sm">
+                  {packet.features.map(feature => <li class="flex items-center justify-between">
+                    <p class={`flex items-center gap-x-2 ${packet.featured ? '' : 'text-neutral-600'}`}>
+                      <Icon name="tabler/circle-check" />
+                      {feature.name}
+                    </p>
+                    <p class={packet.featured ? '' : '"text-neutral-900"'}>{feature.value}</p>
+                  </li>)}
+                </ul>
+                <Button expand color="yellow" size="md">Pesan Sekarang</Button>
+              </Card>)}
+            </div>
+          </div>
+        </Section>
+        <Section>
+          <div class="wrapper space-y-8">
+            <SectionHeader color="black" size="sm" title="Cara Pemesanan" description="Tahapan-tahapan dalam pemesanan dan pengembangan website pilihan anda" />
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card color="gray">
+                <Badge size="md" color="green" circle icon="tabler/number-1" />
+                <p class="font-bold text-xl">Konsultasi</p>
+                <p class="text-neutral-600 leading-normal">Silakan konsultasikan kebutuhan website anda bersama kami, fitur dan model desain yang anda inginkan beserta paket harga yang anda inginkan.</p>
+              </Card>
+              <Card color="gray">
+                <Badge size="md" color="green" circle icon="tabler/number-2" />
+                <p class="font-bold text-xl">Pemesanan</p>
+                <p class="text-neutral-600 leading-normal">Silakan konsultasikan kebutuhan website anda bersama kami, fitur dan model desain yang anda inginkan beserta paket harga yang anda inginkan.</p>
+              </Card>
+              <Card color="gray">
+                <Badge size="md" color="green" circle icon="tabler/number-3" />
+                <p class="font-bold text-xl">Pengumpulan Data</p>
+                <p class="text-neutral-600 leading-normal">Silakan konsultasikan kebutuhan website anda bersama kami, fitur dan model desain yang anda inginkan beserta paket harga yang anda inginkan.</p>
+              </Card>
+              <Card color="gray">
+                <Badge size="md" color="green" circle icon="tabler/number-4" />
+                <p class="font-bold text-xl">Pengerjaan Website</p>
+                <p class="text-neutral-600 leading-normal">Silakan konsultasikan kebutuhan website anda bersama kami, fitur dan model desain yang anda inginkan beserta paket harga yang anda inginkan.</p>
+              </Card>
+              <Card color="gray">
+                <Badge size="md" color="green" circle icon="tabler/number-5" />
+                <p class="font-bold text-xl">Pengujian dan Revisi</p>
+                <p class="text-neutral-600 leading-normal">Silakan konsultasikan kebutuhan website anda bersama kami, fitur dan model desain yang anda inginkan beserta paket harga yang anda inginkan.</p>
+              </Card>
+              <Card color="gray">
+                <Badge size="md" color="green" circle icon="tabler/number-6" />
+                <p class="font-bold text-xl">Website Rilis Online</p>
+                <p class="text-neutral-600 leading-normal">Silakan konsultasikan kebutuhan website anda bersama kami, fitur dan model desain yang anda inginkan beserta paket harga yang anda inginkan.</p>
+              </Card>
             </div>
           </div>
         </Section>
