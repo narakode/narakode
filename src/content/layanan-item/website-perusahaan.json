@@ -1,9 +1,9 @@
 {
     "icon": "tabler/building-skyscraper",
-    "image": "/layanan/website.png",
+    "image": "/images/layanan/website-perusahaan.png",
     "title": "Website Perusahaan",
-    "description": "Tingkatkan citra perusahaan dengan website profesional dan desain elegan.",
-    "startFrom": "100rb",
+    "description": "Website perusahaan adalah media resmi untuk menyampaikan informasi, mempromosikan produk, dan membangun citra secara online.",
+    "startFrom": "1 juta",
     "thumbnail": "test",
     "features": [
         {
@@ -12,19 +12,19 @@
         },
         {
             "icon": "tabler/text-square",
-            "name": "Bisa Custom Desain"
+            "name": "Bisa Pakai Desain Sendiri"
         },
         {
-            "icon": "tabler/world",
-            "name": "Gratis Hosting, Domain dan SSL"
+            "icon": "tabler/file",
+            "name": "Bisa Banyak Halaman"
         },
         {
             "icon": "tabler/mobile",
             "name": "Responsif Di Semua Perangkat"
         },
         {
-            "icon": "tabler/file",
-            "name": "Bisa Banyak Halaman"
+            "icon": "tabler/world",
+            "name": "Gratis Hosting, Domain dan SSL"
         },
         {
             "icon": "tabler/report-search",
@@ -32,7 +32,7 @@
         },
         {
             "icon": "tabler/device-analytic",
-            "name": "Laporan Pengunjung"
+            "name": "Laporan Pengunjung Website"
         },
         {
             "icon": "tabler/shield",

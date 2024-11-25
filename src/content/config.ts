@@ -22,10 +22,10 @@ export const collection = {
     }),
     'layanan-item': defineCollection({
         type: 'data',
-        schema: z.object({
+        schema: ({ image }) => z.object({
             icon: z.string(),
             title: z.string(),
-            image: z.string(),
+            image: image(),
             description: z.string(),
             startFrom: z.number(),
             features: z.array(z.object({
