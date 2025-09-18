@@ -2,9 +2,42 @@
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import CourseCard from '../components/CourseCard.astro';
+
+const courses = [
+	{
+		name: 'Belajar HTML Dasar',
+		description: 'Dasar-dasar HTML dari nol sampai bisa membuat web sederhana',
+		level: 'beginner'
+	},
+	{
+		name: 'Belajar CSS Dasar',
+		description: 'Menggunakan CSS dasar untuk mempercantik tampilan web HTML',
+		level: 'beginner'
+	},
+	{
+		name: 'Belajar Javascript Dasar',
+		description: 'Menggunakan Javascript untuk membuat halaman web yang interaktif',
+		level: 'beginner'
+	},
+	{
+		name: 'Belajar CRUD PHP',
+		description: 'Managemen data di halaman web dengan PHP',
+		level: 'beginner'
+	}
+]
 ---
 
 <Layout>
 	<Navbar />
 	<Header />
+
+	<main>
+		<section>
+			<h2>Mau belajar apa?</h2>
+			<p>Kami menyediakan beragam kelas belajar pemrograman lengkap.</p>
+
+			{courses.map(course => <CourseCard course={course} />)}
+		</section>
+	</main>
 </Layout>

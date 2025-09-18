@@ -1,0 +1,17 @@
+---
+interface Props {
+    course: {
+        name: string
+        level: string
+        description: string
+    }
+}
+
+const { course } = Astro.props
+---
+
+<article>
+    <p>{course.level}</p>
+    <h2>{course.name}</h2>
+    <p>{course.description}</p>
+</article>
