@@ -1,0 +1,14 @@
+---
+import { Code } from 'astro:components';
+
+const code = `function greet(name) {
+  return \`Hello, \${name}! 👋\`;
+}
+
+console.log(greet("World"));`
+---
+<header>
+    <h1>Belajar Pemrograman Mudah, Gratis dengan Materi yang Lengkap.</h1>
+    <p>Mari mulai belajar pemrograman mulai dari level dasar sampai lanjutan untuk menjadi seorang programmer profesional.</p>
+    <Code code={code} lang="js" theme="dark-plus"></Code>
+</header>
