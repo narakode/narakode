@@ -1,0 +1,21 @@
+---
+interface Props {
+    tutorial: {
+        name: string
+        level: string
+        description: string
+        tags: string[]
+    }
+}
+
+const { tutorial } = Astro.props
+---
+
+<article>
+    <p>{tutorial.level}</p>
+    <h3>{tutorial.name}</h3>
+    <div>
+        {tutorial.tags.map(tag => <a href="">{tag}</a>)}
+    </div>
+    <p>{tutorial.description}</p>
+</article>
