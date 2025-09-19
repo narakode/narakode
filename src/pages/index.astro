@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
@@ -142,43 +143,61 @@ const articles = [
 	<Navbar />
 	<Header />
 
-	<main>
-		<section>
-			<h2>Mau belajar apa?</h2>
-			<a href="">Lihat Semua</a>
-			<p>Kami menyediakan beragam kelas belajar pemrograman lengkap.</p>
+	<main class="container mx-auto mt-20">
+		<section class="space-y-4">
+			<div class="flex items-center justify-between">
+				<div class="space-y-2">
+					<h2 class="font-bold text-4xl text-gray-900">Mau belajar apa?</h2>
+					<p class="text-lg text-gray-700">Kami menyediakan beragam kelas belajar pemrograman lengkap.</p>
+				</div>
+				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+					Lihat Semua
+					<Icon name="tabler:arrow-right" />
+				</a>
+			</div>
 
-			{courses.map(course => <CourseCard course={course} />)}
+			<div class="grid grid-cols-2 gap-4">
+				{courses.map(course => <CourseCard course={course} />)}
+			</div>
 		</section>
-		<section>
-			<h2>Ikuti tutorial terbaru</h2>
-			<a href="">Lihat Semua</a>
-			<p>Belajar pemrograman dengan langusng terjun ke studi kasus tertentu.</p>
-
-			{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
+		<section class="py-20 space-y-4">
+			<div class="flex items-center justify-between">
+				<div class="space-y-2">
+					<h2 class="font-bold text-4xl text-gray-900">Ikuti tutorial terbaru</h2>
+					<p class="text-lg text-gray-700">Belajar pemrograman dengan langusng terjun ke studi kasus tertentu.</p>
+				</div>
+				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+					Lihat Semua
+					<Icon name="tabler:arrow-right" />
+				</a>
+			</div>
+			
+			<div class="grid grid-cols-4 gap-4">
+				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
+			</div>
 		</section>
-		<section>
-			<h2>Baca buku pemrograman</h2>
+		<section class="py-20">
+			<h2 class="font-bold text-4xl text-gray-900">Baca buku pemrograman</h2>
 			<a href="">Lihat Semua</a>
 			<p>Ingin lebih fokus? baca buku-buku pemrograman cetak dan ebook kami.</p>
 
 			{books.map(book => <BookCard book={book} />)}
 		</section>
-		<section>
-			<h2>Tonton video Terbaru</h2>
+		<section class="py-20">
+			<h2 class="font-bold text-4xl text-gray-900">Tonton video Terbaru</h2>
 			<a href="">Lihat Semua</a>
 			<p>Bosan baca tulisan terus? baca video tentang pemrograman kami di Youtube</p>
 
 			{videos.map(video => <VideoCard video={video} />)}
 		</section>
-		<section>
-			<h2>Baca artikel Terbaru</h2>
+		<section class="py-20">
+			<h2 class="font-bold text-4xl text-gray-900">Baca artikel Terbaru</h2>
 			<a href="">Lihat Semua</a>
 			<p>Tulisan terbaru berisi berita, tips dan trik dan solusi solusi koding</p>
 
 			{articles.map(article => <ArticleCard article={article} />)}
 		</section>
-		<Subscribe />
-		<Footer />
 	</main>
+	<Subscribe />
+	<Footer />
 </Layout>
