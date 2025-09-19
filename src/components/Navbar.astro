@@ -1,11 +1,18 @@
-<nav>
-    <a href="">Narakode</a>
-    <div>
-        <a href="">Belajar</a>
-        <a href="">Tutorial</a>
-        <a href="">Artikel</a>
-        <a href="">Video</a>
-        <a href="">Buku</a>
+---
+import { Image } from "astro:assets";
+import Logo from '../assets/logo.png'
+---
+
+<nav class="h-16 bg-white text-gray-900 relative">
+    <div class="container h-full mx-auto flex items-center justify-between">
+        <Image src={Logo} alt="Narakode" width={40} class="rounded-full" />
+        <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-4">
+            <a href="" class="hover:text-blue-600 hover:font-medium">Belajar</a>
+            <a href="" class="hover:text-blue-600 hover:font-medium">Tutorial</a>
+            <a href="" class="hover:text-blue-600 hover:font-medium">Artikel</a>
+            <a href="" class="hover:text-blue-600 hover:font-medium">Video</a>
+            <a href="" class="hover:text-blue-600 hover:font-medium">Buku</a>
+        </div>
+        <input type="search" placeholder="Cari sesuatu" class="border border-gray-300 h-10 px-2.5 rounded-lg">
     </div>
-    <input type="search" placeholder="Cari sesuatu">
 </nav>
