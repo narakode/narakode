@@ -5,6 +5,7 @@ interface Props {
         level: string
         description: string
         tags: string[]
+        thumbnailUrl: string
     }
 }
 
@@ -12,6 +13,7 @@ const { tutorial } = Astro.props
 ---
 
 <article>
+    <img src={tutorial.thumbnailUrl} alt={tutorial.name}>
     <p>{tutorial.level}</p>
     <h3>{tutorial.name}</h3>
     <div>
