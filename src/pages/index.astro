@@ -218,12 +218,21 @@ const articles = [
 				{videos.map(video => <VideoCard video={video} />)}
 			</div>
 		</section>
-		<section>
-			<h2 class="font-bold text-4xl text-gray-900">Baca artikel Terbaru</h2>
-			<a href="">Lihat Semua</a>
-			<p>Tulisan terbaru berisi berita, tips dan trik dan solusi solusi koding</p>
+		<section class="space-y-4">
+			<div class="flex items-center justify-between">
+				<div class="space-y-2">
+					<h2 class="font-bold text-4xl text-gray-900">Baca artikel Terbaru</h2>
+					<p class="text-lg text-gray-700">Tulisan terbaru berisi berita, tips dan trik dan solusi solusi koding</p>
+				</div>
+				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+					Lihat Semua
+					<Icon name="tabler:arrow-right" />
+				</a>
+			</div>
 
-			{articles.map(article => <ArticleCard article={article} />)}
+			<div class="grid grid-cols-4 gap-4">
+				{articles.map(article => <ArticleCard article={article} />)}
+			</div>
 		</section>
 	</main>
 	<Subscribe />
