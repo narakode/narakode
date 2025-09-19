@@ -1,5 +1,6 @@
 ---
 import { Code } from 'astro:components';
+import { Icon } from 'astro-icon/components';
 
 const code = `function greet(name) {
   return \`Hello, \${name}! 👋\`;
@@ -7,8 +8,16 @@ const code = `function greet(name) {
 
 console.log(greet("World"));`
 ---
-<header>
-    <h1>Belajar Pemrograman Mudah, Gratis dengan Materi yang Lengkap.</h1>
-    <p>Mari mulai belajar pemrograman mulai dari level dasar sampai lanjutan untuk menjadi seorang programmer profesional.</p>
-    <Code code={code} lang="js" theme="dark-plus"></Code>
+<header class="bg-red-900 text-white h-120 flex items-center">
+    <div class="container mx-auto grid grid-cols-2 items-center gap-16">
+      <div class="space-y-6">
+        <h1 class="font-bold text-5xl tracking-tight">Belajar Pemrograman Mudah, Gratis dengan Materi yang Lengkap.</h1>
+        <p class="text-xl text-gray-100">Mari mulai belajar pemrograman mulai dari level dasar sampai lanjutan untuk menjadi seorang programmer profesional.</p>
+        <button class="bg-yellow-600 text-white h-12 px-6 rounded-lg font-bold text-lg flex items-center gap-2">
+          Mulai Belajar
+          <Icon name="tabler:arrow-right" size={20} />
+        </button>
+      </div>
+      <Code code={code} lang="js" theme="dark-plus" class="p-4 rounded-lg"></Code>
+    </div>
 </header>
