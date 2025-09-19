@@ -1,9 +1,11 @@
 ---
+import { Icon } from 'astro-icon/components'
 interface Props {
     course: {
         name: string
         level: string
         description: string
+        icon: string
     }
 }
 
@@ -12,6 +14,9 @@ const { course } = Astro.props
 
 <article>
     <p>{course.level}</p>
-    <h3>{course.name}</h3>
+    <h3>
+        <Icon name={course.icon} />
+        {course.name}
+    </h3>
     <p>{course.description}</p>
 </article>
