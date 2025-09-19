@@ -1,0 +1,13 @@
+---
+interface Props {
+    video: {
+        url: string
+    }
+}
+
+const { video } = Astro.props
+---
+
+<article>
+    <iframe src={video.url}></iframe>
+</article>

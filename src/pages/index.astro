@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import CourseCard from '../components/CourseCard.astro';
 import TutorialCard from '../components/TutorialCard.astro';
 import BookCard from '../components/BookCard.astro';
+import VideoCard from '../components/VideoCard.astro';
 
 const courses = [
 	{
@@ -78,6 +79,25 @@ const books = [
 		price: 0
 	}
 ]
+
+const videos = [
+	{
+		title: 'Tutorial Membuat Blog dengan Laravel',
+		url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
+	},
+	{
+		title: 'Membuat REST API di Laravel',
+		url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
+	},
+	{
+		title: 'Validasi Form di Vue',
+		url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
+	},
+	{
+		title: 'Membuat Halaman Login di React Native',
+		url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
+	}
+]
 ---
 
 <Layout>
@@ -95,16 +115,23 @@ const books = [
 		<section>
 			<h2>Ikuti tutorial terbaru</h2>
 			<a href="">Lihat Semua</a>
-			<p>Kami menyediakan beragam tutorial step-by-step untuk studi kasus tertentu.</p>
+			<p>Belajar pemrograman dengan langusng terjun ke studi kasus tertentu.</p>
 
 			{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
 		</section>
 		<section>
 			<h2>Baca buku pemrograman</h2>
 			<a href="">Lihat Semua</a>
-			<p>Kami menyediakan buku-buku pemrograman cetak dan ebook.</p>
+			<p>Ingin lebih fokus? baca buku-buku pemrograman cetak dan ebook kami.</p>
 
 			{books.map(book => <BookCard book={book} />)}
+		</section>
+		<section>
+			<h2>Tonton video Terbaru</h2>
+			<a href="">Lihat Semua</a>
+			<p>Bosan baca tulisan terus, baca video tentang pemrograman kami di Youtube</p>
+
+			{videos.map(video => <VideoCard video={video} />)}
 		</section>
 	</main>
 </Layout>
