@@ -7,6 +7,7 @@ import TutorialCard from '../components/TutorialCard.astro';
 import BookCard from '../components/BookCard.astro';
 import VideoCard from '../components/VideoCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import Subscribe from '../components/Subscribe.astro';
 
 const courses = [
 	{
@@ -168,5 +169,6 @@ const articles = [
 
 			{articles.map(article => <ArticleCard article={article} />)}
 		</section>
+		<Subscribe />
 	</main>
 </Layout>
