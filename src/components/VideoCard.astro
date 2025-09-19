@@ -8,6 +8,6 @@ interface Props {
 const { video } = Astro.props
 ---
 
-<article>
-    <iframe src={video.url}></iframe>
+<article class="bg-white border border-gray-300 p-4 rounded-lg space-y-2">
+    <iframe src={video.url} class="w-full"></iframe>
 </article>
