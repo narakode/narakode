@@ -6,6 +6,7 @@ import CourseCard from '../components/CourseCard.astro';
 import TutorialCard from '../components/TutorialCard.astro';
 import BookCard from '../components/BookCard.astro';
 import VideoCard from '../components/VideoCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
 
 const courses = [
 	{
@@ -98,6 +99,33 @@ const videos = [
 		url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
 	}
 ]
+
+const articles = [
+	{
+		title: 'Cara Membuat Komponen Dinamis di Vue',
+		description: 'Kita bisa membuat komponen yang dirender dinamis, misalnya pada komponen tab',
+		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		category: 'vue'
+	},
+	{
+		title: 'Menggunakan Semantic Element untuk Optimasi SEO',
+		description: 'Semantic Element di HTML bisa meningkatkan kualitas SEO website kita',
+		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		category: 'html'
+	},
+	{
+		title: 'Global State di Vue',
+		description: 'Global state adalah state yang bisa diakses di tempat mana saja, seperti state autentikasi',
+		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		category: 'vue'
+	},
+	{
+		title: 'Tutorial Menghubungkan RajaOngkir di Laravel',
+		description: 'RajaOngkir adalah third party yang menyediakan API untuk mengecek ongkir dari ekspedisi pengiriman',
+		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		category: 'laravel'
+	}
+]
 ---
 
 <Layout>
@@ -129,9 +157,16 @@ const videos = [
 		<section>
 			<h2>Tonton video Terbaru</h2>
 			<a href="">Lihat Semua</a>
-			<p>Bosan baca tulisan terus, baca video tentang pemrograman kami di Youtube</p>
+			<p>Bosan baca tulisan terus? baca video tentang pemrograman kami di Youtube</p>
 
 			{videos.map(video => <VideoCard video={video} />)}
+		</section>
+		<section>
+			<h2>Baca artikel Terbaru</h2>
+			<a href="">Lihat Semua</a>
+			<p>Tulisan terbaru berisi berita, tips dan trik dan solusi solusi koding</p>
+
+			{articles.map(article => <ArticleCard article={article} />)}
 		</section>
 	</main>
 </Layout>
