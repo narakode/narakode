@@ -10,8 +10,10 @@ interface Props {
 const { book } = Astro.props
 ---
 
-<article>
-    <img src={book.coverUrl} alt={book.title}>
-    <h3>{book.title}</h3>
-    <p>{book.price === 0 ? 'Gratis' : book.price}</p>
+<article class="bg-white border border-gray-300 p-4 rounded-lg space-y-4">
+    <img src={book.coverUrl} alt={book.title} class="rounded-md">
+    <div>
+        <h3 class="font-bold text-gray-900 text-lg">{book.title}</h3>
+        <p class="font-bold text-red-900">Rp {book.price === 0 ? 'Gratis' : book.price}</p>
+    </div>
 </article>

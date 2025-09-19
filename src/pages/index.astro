@@ -89,6 +89,16 @@ const books = [
 		title: 'Belajar PHP Dasar',
 		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
 		price: 0
+	},
+	{
+		title: 'Belajar PHP Dasar',
+		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
+		price: 145000
+	},
+	{
+		title: 'Belajar PHP Dasar',
+		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
+		price: 0
 	}
 ]
 
@@ -143,7 +153,7 @@ const articles = [
 	<Navbar />
 	<Header />
 
-	<main class="container mx-auto mt-20">
+	<main class="container mx-auto py-20 space-y-20">
 		<section class="space-y-4">
 			<div class="flex items-center justify-between">
 				<div class="space-y-2">
@@ -160,7 +170,7 @@ const articles = [
 				{courses.map(course => <CourseCard course={course} />)}
 			</div>
 		</section>
-		<section class="py-20 space-y-4">
+		<section class="space-y-4">
 			<div class="flex items-center justify-between">
 				<div class="space-y-2">
 					<h2 class="font-bold text-4xl text-gray-900">Ikuti tutorial terbaru</h2>
@@ -176,12 +186,21 @@ const articles = [
 				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
 			</div>
 		</section>
-		<section class="py-20">
-			<h2 class="font-bold text-4xl text-gray-900">Baca buku pemrograman</h2>
-			<a href="">Lihat Semua</a>
-			<p>Ingin lebih fokus? baca buku-buku pemrograman cetak dan ebook kami.</p>
+		<section class="space-y-4">
+			<div class="flex items-center justify-between">
+				<div class="space-y-2">
+					<h2 class="font-bold text-4xl text-gray-900">Baca buku pemrograman</h2>
+					<p class="text-lg text-gray-700">Ingin lebih fokus? baca buku-buku pemrograman cetak dan ebook kami.</p>
+				</div>
+				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+					Lihat Semua
+					<Icon name="tabler:arrow-right" />
+				</a>
+			</div>
 
-			{books.map(book => <BookCard book={book} />)}
+			<div class="grid grid-cols-6 gap-4">
+				{books.map(book => <BookCard book={book} />)}
+			</div>
 		</section>
 		<section class="py-20">
 			<h2 class="font-bold text-4xl text-gray-900">Tonton video Terbaru</h2>
