@@ -1,0 +1,17 @@
+---
+interface Props {
+    book: {
+        title: string
+        coverUrl: string
+        price: number
+    }
+}
+
+const { book } = Astro.props
+---
+
+<article>
+    <img src={book.coverUrl} alt={book.title}>
+    <h3>{book.title}</h3>
+    <p>{book.price === 0 ? 'Gratis' : book.price}</p>
+</article>

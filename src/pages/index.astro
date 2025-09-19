@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CourseCard from '../components/CourseCard.astro';
 import TutorialCard from '../components/TutorialCard.astro';
+import BookCard from '../components/BookCard.astro';
 
 const courses = [
 	{
@@ -54,6 +55,29 @@ const tutorials = [
 		level: 'beginner'
 	}
 ]
+
+const books = [
+	{
+		title: 'Belajar HTML Dasar',
+		coverUrl: 'https://placehold.co/300x450/red/white?text=Belajar+HTML+Dasar&font=Playfair+Display',
+		price: 0
+	},
+	{
+		title: 'Belajar CSS Dasar',
+		coverUrl: 'https://placehold.co/300x450/blue/white?text=Belajar+CSS+Dasar&font=Oswald',
+		price: 0
+	},
+	{
+		title: 'Belajar Javascript Dasar',
+		coverUrl: 'https://placehold.co/300x450/yellow/black/?text=Belajar+Javascript+Dasar&font=Poppins',
+		price: 0
+	},
+	{
+		title: 'Belajar PHP Dasar',
+		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
+		price: 0
+	}
+]
 ---
 
 <Layout>
@@ -74,6 +98,13 @@ const tutorials = [
 			<p>Kami menyediakan beragam tutorial step-by-step untuk studi kasus tertentu.</p>
 
 			{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
+		</section>
+		<section>
+			<h2>Baca buku pemrograman</h2>
+			<a href="">Lihat Semua</a>
+			<p>Kami menyediakan buku-buku pemrograman cetak dan ebook.</p>
+
+			{books.map(book => <BookCard book={book} />)}
 		</section>
 	</main>
 </Layout>
