@@ -1,26 +1,26 @@
 ---
 import { Icon } from 'astro-icon/components'
+import Card from './app/Card.astro'
+import Link from './app/Link.astro'
+import Badge from './app/Badge.astro'
+
 interface Props {
     course: {
         name: string
-        level: string
         description: string
         icon: string
+        itemsQty: number
     }
 }
 
 const { course } = Astro.props
 ---
 
-<article class="bg-white border border-gray-300 p-4 rounded-lg space-y-2">
-    <div class="flex items-center justify-between">
-        <div>
-            <h3 class="flex items-center gap-2 font-bold text-lg text-gray-900">
-                <Icon name={course.icon} />
-                {course.name}
-            </h3>
-            <p class="text-gray-700">{course.description}</p>
-        </div>
-        <span class="bg-blue-100 text-xs h-5 inline-flex items-center px-1.5 rounded-lg text-blue-900 font-medium">{course.level}</span>
-    </div>
-</article>
+<Card class="space-y-2">
+    <h3 class="flex items-center gap-2 font-bold text-lg text-gray-900">
+        <Icon name={course.icon} size={20} />
+        <Link>{course.name}</Link>
+    </h3>
+    <p class="text-gray-700">{course.description}</p>
+    <Badge>{course.itemsQty} Materi</Badge>
+</Card>
