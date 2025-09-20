@@ -10,33 +10,57 @@ import ArticleCard from '../components/ArticleCard.astro';
 import Subscribe from '../components/Subscribe.astro';
 import Footer from '../components/Footer.astro';
 import Container from '../components/app/Container.astro';
-import Section from '../components/app/section.astro';
-import Button from '../components/app/button.astro';
+import Section from '../components/app/Section.astro';
+import Button from '../components/app/Button.astro';
 
 const courses = [
 	{
 		name: 'Belajar HTML Dasar',
-		description: 'Mengenal HTML dari nol sampai bisa membuat web sederhana',
-		level: 'beginner',
-		icon: 'logos:html-5'
+		description: 'Mengenal HTML dari nol sampai bisa membuat web sederhana.',
+		icon: 'logos:html-5',
+		itemsQty: 12
 	},
 	{
 		name: 'Belajar CSS Dasar',
-		description: 'Mengenal CSS dari nol sampai bisa memberikan style sederhana pada web',
-		level: 'beginner',
-		icon: 'logos:css-3'
+		description: 'Mengenal CSS dari nol sampai bisa memberikan style sederhana pada web.',
+		icon: 'logos:css-3',
+		itemsQty: 20
 	},
 	{
 		name: 'Belajar Javascript Dasar',
-		description: 'Menggunakan Javascript sampai bisa membuat web yang interaktif',
-		level: 'beginner',
-		icon: 'logos:javascript'
+		description: 'Mengenal Javascript dari nol sampai bisa menambahkan interaksi sederhana pada web.',
+		icon: 'logos:javascript',
+		itemsQty: 14
 	},
 	{
 		name: 'Belajar PHP Dasar',
-		description: 'Menggunakan PHP sampai bisa menampilkan dan memproses data di web',
-		level: 'beginner',
-		icon: 'logos:php'
+		description: 'Mengenal PHP dari nol sampai bisa menampilkan dan memproses data di web.',
+		icon: 'logos:php',
+		itemsQty: 15
+	},
+	{
+		name: 'Belajar MySQL Dasar',
+		description: 'Mengenal databse MySQL dari nol sampai bisa mengolah dan menampilkan data di database.',
+		icon: 'logos:mysql',
+		itemsQty: 10
+	},
+	{
+		name: 'Belajar Tailwind CSS Dasar',
+		description: 'Mengenal Tailwind CSS dari nol sampai bisa mendesain web sederhana tanpa menulis CSS.',
+		icon: 'logos:tailwindcss-icon',
+		itemsQty: 8
+	},
+	{
+		name: 'Belajar Laravel Dasar',
+		description: 'Mengenal Laravel dari nol sampai bisa membuat web dinamis berbasis PHP.',
+		icon: 'logos:laravel',
+		itemsQty: 11
+	},
+	{
+		name: 'Belajar Vue JS Dasar',
+		description: 'Mengenal Vue JS dari nol sampai bisa membuat web statis yang interaktif.',
+		icon: 'logos:vue',
+		itemsQty: 14
 	}
 ]
 
@@ -156,10 +180,10 @@ const articles = [
 	<Header />
 
 	<Container tag="main" class="py-20 space-y-20">
-		<Section title='Mau Belajar Apa?' description='Kami menyediakan beragam kelas belajar pemrograman lengkap.'>
+		<Section title='Mau Belajar Apa?' description='Telusri dan pilih beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'>
 			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
 
-			<div class="grid grid-cols-2 gap-4">
+			<div class="grid grid-cols-4 gap-4">
 				{courses.map(course => <CourseCard course={course} />)}
 			</div>
 		</Section>
