@@ -11,6 +11,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import Subscribe from '../components/Subscribe.astro';
 import Footer from '../components/Footer.astro';
 import Container from '../components/app/Container.astro';
+import Section from '../components/app/section.astro';
 
 const courses = [
 	{
@@ -155,13 +156,23 @@ const articles = [
 	<Header />
 
 	<Container tag="main" class="py-20 space-y-20">
+		<Section title='Mau Belajar Apa?' description='Kami menyediakan beragam kelas belajar pemrograman lengkap.'>
+			<a slot="action" href="" class="bg-red-800 hover:bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+				Lihat Semua
+				<Icon name="tabler:arrow-right" />
+			</a>
+
+			<div class="grid grid-cols-2 gap-4">
+				{courses.map(course => <CourseCard course={course} />)}
+			</div>
+		</Section>
 		<section class="space-y-4">
 			<div class="flex items-center justify-between">
 				<div class="space-y-2">
-					<h2 class="font-bold text-4xl text-gray-900">Mau belajar apa?</h2>
+					<h2 class="font-bold text-4xl text-gray-900">Mau Belajar Apa?</h2>
 					<p class="text-lg text-gray-700">Kami menyediakan beragam kelas belajar pemrograman lengkap.</p>
 				</div>
-				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+				<a href="" class="bg-red-800 hover:bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
 					Lihat Semua
 					<Icon name="tabler:arrow-right" />
 				</a>
@@ -177,7 +188,7 @@ const articles = [
 					<h2 class="font-bold text-4xl text-gray-900">Ikuti tutorial terbaru</h2>
 					<p class="text-lg text-gray-700">Belajar pemrograman dengan langusng terjun ke studi kasus tertentu.</p>
 				</div>
-				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+				<a href="" class="bg-red-800 hover:bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
 					Lihat Semua
 					<Icon name="tabler:arrow-right" />
 				</a>
@@ -193,7 +204,7 @@ const articles = [
 					<h2 class="font-bold text-4xl text-gray-900">Baca buku pemrograman</h2>
 					<p class="text-lg text-gray-700">Ingin lebih fokus? baca buku-buku pemrograman cetak dan ebook kami.</p>
 				</div>
-				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+				<a href="" class="bg-red-800 hover:bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
 					Lihat Semua
 					<Icon name="tabler:arrow-right" />
 				</a>
@@ -209,7 +220,7 @@ const articles = [
 					<h2 class="font-bold text-4xl text-gray-900">Tonton video Terbaru</h2>
 					<p class="text-lg text-gray-700">Bosan baca tulisan terus? baca video tentang pemrograman kami di Youtube</p>
 				</div>
-				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+				<a href="" class="bg-red-800 hover:bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
 					Lihat Semua
 					<Icon name="tabler:arrow-right" />
 				</a>
@@ -225,7 +236,7 @@ const articles = [
 					<h2 class="font-bold text-4xl text-gray-900">Baca artikel Terbaru</h2>
 					<p class="text-lg text-gray-700">Tulisan terbaru berisi berita, tips dan trik dan solusi solusi koding</p>
 				</div>
-				<a href="" class="bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
+				<a href="" class="bg-red-800 hover:bg-red-900 text-white font-medium h-10 px-4 flex items-center rounded-lg gap-2">
 					Lihat Semua
 					<Icon name="tabler:arrow-right" />
 				</a>

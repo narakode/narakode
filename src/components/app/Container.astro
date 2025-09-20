@@ -1,4 +1,9 @@
 ---
+interface Props {
+    class?: string
+    tag?: 'div' | 'main'
+}
+
 const { class: className, tag: Element = 'div' } = Astro.props
 ---
 
