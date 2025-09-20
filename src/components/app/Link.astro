@@ -1,3 +1,18 @@
-<a href="" class="hover:text-red-900 hover:underline">
+---
+type Color = 'dark' | 'primary'
+
+interface Props {
+    color?: Color
+}
+
+const colorClass: Record<Color, string> = {
+    dark: 'text-gray-900 hover:text-red-900',
+    primary: 'text-red-900'
+}
+
+const { color = 'dark' } = Astro.props
+---
+
+<a href="" class=`hover:underline ${colorClass[color]}`>
     <slot />
 </a>
