@@ -1,4 +1,5 @@
 ---
+import Badge from './app/Badge.astro'
 import Card from './app/Card.astro'
 import Link from './app/Link.astro'
 
@@ -8,6 +9,7 @@ interface Props {
         description: string
         tags: string[]
         thumbnailUrl: string
+        itemsCount: number
     }
 }
 
@@ -25,5 +27,6 @@ const { tutorial } = Astro.props
             <Link>{tutorial.name}</Link>
         </h3>
         <p class="text-gray-700">{tutorial.description}</p>
+        <Badge>{tutorial.itemsCount} Materi</Badge>
     </div>
 </Card>
