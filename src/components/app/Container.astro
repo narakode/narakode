@@ -1,0 +1,7 @@
+---
+const { class: className, tag: Element = 'div' } = Astro.props
+---
+
+<Element class={`${className} container mx-auto`}>
+    <slot />
+</Element>

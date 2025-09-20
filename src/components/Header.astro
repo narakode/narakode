@@ -1,6 +1,7 @@
 ---
 import { Code } from 'astro:components';
 import { Icon } from 'astro-icon/components';
+import Container from './app/Container.astro';
 
 const code = `// Belajar JavaScript Dasar
 const numbers = [1, 2, 3, 4, 5];
@@ -15,7 +16,7 @@ for (let n of numbers) {
 ---
 <header class="bg-red-900 text-white h-140 flex items-center relative">
   <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>  
-  <div class="container mx-auto grid grid-cols-2 items-center gap-32 relative">
+  <Container class="grid grid-cols-2 items-center gap-32 relative">
     <div class="space-y-6">
       <h1 class="font-bold text-5xl tracking-tight">Mulai Belajar <span class="text-yellow-400">Pemrograman</span> Gratis dari Dasar hingga Mahir.</h1>
       <p class="text-xl text-gray-200">Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional.</p>
@@ -25,5 +26,5 @@ for (let n of numbers) {
       </button>
     </div>
     <Code code={code} lang="js" theme="monokai" class="bg-red-100 p-4 rounded-lg"></Code>
-  </div>
+  </Container>
 </header>

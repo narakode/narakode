@@ -10,6 +10,7 @@ import VideoCard from '../components/VideoCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import Subscribe from '../components/Subscribe.astro';
 import Footer from '../components/Footer.astro';
+import Container from '../components/app/Container.astro';
 
 const courses = [
 	{
@@ -153,7 +154,7 @@ const articles = [
 	<Navbar />
 	<Header />
 
-	<main class="container mx-auto py-20 space-y-20">
+	<Container tag="main" class="py-20 space-y-20">
 		<section class="space-y-4">
 			<div class="flex items-center justify-between">
 				<div class="space-y-2">
@@ -234,7 +235,7 @@ const articles = [
 				{articles.map(article => <ArticleCard article={article} />)}
 			</div>
 		</section>
-	</main>
+	</Container>
 	<Subscribe />
 	<Footer />
 </Layout>
