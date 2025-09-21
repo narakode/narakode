@@ -105,34 +105,34 @@ const tutorials = [
 
 const books = [
 	{
-		title: 'Belajar HTML Dasar',
+		title: 'Belajar HTML, CSS, dan Javascript Dasar',
 		coverUrl: 'https://placehold.co/300x450/red/white?text=Belajar+HTML+Dasar&font=Playfair+Display',
 		price: 0
 	},
 	{
-		title: 'Belajar CSS Dasar',
+		title: 'Belajar Vue JS Sampai Mahir',
 		coverUrl: 'https://placehold.co/300x450/blue/white?text=Belajar+CSS+Dasar&font=Oswald',
-		price: 0
+		price: 80000
 	},
 	{
-		title: 'Belajar Javascript Dasar',
+		title: 'Menguasai MySQL Sampai Mahir',
 		coverUrl: 'https://placehold.co/300x450/yellow/black/?text=Belajar+Javascript+Dasar&font=Poppins',
-		price: 0
+		price: 80000
 	},
 	{
-		title: 'Belajar PHP Dasar',
+		title: 'Belajar Laravel Sampai Mahir',
 		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
-		price: 0
+		price: 100000
 	},
 	{
-		title: 'Belajar PHP Dasar',
+		title: 'Membangun Aplikasi Perpustakaan dengan PHP',
+		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
+		price: 40000
+	},
+	{
+		title: 'Membangun Toko Online dengan Laravel',
 		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
 		price: 145000
-	},
-	{
-		title: 'Belajar PHP Dasar',
-		coverUrl: 'https://placehold.co/300x450/purple/white/?text=Belajar+PHP+Dasar&font=Montserrat',
-		price: 0
 	}
 ]
 
@@ -202,7 +202,7 @@ const articles = [
 				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
 			</div>
 		</Section>
-		<Section title='Baca buku pemrograman' description='Ingin lebih fokus? baca buku-buku pemrograman cetak dan ebook kami.'>
+		<Section title='Baca buku pemrograman' description='Ingin lebih fokus? Baca buku cetak dan ebook seputaran pemrograman kami.'>
 			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid grid-cols-6 gap-4">

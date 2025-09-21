@@ -1,4 +1,7 @@
 ---
+import Card from './app/Card.astro'
+import Link from './app/Link.astro'
+
 interface Props {
     book: {
         title: string
@@ -8,12 +11,21 @@ interface Props {
 }
 
 const { book } = Astro.props
+
+function formatPrice(number: number): string {
+    return new Intl.NumberFormat('id-Id', {
+        style: 'currency',
+        currency: 'idr'
+    }).format(number)
+}
 ---
 
-<article class="bg-white border border-gray-300 p-4 rounded-lg space-y-4">
+<Card class="space-y-4">
     <img src={book.coverUrl} alt={book.title} class="rounded-md">
-    <div>
-        <h3 class="font-bold text-gray-900 text-lg">{book.title}</h3>
-        <p class="font-bold text-red-900">Rp {book.price === 0 ? 'Gratis' : book.price}</p>
+    <div class="space-y-2">
+        <h3 class="font-bold text-gray-900 text-lg">
+            <Link>{book.title}</Link>
+        </h3>
+        <p class="font-bold text-red-900">{book.price === 0 ? 'Gratis' : formatPrice(book.price)}</p>
     </div>
-</article>
+</Card>
