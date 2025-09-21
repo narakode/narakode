@@ -1,4 +1,8 @@
 ---
+import MembuatWebPortofolioHtmlCss from '../assets/tutorials/membuat-web-portofolio-html-css/thumbnail.png'
+import MembuatWebTodoListJavascript from '../assets/tutorials/membuat-web-todo-list-javascript/thumbnail.png'
+import MembuatSistemCrudPhpMysql from '../assets/tutorials/membuat-sistem-crud-php-mysql/thumbnail.png'
+import MembuatFormLoginRegisterLaravelVue from '../assets/tutorials/membuat-form-login-register-laravel-vue/thumbnail.png'
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
@@ -70,7 +74,7 @@ const tutorials = [
 		tags: ['html', 'css'],
 		description: 'Belajar membuat web untuk menampilkan karya-karya pribadimu menggunakan HTML dan CSS.',
 		level: 'beginner',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: MembuatWebPortofolioHtmlCss,
 		itemsCount: 20
 	},
 	{
@@ -78,7 +82,7 @@ const tutorials = [
 		tags: ['javascript'],
 		description: 'Belajar membuat aplikasi web untuk mengelola daftar aktifitas yang ingin dilakukan dengan JavaScript.',
 		level: 'beginner',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: MembuatWebTodoListJavascript,
 		itemsCount: 15
 	},
 	{
@@ -86,7 +90,7 @@ const tutorials = [
 		tags: ['php', 'mysql'],
 		description: 'Belajar mengolah data dengan metode CRUD (create, read, update, dan delete) dengan PHP dan MySQL.',
 		level: 'beginner',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: MembuatSistemCrudPhpMysql,
 		itemsCount: 14
 	},
 	{
@@ -94,7 +98,7 @@ const tutorials = [
 		tags: ['vue', 'laravel'],
 		description: 'Belajar membuat form untuk autentikasi dan pendaftaran pengguna dengan Vue dan Laravel.',
 		level: 'beginner',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: MembuatFormLoginRegisterLaravelVue,
 		itemsCount: 17
 	}
 ]
