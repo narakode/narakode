@@ -9,6 +9,7 @@ import MenguasaiMysqlSampaiMahir from '../assets/books/menguasai-mysql-sampai-ma
 import BelajarLaravelSampaiMahir from '../assets/books/belajar-laravel-sampai-mahir.png'
 import MembangunAplikasiperpustakaanDenganPhp from '../assets/books/membangun-aplikasi-perpustakaan-dengan-php.png'
 import MembangunTokoOnlineDenganLaravel from '../assets/books/membangun-toko-online-dengan-laravel.png'
+import CaraMembuatKomponenDinamisDiVue from '../assets/articles/cara-membuat-komponen-dinamis-di-vue.png'
 import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
@@ -165,25 +166,25 @@ const articles = [
 	{
 		title: 'Cara Membuat Komponen Dinamis di Vue',
 		description: 'Kita bisa membuat komponen yang dirender dinamis, misalnya pada komponen tab',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: CaraMembuatKomponenDinamisDiVue,
 		category: 'vue'
 	},
 	{
 		title: 'Menggunakan Semantic Element untuk Optimasi SEO',
 		description: 'Semantic Element di HTML bisa meningkatkan kualitas SEO website kita',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: CaraMembuatKomponenDinamisDiVue,
 		category: 'html'
 	},
 	{
 		title: 'Global State di Vue',
 		description: 'Global state adalah state yang bisa diakses di tempat mana saja, seperti state autentikasi',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: CaraMembuatKomponenDinamisDiVue,
 		category: 'vue'
 	},
 	{
 		title: 'Tutorial Menghubungkan RajaOngkir di Laravel',
 		description: 'RajaOngkir adalah third party yang menyediakan API untuk mengecek ongkir dari ekspedisi pengiriman',
-		thumbnailUrl: 'https://placehold.co/600x338/?text=Belajar+PHP+Dasar&font=Montserrat',
+		thumbnailSrc: CaraMembuatKomponenDinamisDiVue,
 		category: 'laravel'
 	}
 ]
@@ -208,21 +209,21 @@ const articles = [
 				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
 			</div>
 		</Section>
-		<Section title='Baca buku pemrograman' description='Ingin lebih fokus? Baca buku cetak dan ebook seputaran pemrograman kami.'>
+		<Section title='Baca Buku Pemrograman' description='Ingin lebih fokus? Baca buku cetak dan ebook seputaran pemrograman kami.'>
 			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid grid-cols-6 gap-4">
 				{books.map(book => <BookCard book={book} />)}
 			</div>
 		</Section>
-		<Section title='Tonton video Terbaru' description='Bosan baca tulisan terus? baca video tentang pemrograman kami di Youtube'>
+		<Section title='Tonton Video Terbaru' description='Bosan baca tulisan terus? Tonton video tentang pemrograman kami di Youtube.'>
 			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid grid-cols-4 gap-4">
 				{videos.map(video => <VideoCard video={video} />)}
 			</div>
 		</Section>
-		<Section title='Baca artikel Terbaru' description='Tulisan terbaru berisi berita, tips dan trik dan solusi solusi koding'>
+		<Section title='Baca Artikel Terbaru' description='Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'>
 			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid grid-cols-4 gap-4">
