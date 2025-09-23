@@ -3,17 +3,18 @@ import { Image } from "astro:assets";
 import Logo from '../assets/logo.png'
 import Container from "./app/Container.astro";
 import Input from "./app/Input.astro";
+import Link from "./app/Link.astro";
 ---
 
 <nav class="h-16 bg-white text-gray-900 relative">
     <Container class="h-full flex items-center justify-between">
         <Image src={Logo} alt="Narakode" width={40} class="rounded-full" />
         <div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-4">
-            <a href="" class="hover:text-red-600 hover:font-medium">Belajar</a>
-            <a href="" class="hover:text-red-600 hover:font-medium">Tutorial</a>
-            <a href="" class="hover:text-red-600 hover:font-medium">Artikel</a>
-            <a href="" class="hover:text-red-600 hover:font-medium">Video</a>
-            <a href="" class="hover:text-red-600 hover:font-medium">Buku</a>
+            <Link>Belajar</Link>
+            <Link>Tutorial</Link>
+            <Link>Artikel</Link>
+            <Link>Video</Link>
+            <Link>Buku</Link>
         </div>
         <Input type="search" placeholder="Cari sesuatu" name="Pencarian" />
     </Container>
