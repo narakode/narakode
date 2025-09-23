@@ -6,8 +6,8 @@ import Link from "./app/Link.astro";
 
 <footer class="bg-gray-900 text-white py-20">
     <Container>
-        <div class="grid grid-cols-6 gap-32">
-            <div class="col-span-2">
+        <div class="grid grid-cols-2 gap-8 lg:grid-cols-6">
+            <div class="lg:col-span-2">
                 <div class="flex flex-col gap-2 xl:max-w-3/4">
                     <a href="" class="font-bold text-xl uppercase tracking-tight">Narakode</a>
                     <p class="text-gray-300">Jl. Raya Timur Wanadadi, KM 3, Wanadadi, Banjarnegara, Jawa Tengah</p>
@@ -23,7 +23,7 @@ import Link from "./app/Link.astro";
                     </div>
                 </div>
             </div>
-            <div class="space-y-2">
+            <div class="space-y-2 order-3 lg:order-none">
                 <p class="text-lg font-bold">Fitur</p>
                 <div class="flex flex-col space-y-2">
                     <Link color="light-muted">Belajar</Link>
@@ -33,7 +33,7 @@ import Link from "./app/Link.astro";
                     <Link color="light-muted">Buku</Link>
                 </div>
             </div>
-            <div class="space-y-2">
+            <div class="space-y-2 order-4 lg:order-none">
                 <p class="text-lg font-bold">Terhubung</p>
                 <div class="flex flex-col space-y-2">
                     <Link color="light-muted">Tentang Kami</Link>
@@ -42,7 +42,7 @@ import Link from "./app/Link.astro";
                     <Link color="light-muted">Kerjasama</Link>
                 </div>
             </div>
-            <div class="col-span-2 space-y-4">
+            <div class="space-y-4 lg:col-span-2">
                 <div class="space-y-2 xl:max-w-3/4">
                     <p class="text-lg font-bold">Media Sosial</p>
                     <p class="text-gray-300">Ikuti sosial media kami untuk mendapatkan informasi dan update terbaru dari kami.</p>

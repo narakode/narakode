@@ -33,7 +33,7 @@ const iconSize: Record<Size, number> = {
 const { tag: Element = 'button', color = 'primary', size = 'md', xlSize, icon, fullwidth = false } = Astro.props
 ---
 
-<Element class={`font-medium flex items-center justify-center gap-2 cursor-pointer ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''}`}>
+<Element class={`font-medium flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''}`}>
     <slot />
     {icon && <Icon name={icon} size={iconSize[size]} />}
 </Element>

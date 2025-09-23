@@ -1,6 +1,5 @@
 ---
 import { Code } from 'astro:components';
-import { Icon } from 'astro-icon/components';
 import Container from './app/Container.astro';
 import Button from './app/Button.astro';
 
@@ -15,10 +14,10 @@ for (let n of numbers) {
   console.log(\`\${n}² = \${square(n)}\`);
 }`
 ---
-<header class="bg-red-900 text-white flex items-center relative lg:h-140">
+<header class="bg-red-900 py-20 text-white flex items-center relative lg:py-0 lg:h-140">
   <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>  
-  <Container class="relative lg:grid lg:grid-cols-2 lg:items-center lg:gap-20 xl:gap-32">
-    <div class="space-y-6">
+  <Container class="relative flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-20 xl:gap-32">
+    <div class="space-y-4 lg:space-y-6">
       <h1 class="font-bold text-4xl tracking-tight xl:text-5xl">Mulai Belajar <span class="text-yellow-400">Pemrograman</span> Gratis dari Dasar hingga Mahir.</h1>
       <p class="text-lg text-gray-200 xl:text-xl">Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional.</p>
       <Button icon='tabler:arrow-right' xlSize='lg' color='secondary'>Mulai Belajar</Button>
