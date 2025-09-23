@@ -1,32 +1,67 @@
-<footer>
-    <div>
-        <a href="">Narakode</a>
-        <p>Jl. Raya Timur Wanadadi, KM 3, Wanadadi, Banjarnegara, Jawa Tengah</p>
-        <div>
-            <a href="">info@narakode.com</a>
-            <a href="">082236654884</a>
+---
+import { Icon } from "astro-icon/components";
+import Container from "./app/Container.astro";
+import Link from "./app/Link.astro";
+---
+
+<footer class="bg-gray-900 text-white py-20">
+    <Container>
+        <div class="grid grid-cols-6 gap-32">
+            <div class="col-span-2">
+                <div class="max-w-3/4 flex flex-col gap-2">
+                    <a href="" class="font-bold text-xl uppercase tracking-tight">Narakode</a>
+                    <p class="text-gray-300">Jl. Raya Timur Wanadadi, KM 3, Wanadadi, Banjarnegara, Jawa Tengah</p>
+                    <div class="space-y-1">
+                        <Link color="light-muted" class="flex items-center gap-2">
+                            <Icon name={'tabler:mail'} />
+                            info@narakode.com
+                        </Link>
+                        <Link color="light-muted" class="flex items-center gap-2">
+                            <Icon name={'tabler:phone'} />
+                            082236654884
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <p class="text-lg font-bold">Fitur</p>
+                <div class="flex flex-col space-y-2">
+                    <Link color="light-muted">Belajar</Link>
+                    <Link color="light-muted">Tutorial</Link>
+                    <Link color="light-muted">Artikel</Link>
+                    <Link color="light-muted">Video</Link>
+                    <Link color="light-muted">Buku</Link>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <p class="text-lg font-bold">Terhubung</p>
+                <div class="flex flex-col space-y-2">
+                    <Link color="light-muted">Tentang Kami</Link>
+                    <Link color="light-muted">Hubungi Kami</Link>
+                    <Link color="light-muted">Dukung Kami</Link>
+                    <Link color="light-muted">Kerjasama</Link>
+                </div>
+            </div>
+            <div class="col-span-2 space-y-4">
+                <div class="max-w-3/4 space-y-2">
+                    <p class="text-lg font-bold">Media Sosial</p>
+                    <p class="text-gray-300">Ikuti sosial media kami untuk mendapatkan informasi dan update terbaru dari kami.</p>
+                </div>
+                <div class="flex gap-2">
+                    <a href="facebook.com/narakode" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                        <Icon name={'tabler:brand-facebook'} />
+                    </a>
+                    <a href="instagram.com/narakode" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                        <Icon name={'tabler:brand-instagram'} />
+                    </a>
+                    <a href="twitter.com/narakode" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                        <Icon name={'tabler:brand-twitter'} />
+                    </a>
+                    <a href="youtube.com/narakode" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                        <Icon name={'tabler:brand-youtube'} />
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div>
-        <h2>Fitur</h2>
-        <a href="">Belajar</a>
-        <a href="">Tutorial</a>
-        <a href="">Artikel</a>
-        <a href="">Video</a>
-        <a href="">Buku</a>
-    </div>
-    <div>
-        <h2>Terhubung</h2>
-        <a href="">Tentang Kami</a>
-        <a href="">Hubungi Kami</a>
-        <a href="">Dukung Kami</a>
-        <a href="">Kerjasama</a>
-    </div>
-    <div>
-        <h2>Media Sosial</h2>
-        <a href="facebook.com/narakode"></a>
-        <a href="instagram.com/narakode"></a>
-        <a href="twitter.com/narakode"></a>
-        <a href="youtube.com/narakode"></a>
-    </div>
+    </Container>
 </footer>
