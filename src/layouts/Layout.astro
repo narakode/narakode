@@ -12,7 +12,11 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body class="bg-gray-100">
-		<slot />
+	<body class="bg-gray-100 relative">
+		<div class="absolute inset-0 bg-gray-100 bg-[radial-gradient(rgba(0,0,0,0.05)_2px,transparent_2px)] bg-[size:16px_16px]"></div>
+
+		<div class="relative">
+			<slot />
+		</div>
 	</body>
 </html>

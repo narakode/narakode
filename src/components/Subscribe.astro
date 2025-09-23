@@ -4,7 +4,9 @@ import Container from "./app/Container.astro";
 import Input from "./app/Input.astro";
 ---
 
-<section class="bg-red-900 text-white py-20">
+<section class="bg-red-900 text-white py-20 relative">
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:100%_30px]"></div>
+
     <Container>
         <form action="" class="space-y-4 text-center flex flex-col items-center">
             <div class="space-y-2">
