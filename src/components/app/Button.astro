@@ -8,6 +8,7 @@ interface Props {
     tag?: 'button' | 'a'
     color?: Color
     size?: Size
+    xlSize?: Size
     icon?: string
     fullwidth?: boolean
 }
@@ -20,15 +21,19 @@ const sizeClass: Record<Size, string> = {
     md: 'h-10 px-4 rounded-lg',
     lg: 'h-12 px-6 rounded-lg text-lg'
 }
+const xlSizeClass: Record<Size, string> = {
+    md: 'xl:h-10 xl:px-4 xl:rounded-lg',
+    lg: 'xl:h-12 xl:px-6 xl:rounded-lg xl:text-lg'
+}
 const iconSize: Record<Size, number> = {
     md: 16,
     lg: 20
 }
 
-const { tag: Element = 'button', color = 'primary', size = 'md', icon, fullwidth = false } = Astro.props
+const { tag: Element = 'button', color = 'primary', size = 'md', xlSize, icon, fullwidth = false } = Astro.props
 ---
 
-<Element class={`font-medium flex items-center justify-center gap-2 cursor-pointer ${colorClass[color]} ${sizeClass[size]} ${fullwidth ? 'w-full' : ''}`}>
+<Element class={`font-medium flex items-center justify-center gap-2 cursor-pointer ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''}`}>
     <slot />
     {icon && <Icon name={icon} size={iconSize[size]} />}
 </Element>

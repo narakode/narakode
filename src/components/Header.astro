@@ -15,13 +15,13 @@ for (let n of numbers) {
   console.log(\`\${n}² = \${square(n)}\`);
 }`
 ---
-<header class="bg-red-900 text-white h-140 flex items-center relative">
+<header class="bg-red-900 text-white flex items-center relative lg:h-140">
   <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>  
-  <Container class="grid grid-cols-2 items-center gap-32 relative">
+  <Container class="relative lg:grid lg:grid-cols-2 lg:items-center lg:gap-20 xl:gap-32">
     <div class="space-y-6">
-      <h1 class="font-bold text-5xl tracking-tight">Mulai Belajar <span class="text-yellow-400">Pemrograman</span> Gratis dari Dasar hingga Mahir.</h1>
-      <p class="text-xl text-gray-200">Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional.</p>
-      <Button icon='tabler:arrow-right' size='lg' color='secondary'>Mulai Belajar</Button>
+      <h1 class="font-bold text-4xl tracking-tight xl:text-5xl">Mulai Belajar <span class="text-yellow-400">Pemrograman</span> Gratis dari Dasar hingga Mahir.</h1>
+      <p class="text-lg text-gray-200 xl:text-xl">Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional.</p>
+      <Button icon='tabler:arrow-right' xlSize='lg' color='secondary'>Mulai Belajar</Button>
     </div>
     <Code code={code} lang="js" theme="monokai" class="p-4 rounded-lg"></Code>
   </Container>

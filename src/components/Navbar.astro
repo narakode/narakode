@@ -4,6 +4,7 @@ import Logo from '../assets/logo.png'
 import Container from "./app/Container.astro";
 import Input from "./app/Input.astro";
 import Link from "./app/Link.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <nav class="h-16 bg-white text-gray-900 relative">
@@ -16,6 +17,9 @@ import Link from "./app/Link.astro";
             <Link>Video</Link>
             <Link>Buku</Link>
         </div>
-        <Input type="search" placeholder="Cari sesuatu" name="Pencarian" />
+        <Input type="search" placeholder="Cari sesuatu" name="Pencarian" class="hidden lg:block" />
+        <button>
+            <Icon name="tabler:search" />
+        </button>
     </Container>
 </nav>

@@ -7,9 +7,10 @@ interface Props {
     color?: Color
     bordered?: boolean
     name?: string
+    class?: string
 }
 
-const { name, placeholder, type, color = 'transparent', bordered = true } = Astro.props
+const { name, placeholder, type, color = 'transparent', bordered = true, class: className = '' } = Astro.props
 
 const colorClass: Record<Color, string> = {
     transparent: '',
@@ -17,4 +18,4 @@ const colorClass: Record<Color, string> = {
 }
 ---
 
-<input name={name} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} h-10 px-2.5 rounded-lg`>
+<input name={name} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} h-10 px-2.5 rounded-lg ${className}`>
