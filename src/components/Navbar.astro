@@ -8,21 +8,57 @@ import { Icon } from "astro-icon/components";
 ---
 
 <nav class="h-14 bg-white text-gray-900 relative md:h-16">
-    <Container class="h-full flex items-center justify-between">
-        <Image src={Logo} alt="Narakode" width={40} class="hidden md:block md:rounded-full" />
-        <button class="md:hidden">
+    <Container class="h-full flex items-center justify-between gap-2 lg:gap-0">
+        <Image id="navbar-logo" src={Logo} alt="Narakode" width={40} class="hidden md:block md:rounded-full" />
+        <button id="navbar-sidebar-toggle" class="md:hidden">
             <Icon name="tabler:menu-2" />
         </button>
-        <div class="hidden md:absolute md:left-1/2 md:-translate-x-1/2 md:flex md:items-center md:gap-4">
+        <div id="navbar-menu" class="hidden md:absolute md:left-1/2 md:-translate-x-1/2 md:flex md:items-center md:gap-4">
             <Link>Belajar</Link>
             <Link>Tutorial</Link>
             <Link>Artikel</Link>
             <Link>Video</Link>
             <Link>Buku</Link>
         </div>
-        <Input type="search" placeholder="Cari sesuatu" name="Pencarian" class="hidden lg:block" />
-        <button class="lg:hidden">
+        <button id="navbar-search-close" class="hidden">
+            <Icon name="tabler:x" />
+        </button>
+        <Input id="navbar-search" type="search" placeholder="Cari sesuatu" name="Pencarian" class="hidden w-full lg:block lg:w-auto" />
+        <button id="navbar-search-open" class="lg:hidden">
             <Icon name="tabler:search" />
         </button>
     </Container>
 </nav>
+
+<script>
+const logo = document.querySelector('#navbar-logo')
+const menu = document.querySelector('#navbar-menu')
+const search = document.querySelector('#navbar-search')
+const searchOpen = document.querySelector('#navbar-search-open')
+const searchClose = document.querySelector('#navbar-search-close')
+const sidebarToggle = document.querySelector('#navbar-sidebar-toggle')
+
+searchOpen?.addEventListener('click', () => {
+    search?.classList.remove('hidden')
+    menu?.classList.remove('md:flex')
+    menu?.classList.add('lg:flex')
+    logo?.classList.remove('md:block')
+    logo?.classList.add('lg:block')
+    searchOpen.classList.add('hidden')
+    sidebarToggle?.classList.add('hidden')
+    searchClose?.classList.remove('hidden')
+    searchClose?.classList.add('lg:hidden')
+})
+
+searchClose?.addEventListener('click', () => {
+    search?.classList.add('hidden')
+    menu?.classList.add('md:flex')
+    menu?.classList.remove('lg:flex')
+    logo?.classList.add('md:block')
+    logo?.classList.remove('lg:block')
+    searchOpen?.classList.remove('hidden')
+    sidebarToggle?.classList.remove('hidden')
+    searchClose?.classList.add('hidden')
+    searchClose?.classList.remove('lg:hidden')
+})
+</script>
