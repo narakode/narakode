@@ -1,0 +1,20 @@
+---
+type Color = 'transparent' | 'light'
+
+interface Props {
+    type?: 'search' | 'email'
+    placeholder?: string
+    color?: Color
+    bordered?: boolean
+    name?: string
+}
+
+const { name, placeholder, type, color = 'transparent', bordered = true } = Astro.props
+
+const colorClass: Record<Color, string> = {
+    transparent: '',
+    light: 'bg-white placeholder-gray-400'
+}
+---
+
+<input name={name} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} h-10 px-2.5 rounded-lg`>
