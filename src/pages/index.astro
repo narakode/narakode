@@ -25,6 +25,7 @@ import Button from '../components/app/Button.astro';
 import { getCollection } from 'astro:content'
 
 const courses = await getCollection('course')
+
 const tutorials = await getCollection('tutorial')
 
 const books = [
@@ -122,7 +123,7 @@ const articles = [
 		<Section title='Ikuti Tutorial Terbaru' description='Belajar pemrograman dengan praktek langsung terjun ke studi kasus tertentu.'>
 			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
 			
-			<divclass="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
 			</div>
 		</Section>
