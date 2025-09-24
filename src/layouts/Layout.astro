@@ -6,7 +6,7 @@ import { SEO } from "astro-seo";
 const config = {
 	title: 'Narakode - Tempat Belajar Pemrograman dengan Materi Lengkap',
 	description: 'Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional, mulai dari HTML, CSS, JavaScript, dan masih banyak lagi.',
-	image: "/banner.png",
+	image: new URL('/banner.png', Astro.url.origin).href,
 }
 ---
 
