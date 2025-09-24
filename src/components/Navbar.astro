@@ -10,11 +10,11 @@ import { Icon } from "astro-icon/components";
 <nav class="h-14 bg-white text-gray-900 relative md:h-16">
     <Container class="h-full flex items-center justify-between gap-2 relative md:static lg:gap-0">
         <Image id="navbar-logo" src={Logo} alt="Narakode" width={40} class="hidden md:block md:rounded-full" />
-        <button id="navbar-sidebar-toggle" class="md:hidden">
-            <Icon  name="tabler:menu-2" />
+        <button id="navbar-sidebar-toggle" class="md:hidden" title="Buka Menu">
+            <Icon name="tabler:menu-2" />
         </button>
-        <button id="navbar-sidebar-close" class="hidden md:hidden">
-            <Icon  name="tabler:x" />
+        <button id="navbar-sidebar-close" class="hidden md:hidden" title="Tutup Menu">
+            <Icon name="tabler:x" />
         </button>
         <div id="navbar-menu" class="hidden absolute top-14 left-0 z-10 bg-white w-full p-4 flex-col gap-2 border-t border-gray-300 sm:border-0 sm:top-18 sm:rounded-lg md:top-[unset] md:left-1/2 md:-translate-x-1/2 md:w-auto md:bg-transparent md:p-0 md:rounded-0 md:flex md:flex-row md:items-center md:gap-4">
             <Link>Belajar</Link>
@@ -23,11 +23,11 @@ import { Icon } from "astro-icon/components";
             <Link>Video</Link>
             <Link>Buku</Link>
         </div>
-        <button id="navbar-search-close" class="hidden">
+        <button id="navbar-search-close" class="hidden" title="Tutup Pencarian">
             <Icon name="tabler:x" />
         </button>
         <Input id="navbar-search" type="search" placeholder="Cari sesuatu" name="Pencarian" class="hidden w-full lg:block lg:w-auto" />
-        <button id="navbar-search-open" class="lg:hidden">
+        <button id="navbar-search-open" class="lg:hidden" title="Pencarian">
             <Icon name="tabler:search" />
         </button>
     </Container>

@@ -3,6 +3,7 @@ import Card from './app/Card.astro'
 
 interface Props {
     video: {
+        name: string
         url: string
     }
 }
@@ -11,5 +12,5 @@ const { video } = Astro.props
 ---
 
 <Card class="space-y-2">
-    <iframe src={video.url} class="w-full"></iframe>
+    <iframe src={video.url} class="w-full" title={video.name}></iframe>
 </Card>
