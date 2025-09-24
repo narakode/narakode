@@ -1,16 +1,45 @@
 ---
 import '@fontsource/ubuntu';
 import "../styles/global.css";
+import { SEO } from "astro-seo";
+
+const config = {
+	title: 'Narakode - Tempat Belajar Pemrograman dengan Materi Lengkap',
+	description: 'Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional, mulai dari HTML, CSS, JavaScript, dan masih banyak lagi.',
+	image: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+}
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<SEO
+			title={config.title}
+			description={config.description}
+			openGraph={{
+				basic: {
+					title: config.title,
+					type: "website",
+					image: config.image,
+				},
+				optional: {
+					description: config.description
+				}
+			}}
+			twitter={{
+				card: 'summary',
+				site: '@narakode',
+				creator: "@narakode",
+				title: config.title,
+				description: config.description,
+				image: config.image,
+				imageAlt: config.title
+			}}
+		/>
 	</head>
 	<body class="bg-gray-100 relative">
 		<div class="absolute inset-0 bg-gray-100 bg-[radial-gradient(rgba(0,0,0,0.05)_2px,transparent_2px)] bg-[size:16px_16px]"></div>
