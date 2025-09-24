@@ -10,4 +10,14 @@ const course = defineCollection({
     })
 })
 
-export const collections = { course }
+const tutorial = defineCollection({
+    loader: glob({ pattern: '**/*.md', base: './src/data/tutorials' }),
+    schema: ({ image }) => z.object({
+        title: z.string(),
+        description: z.string(),
+        thumbnail: image(),
+        tags: z.array(z.string())
+    })
+})
+
+export const collections = { course, tutorial }
