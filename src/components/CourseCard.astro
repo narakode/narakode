@@ -3,14 +3,10 @@ import { Icon } from 'astro-icon/components'
 import Card from './app/Card.astro'
 import Link from './app/Link.astro'
 import Badge from './app/Badge.astro'
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-    course: {
-        name: string
-        description: string
-        icon: string
-        itemsQty: number
-    }
+    course: CollectionEntry<'course'>
 }
 
 const { course } = Astro.props
@@ -18,9 +14,9 @@ const { course } = Astro.props
 
 <Card class="space-y-2">
     <h3 class="flex items-center gap-2 font-bold text-lg text-gray-900">
-        <Icon name={course.icon} size={20} />
-        <Link>{course.name}</Link>
+        <Icon name={course.data.icon} size={20} />
+        <Link>{course.data.title}</Link>
     </h3>
-    <p class="text-gray-700">{course.description}</p>
-    <Badge>{course.itemsQty} Materi</Badge>
+    <p class="text-gray-700">{course.data.description}</p>
+    <Badge>{10} Materi</Badge>
 </Card>
