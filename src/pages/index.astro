@@ -19,29 +19,9 @@ import Button from '../components/app/Button.astro';
 import { getCollection } from 'astro:content'
 
 const courses = await getCollection('course')
-
 const tutorials = await getCollection('tutorial')
-
 const books = await getCollection('book')
-
-const videos = [
-	{
-		name: 'Tutorial Membuat Blog dengan Laravel',
-		url: 'https://www.youtube.com/embed/nhBVL41-_Cw?si=xyqm0eKQu2tzDbF0'
-	},
-	{
-		name: 'Membuat REST API di Laravel',
-		url: 'https://www.youtube.com/embed/zROpI35swtg?si=AYpDHBzm8XxhanlM'
-	},
-	{
-		name: 'Validasi Form di Vue',
-		url: 'https://www.youtube.com/embed/VldVWN2i710?si=Mn8wXD4M4rMJCv4E'
-	},
-	{
-		name: 'Membuat Halaman Login di React Native',
-		url: 'https://www.youtube.com/embed/V9i3cGD-mts?si=8LiPVCKN-Kd_jf8O'
-	}
-]
+const videos = await getCollection('video')
 
 const articles = [
 	{

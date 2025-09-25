@@ -1,16 +1,14 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 import Card from './app/Card.astro'
 
 interface Props {
-    video: {
-        name: string
-        url: string
-    }
+    video: CollectionEntry<'video'>
 }
 
 const { video } = Astro.props
 ---
 
 <Card class="space-y-2">
-    <iframe src={video.url} class="w-full" title={video.name}></iframe>
+    <iframe src={video.data.src} class="w-full" title={video.data.title}></iframe>
 </Card>
