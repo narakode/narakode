@@ -4,26 +4,22 @@ import Badge from './app/Badge.astro'
 import Card from './app/Card.astro'
 import Link from './app/Link.astro'
 import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-    article: {
-        title: string
-        thumbnailSrc: ImageMetadata
-        description: string
-        category: string
-    }
+    article: CollectionEntry<'article'>
 }
 
 const { article } = Astro.props
 ---
 
 <Card class="space-y-4">
-    <Image src={article.thumbnailSrc} alt={article.title} class={'rounded-md'} />
+    <Image src={article.data.thumbnail} alt={article.data.title} class={'rounded-md'} />
     <div class="space-y-2">
-        <Badge>{article.category}</Badge>
+        <Badge>{article.data.category}</Badge>
         <h3 class="font-bold text-gray-900 text-lg">
-            <Link>{article.title}</Link>
+            <Link>{article.data.title}</Link>
         </h3>
-        <p class="text-gray-700">{article.description}</p>
+        <p class="text-gray-700">{article.data.description}</p>
     </div>
 </Card>
