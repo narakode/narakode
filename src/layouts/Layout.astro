@@ -6,13 +6,15 @@ import Navbar from '../components/Navbar.astro';
 
 interface Props {
 	navbarBordered?: boolean
+	title?: string
+	description?: string
 }
 
-const { navbarBordered = false } = Astro.props
+const { navbarBordered = false, title, description } = Astro.props
 
 const config = {
-	title: 'Narakode - Tempat Belajar Pemrograman dengan Materi Lengkap',
-	description: 'Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional, mulai dari HTML, CSS, JavaScript, dan masih banyak lagi.',
+	title: title ? `${title} - Narakode` : 'Narakode - Tempat Belajar Pemrograman dengan Materi Lengkap',
+	description: description ?? 'Mari mulai belajar pemrograman dari level dasar hingga lanjutan untuk menjadi programmer profesional, mulai dari HTML, CSS, JavaScript, dan masih banyak lagi.',
 	image: new URL('/banner.png', Astro.url.origin).href,
 }
 ---
