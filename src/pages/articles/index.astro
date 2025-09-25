@@ -13,7 +13,7 @@ const description = 'Terus update dengan membaca artikel-artikel seputar pemrogr
 <Layout navbarBordered={true} title="Baca Artikel Seputar Pemrograman dan Teknologi" description={description}>
     <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
         <Section tag="main" level={1} title='Baca Artikel Terbaru' description={description}>
-            <Input slot="action" color="light" placeholder="Cari pelajaran" />
+            <Input slot="action" color="light" placeholder="Cari artikel" />
 
             <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{articles.map(article => <ArticleCard article={article} />)}

@@ -13,7 +13,7 @@ const description = 'Belajar pemrograman dengan praktek langsung terjun ke studi
 <Layout navbarBordered={true} title="Tutorial Pemrograman Lengkap" description={description}>
     <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
         <Section tag="main" level={1} title='Ikuti Tutorial Terbaru' description={description}>
-            <Input slot="action" color="light" placeholder="Cari pelajaran" />
+            <Input slot="action" color="light" placeholder="Cari tutorial" />
 
             <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}

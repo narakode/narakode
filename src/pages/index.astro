@@ -38,8 +38,8 @@ const articles =  await getCollection('article')
 				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
 			</div>
 		</Section>
-		<Section title='Baca Buku Pemrograman' description='Ingin lebih fokus? Baca buku cetak dan ebook seputaran pemrograman kami.'>
-			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
+		<Section title='Baca Buku Pemrograman' description='Ingin lebih fokus? Baca buku cetak dan ebook seputar pemrograman kami.'>
+			<Button slot="action" tag='a' href='/books' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
 				{books.map(book => <BookCard book={book} />)}

@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Container from "../../components/app/Container.astro";
+import Input from "../../components/app/Input.astro";
+import Section from "../../components/app/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import BookCard from "../../components/BookCard.astro";
+
+const books = await getCollection('book')
+const description = 'Ingin lebih fokus? Baca buku cetak dan ebook seputar pemrograman kami.'
+---
+
+<Layout navbarBordered={true} title="Baca Buku Pemrograman" description={description}>
+    <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
+        <Section tag="main" level={1} title='Baca Buku Pemrograman' description={description}>
+            <Input slot="action" color="light" placeholder="Cari buku" />
+
+            <div class="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
+				{books.map(book => <BookCard book={book} />)}
+			</div>
+        </Section>
+    </Container>
+</Layout>
