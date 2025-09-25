@@ -3,13 +3,10 @@ import type { ImageMetadata } from 'astro'
 import Card from './app/Card.astro'
 import Link from './app/Link.astro'
 import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-    book: {
-        title: string
-        coverSrc: ImageMetadata
-        price: number
-    }
+    book: CollectionEntry<'book'>
 }
 
 const { book } = Astro.props
@@ -23,11 +20,11 @@ function formatPrice(number: number): string {
 ---
 
 <Card class="space-y-4">
-    <Image src={book.coverSrc} alt={book.title} class="rounded-md mx-auto" />
+    <Image src={book.data.cover} alt={book.data.title} class="rounded-md mx-auto" />
     <div class="space-y-2">
         <h3 class="font-bold text-gray-900 text-lg">
-            <Link>{book.title}</Link>
+            <Link>{book.data.title}</Link>
         </h3>
-        <p class="font-bold text-red-900">{book.price === 0 ? 'Gratis' : formatPrice(book.price)}</p>
+        <p class="font-bold text-red-900">{book.data.price === 0 ? 'Gratis' : formatPrice(book.data.price)}</p>
     </div>
 </Card>

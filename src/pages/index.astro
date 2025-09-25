@@ -1,10 +1,4 @@
 ---
-import BelajarHtmlCssJavascriptDasar from '../assets/books/belajar-html-css-js-dasar.png'
-import BelajarVueJsSampaiMahir from '../assets/books/belajar-vuejs-sampai-mahir.png'
-import MenguasaiMysqlSampaiMahir from '../assets/books/menguasai-mysql-sampai-mahir.png'
-import BelajarLaravelSampaiMahir from '../assets/books/belajar-laravel-sampai-mahir.png'
-import MembangunAplikasiperpustakaanDenganPhp from '../assets/books/membangun-aplikasi-perpustakaan-dengan-php.png'
-import MembangunTokoOnlineDenganLaravel from '../assets/books/membangun-toko-online-dengan-laravel.png'
 import CaraMembuatKomponenDinamisDiVue from '../assets/articles/cara-membuat-komponen-dinamis-di-vue.png'
 import MenggunakanSemanticElementSeo from '../assets/articles/menggunakan-semantic-element-seo.png'
 import CaraMembuatGlobalStateVue from '../assets/articles/cara-membuat-global-state-vue.png'
@@ -28,38 +22,7 @@ const courses = await getCollection('course')
 
 const tutorials = await getCollection('tutorial')
 
-const books = [
-	{
-		title: 'Belajar HTML, CSS, dan Javascript Dasar',
-		coverSrc: BelajarHtmlCssJavascriptDasar,
-		price: 0
-	},
-	{
-		title: 'Belajar Vue JS Sampai Mahir',
-		coverSrc: BelajarVueJsSampaiMahir,
-		price: 80000
-	},
-	{
-		title: 'Menguasai MySQL Sampai Mahir',
-		coverSrc: MenguasaiMysqlSampaiMahir,
-		price: 80000
-	},
-	{
-		title: 'Belajar Laravel Sampai Mahir',
-		coverSrc: BelajarLaravelSampaiMahir,
-		price: 100000
-	},
-	{
-		title: 'Membangun Aplikasi Perpustakaan dengan PHP',
-		coverSrc: MembangunAplikasiperpustakaanDenganPhp,
-		price: 40000
-	},
-	{
-		title: 'Membangun Toko Online dengan Laravel',
-		coverSrc: MembangunTokoOnlineDenganLaravel,
-		price: 145000
-	}
-]
+const books = await getCollection('book')
 
 const videos = [
 	{
