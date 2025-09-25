@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Container from "../../components/app/Container.astro";
+import Input from "../../components/app/Input.astro";
+import Section from "../../components/app/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import VideoCard from "../../components/VideoCard.astro";
+
+const videos = await getCollection('video')
+const description = 'Bosan baca tulisan terus? Tonton video tentang pemrograman kami di Youtube.'
+---
+
+<Layout navbarBordered={true} title="Tonton Video Pemrograman" description={description}>
+    <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
+        <Section tag="main" level={1} title='Tonton Video Terbaru' description={description}>
+            <Input slot="action" color="light" placeholder="Cari video" />
+
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+				{videos.map(video => <VideoCard video={video} />)}
+			</div>
+        </Section>
+    </Container>
+</Layout>
