@@ -11,6 +11,7 @@ interface Props {
     xlSize?: Size
     icon?: string
     fullwidth?: boolean
+    href?: string
 }
 
 const colorClass: Record<Color, string> = {
@@ -30,10 +31,10 @@ const iconSize: Record<Size, number> = {
     lg: 20
 }
 
-const { tag: Element = 'button', color = 'primary', size = 'md', xlSize, icon, fullwidth = false } = Astro.props
+const { tag: Element = 'button', href, color = 'primary', size = 'md', xlSize, icon, fullwidth = false } = Astro.props
 ---
 
-<Element class={`font-medium flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''}`}>
+<Element href={href} class={`font-medium inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''}`}>
     <slot />
     {icon && <Icon name={icon} size={iconSize[size]} />}
 </Element>
