@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Container from "../../components/app/Container.astro";
+import Input from "../../components/app/Input.astro";
+import Section from "../../components/app/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import TutorialCard from "../../components/TutorialCard.astro";
+
+const tutorials = await getCollection('tutorial')
+const description = 'Belajar pemrograman dengan praktek langsung terjun ke studi kasus tertentu.'
+---
+
+<Layout navbarBordered={true} title="Tutorial Pemrograman Lengkap" description={description}>
+    <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
+        <Section tag="main" level={1} title='Ikuti Tutorial Terbaru' description={description}>
+            <Input slot="action" color="light" placeholder="Cari pelajaran" />
+
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
+			</div>
+        </Section>
+    </Container>
+</Layout>
