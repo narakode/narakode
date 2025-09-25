@@ -53,7 +53,7 @@ const articles =  await getCollection('article')
 			</div>
 		</Section>
 		<Section title='Baca Artikel Terbaru' description='Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'>
-			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
+			<Button slot="action" tag='a' href='/articles' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{articles.map(article => <ArticleCard article={article} />)}

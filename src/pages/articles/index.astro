@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Container from "../../components/app/Container.astro";
+import Input from "../../components/app/Input.astro";
+import Section from "../../components/app/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+
+const articles =  await getCollection('article')
+const description = 'Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'
+---
+
+<Layout navbarBordered={true} title="Baca Artikel Seputar Pemrograman dan Teknologi" description={description}>
+    <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
+        <Section tag="main" level={1} title='Baca Artikel Terbaru' description={description}>
+            <Input slot="action" color="light" placeholder="Cari pelajaran" />
+
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+				{articles.map(article => <ArticleCard article={article} />)}
+			</div>
+        </Section>
+    </Container>
+</Layout>
