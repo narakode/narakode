@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Container from "../../components/app/Container.astro";
+import Input from "../../components/app/Input.astro";
+import Section from "../../components/app/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import CourseCard from "../../components/CourseCard.astro";
+
+const courses = await getCollection('course')
+---
+
+<Layout navbarBordered={true}>
+    <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
+        <Section tag="main" level={1} title='Mau Belajar Apa?' description='Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'>
+            <Input slot="action" color="light" placeholder="Cari pelajaran" />
+
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+				{courses.map(course => <CourseCard level={2} course={course} />)}
+			</div>
+        </Section>
+    </Container>
+</Layout>

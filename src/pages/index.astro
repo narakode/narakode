@@ -25,7 +25,7 @@ const articles =  await getCollection('article')
 
 	<Container tag="main" class="py-20 space-y-20">
 		<Section id='courses' title='Mau Belajar Apa?' description='Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'>
-			<Button slot="action" tag='a' icon='tabler:arrow-right'>Lihat Semua</Button>
+			<Button slot="action" tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{courses.map(course => <CourseCard course={course} />)}
