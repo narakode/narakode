@@ -2,6 +2,13 @@
 import '@fontsource/ubuntu';
 import "../styles/global.css";
 import { SEO } from "astro-seo";
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+	navbarBordered?: boolean
+}
+
+const { navbarBordered = false } = Astro.props
 
 const config = {
 	title: 'Narakode - Tempat Belajar Pemrograman dengan Materi Lengkap',
@@ -44,10 +51,12 @@ const config = {
 			}}
 		/>
 	</head>
-	<body class="bg-gray-100 relative">
+	<body class="bg-gray-100 relative min-h-screen">
 		<div class="absolute inset-0 bg-gray-100 bg-[radial-gradient(rgba(0,0,0,0.05)_2px,transparent_2px)] bg-[size:16px_16px]"></div>
 
 		<div class="relative">
+			<Navbar bordered={navbarBordered} />
+
 			<slot />
 		</div>
 	</body>

@@ -1,5 +1,4 @@
 ---
-import Navbar from '../components/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CourseCard from '../components/CourseCard.astro';
@@ -22,7 +21,6 @@ const articles =  await getCollection('article')
 ---
 
 <Layout>
-	<Navbar />
 	<Header />
 
 	<Container tag="main" class="py-20 space-y-20">
