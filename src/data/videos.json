@@ -1,0 +1,22 @@
+[
+	{
+        "id": "tutorial-membuat-blog-dengan-laravel",
+		"title": "Tutorial Membuat Blog dengan Laravel",
+		"src": "https://www.youtube.com/embed/nhBVL41-_Cw?si=xyqm0eKQu2tzDbF0"
+	},
+	{
+		"id": "membuat-rest-api-di-laravel",
+		"title": "Membuat REST API di Laravel",
+		"src": "https://www.youtube.com/embed/zROpI35swtg?si=AYpDHBzm8XxhanlM"
+	},
+	{
+        "id": "validasi-form-di-vue",
+		"title": "Validasi Form di Vue",
+		"src": "https://www.youtube.com/embed/VldVWN2i710?si=Mn8wXD4M4rMJCv4E"
+	},
+	{
+        "id": "membuat-halaman-login-di-reacti-native",
+		"title": "Membuat Halaman Login di React Native",
+		"src": "https://www.youtube.com/embed/V9i3cGD-mts?si=8LiPVCKN-Kd_jf8O"
+	}
+]
