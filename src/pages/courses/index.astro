@@ -7,11 +7,12 @@ import Layout from "../../layouts/Layout.astro";
 import CourseCard from "../../components/CourseCard.astro";
 
 const courses = await getCollection('course')
+const description = 'Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'
 ---
 
-<Layout navbarBordered={true}>
+<Layout navbarBordered={true} title="Belajar Pemrograman Dengan Materi Lengkap" description={description}>
     <Container class="py-8 md:py-12 lg:py-16 xl:py-20">
-        <Section tag="main" level={1} title='Mau Belajar Apa?' description='Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'>
+        <Section tag="main" level={1} title='Mau Belajar Apa?' description={description}>
             <Input slot="action" color="light" placeholder="Cari pelajaran" />
 
             <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
