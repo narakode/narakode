@@ -3,19 +3,22 @@ interface Props {
     title: string
     description: string
     id?: string
+    tag?: 'section' | 'main'
+    level?: 1 | 2
 }
 
-const { title, description, id } = Astro.props
+const { title, description, id, tag: Element = 'section', level = 2 } = Astro.props
+const Title: 'h1' | 'h2' = `h${level}`
 ---
 
-<section id={id} class="space-y-6">
+<Element id={id} class="space-y-6">
     <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-8 lg:gap-0">
         <div class="space-y-2">
-            <h2 class="font-bold text-3xl text-gray-900 xl:text-4xl">{title}</h2>
+            <Title class="font-bold text-3xl text-gray-900 xl:text-4xl">{title}</Title>
             <p class="text-lg text-gray-700">{description}</p>
         </div>
         <slot name="action" />
     </div>
 
     <slot />
-</section>
+</Element>
