@@ -37,4 +37,14 @@ const video = defineCollection({
     })
 })
 
-export const collections = { course, tutorial, book, video }
+const article = defineCollection({
+    loader: glob({ pattern: '**/*.md', base: './src/data/articles' }),
+    schema: ({ image }) => z.object({
+        title: z.string(),
+        description: z.string(),
+        category: z.string(),
+        thumbnail: image(),
+    })
+})
+
+export const collections = { course, tutorial, book, video, article }
