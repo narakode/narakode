@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Container from '../../../components/app/Container.astro';
+import Card from '../../../components/app/Card.astro';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry } from 'astro:content';
+import Link from '../../../components/app/Link.astro';
+import { Icon } from 'astro-icon/components';
+import Button from '../../../components/app/Button.astro';
+
+export async function getStaticPaths() {
+    const articles = await getCollection('article', article => article.data.type === 'course')
+
+    return articles.map(article => {
+        const course = article.data.course as CollectionEntry<'course'>
+
+        return {
+            params: {
+                id: course.id,
+                articleId: article.id
+            },
+            props: { article, articleCourse: course }
+        }
+    })
+}
+
+const { article, articleCourse } = Astro.props
+const course = await getEntry(articleCourse)
+const courseItems = await getCollection('article', article => article.data.course?.id === course.id)
+const { Content, headings } = await render(article)
+---
+
+<Layout navbarBordered title={article.data.title} description={article.data.description}>
+    <Container class="py-8 space-y-4">
+        <div class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
+            <nav class="flex items-center gap-4">
+                <Link href='/'>
+                    <Icon class={'shrink-0'} name={'tabler:home'} />
+                </Link>
+                <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
+                <Link class="line-clamp-1" href=`/courses`>
+                    Belajar
+                </Link>
+                <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
+                <Link class="line-clamp-1" href=`/courses/${course.id}`>
+                    {course.data.title}
+                </Link>
+                <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
+                <p class="line-clamp-1 text-gray-500">
+                    {article.data.title}
+                </p>
+            </nav>
+            <div class="flex items-center gap-2">
+                <Button class="lg:hidden" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
+                <Button class="xl:hidden" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
+            </div>
+        </div>
+        <main class="grid gap-4 items-start lg:grid-cols-6 xl:grid-cols-5">
+            <Card tag='aside' class='hidden lg:block lg:col-span-2 lg:sticky lg:top-4 lg:left-0 xl:col-span-1'>
+                <h2 class="font-bold text-2xl mb-4">{course.data.title}</h2>
+                <ol>
+                    <li>{courseItems.map((item, index) => <Link>{index + 1}. {item.data.title}</Link>)}</li>
+                </ol>
+            </Card>
+            <Card tag='article' class="col-span-4 xl:col-span-3 prose max-w-none">
+                <h1>{article.data.title}</h1>
+                <Content />
+            </Card>
+            <Card tag='aside' class='hidden xl:block xl:sticky xl:top-4 xl:right-0'>
+                <h2 class="font-bold text-2xl mb-4">Daftar Isi</h2>
+                <ol>
+                    {headings.map(heading => <li><Link href={`#${heading.slug}`}>{heading.text}</Link></li>)}
+                </ol>
+            </Card>
+        </main>
+    </Container>
+</Layout>

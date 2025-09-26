@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import Container from '../../components/app/Container.astro';
-import Card from '../../components/app/Card.astro';
+import Layout from '../../../layouts/Layout.astro';
+import Container from '../../../components/app/Container.astro';
+import Card from '../../../components/app/Card.astro';
 import { Icon } from 'astro-icon/components';
 import { render } from 'astro:content';
-import Link from '../../components/app/Link.astro';
-import Button from '../../components/app/Button.astro';
-import Badge from '../../components/app/Badge.astro';
+import Link from '../../../components/app/Link.astro';
+import Button from '../../../components/app/Button.astro';
+import Badge from '../../../components/app/Badge.astro';
 
 export async function getStaticPaths() {
     const courses = await getCollection('course')
@@ -25,8 +25,8 @@ const items = await getCollection('article', article => article.data.course?.id 
 ---
 
 <Layout navbarBordered title={course.data.title} description={course.data.description}>
-    <Container class="py-8 grid gap-4 items-start md:py-12 lg:py-16 lg:grid-cols-2 xl:py-20">
-        <Card>
+    <Container class="py-8 grid gap-4 items-start lg:grid-cols-2" tag='article'>
+        <Card tag='section'>
             <div class="prose max-w-none">
                 <p class="flex items-center justify-between">
                     <Badge>{items.length} materi</Badge>
@@ -39,11 +39,11 @@ const items = await getCollection('article', article => article.data.course?.id 
                 <Button icon='tabler:arrow-right'>Mulai Belajar</Button>
             </div>
         </Card>
-        <Card>
+        <Card tag='aside'>
             <h2 class="font-bold text-2xl text-gray-900 mb-4">Daftar Materi</h2>
             <ol class="space-y-2">
                 {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
-                    <Link>{index + 1}. {item.data.title}</Link>
+                    <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
                 </li>)}
             </ol>
         </Card>
