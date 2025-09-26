@@ -1,5 +1,5 @@
 import { file, glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 const course = defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/data/courses' }),
@@ -42,8 +42,10 @@ const article = defineCollection({
     schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
-        category: z.string(),
-        thumbnail: image(),
+        category: z.string().optional(),
+        thumbnail: image().optional(),
+        type: z.enum(['article', 'course']),
+        course: reference('course').optional()
     })
 })
 
