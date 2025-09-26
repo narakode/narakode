@@ -1,8 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-type Color = 'secondary' | 'primary'
-type Size = 'md' | 'lg'
+type Color = 'secondary' | 'primary' | 'light'
+type Size = 'sm' | 'md' | 'lg'
 
 interface Props {
     tag?: 'button' | 'a'
@@ -12,29 +12,36 @@ interface Props {
     icon?: string
     fullwidth?: boolean
     href?: string
+    class?: string
+    iconPosition?: 'start' | 'end'
 }
 
 const colorClass: Record<Color, string> = {
     secondary: 'bg-yellow-600 text-white hover:bg-yellow-700',
-    primary: 'bg-red-800 text-white hover:bg-red-900'
+    primary: 'bg-red-800 text-white hover:bg-red-900',
+    light: 'bg-white border border-gray-300'
 }
 const sizeClass: Record<Size, string> = {
+    sm: 'h-8 px-3 rounded-md text-sm',
     md: 'h-10 px-4 rounded-lg',
     lg: 'h-12 px-6 rounded-lg text-lg'
 }
 const xlSizeClass: Record<Size, string> = {
+    sm: 'xl:h-8 xl:px-3 xl:rounded-md xl:text-sm',
     md: 'xl:h-10 xl:px-4 xl:rounded-lg',
     lg: 'xl:h-12 xl:px-6 xl:rounded-lg xl:text-lg'
 }
 const iconSize: Record<Size, number> = {
+    sm: 14,
     md: 16,
     lg: 20
 }
 
-const { tag: Element = 'button', href, color = 'primary', size = 'md', xlSize, icon, fullwidth = false } = Astro.props
+const { tag: Element = 'button', href, color = 'primary', size = 'md', xlSize, icon, fullwidth = false, class: className = '', iconPosition = 'end' } = Astro.props
 ---
 
-<Element href={href} class={`font-medium inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''}`}>
+<Element href={href} class={`font-medium inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''} ${className}`}>
+    {icon && iconPosition === 'start' && <Icon name={icon} size={iconSize[size]} />}
     <slot />
-    {icon && <Icon name={icon} size={iconSize[size]} />}
+    {icon && iconPosition === 'end' && <Icon name={icon} size={iconSize[size]} />}
 </Element>
