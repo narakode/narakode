@@ -5,6 +5,8 @@ import Container from '../../components/app/Container.astro';
 import Card from '../../components/app/Card.astro';
 import { Icon } from 'astro-icon/components';
 import { render } from 'astro:content';
+import Link from '../../components/app/Link.astro';
+import Button from '../../components/app/Button.astro';
 
 export async function getStaticPaths() {
     const courses = await getCollection('course')
@@ -17,18 +19,42 @@ export async function getStaticPaths() {
 
 const { course } = Astro.props
 const { Content } = await render(course)
+
+const items = [
+    'Mengenal Apa Itu HTML',
+    'Cara Membuat dan Menjalankan HTML',
+    'Struktur Dasar HTML',
+    'Elemen, Tag, dan Atribut di HTML',
+    'Membuat Judul dengan HTML',
+    'Membuat Paragraf dengan HTML',
+    'Membuat Link dengan HTML',
+    'Membuat Gambar dengan HTML',
+    'Membuat Daftar dengan HTML',
+    'Membuat Tabel dengan HTML',
+    'Membuat Form dengan HTML',
+    'Kesimpulan dan Langkah Selanjutnya'
+]
 ---
 
 <Layout navbarBordered>
-    <Container class="py-20">
+    <Container class="py-20 grid grid-cols-2 gap-4 items-start">
         <Card>
-            <h1 class="font-bold text-4xl flex items-center gap-3">
-                <Icon name={course.data.icon} />
-                {course.data.title}
-            </h1>
-            <div>
+            <div class="prose max-w-none">
+                <h1 class="flex items-center gap-3">
+                    <Icon name={course.data.icon} />
+                    {course.data.title}
+                </h1>
                 <Content />
+                <Button icon='tabler:arrow-right'>Mulai Belajar</Button>
             </div>
+        </Card>
+        <Card>
+            <h2 class="font-bold text-2xl text-gray-900 mb-4">Daftar Materi</h2>
+            <ol class="space-y-2">
+                {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
+                    <Link>{index + 1}. {item}</Link>
+                </li>)}
+            </ol>
         </Card>
     </Container>
 </Layout>
