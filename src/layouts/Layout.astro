@@ -53,13 +53,9 @@ const config = {
 			}}
 		/>
 	</head>
-	<body class="bg-gray-100 relative min-h-screen">
-		<div class="absolute inset-0 bg-gray-100 bg-[radial-gradient(rgba(0,0,0,0.05)_2px,transparent_2px)] bg-[size:16px_16px]"></div>
+	<body class="bg-gray-100">
+		<Navbar bordered={navbarBordered} />
 
-		<div class="relative">
-			<Navbar bordered={navbarBordered} />
-
-			<slot />
-		</div>
+		<slot />
 	</body>
 </html>
