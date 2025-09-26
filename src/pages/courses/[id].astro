@@ -7,6 +7,7 @@ import { Icon } from 'astro-icon/components';
 import { render } from 'astro:content';
 import Link from '../../components/app/Link.astro';
 import Button from '../../components/app/Button.astro';
+import Badge from '../../components/app/Badge.astro';
 
 export async function getStaticPaths() {
     const courses = await getCollection('course')
@@ -40,8 +41,11 @@ const items = [
     <Container class="py-8 grid gap-4 items-start md:py-12 lg:py-16 lg:grid-cols-2 xl:py-20">
         <Card>
             <div class="prose max-w-none">
-                <h1 class="flex items-start gap-3">
-                    <Icon name={course.data.icon} class="shrink-0" />
+                <p class="flex items-center justify-between">
+                    <Badge>{items.length} materi</Badge>
+                    <Icon name={course.data.icon} size={32} class="shrink-0" />
+                </p>
+                <h1>
                     {course.data.title}
                 </h1>
                 <Content />
