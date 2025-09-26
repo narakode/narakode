@@ -1,5 +1,4 @@
 ---
-import type { ImageMetadata } from 'astro'
 import Badge from './app/Badge.astro'
 import Card from './app/Card.astro'
 import Link from './app/Link.astro'
@@ -14,7 +13,7 @@ const { article } = Astro.props
 ---
 
 <Card class="space-y-4">
-    <Image src={article.data.thumbnail} alt={article.data.title} class={'rounded-md'} />
+    {article.data.type === 'article' && article.data.thumbnail && <Image src={article.data.thumbnail} alt={article.data.title} class={'rounded-md'} />}
     <div class="space-y-2">
         <Badge>{article.data.category}</Badge>
         <h3 class="font-bold text-gray-900 text-lg">
