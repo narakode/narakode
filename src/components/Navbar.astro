@@ -43,13 +43,18 @@ const activeMenu = Astro.url.pathname
         <Link href="/" class="hidden md:block">
             <Image id="navbar-logo" src={Logo} alt="Narakode" width={40} class="rounded-full" />
         </Link>
-        <button id="navbar-sidebar-toggle" class="md:hidden" title="Buka Menu">
-            <Icon name="tabler:menu-2" />
-        </button>
-        <button id="navbar-sidebar-close" class="hidden md:hidden" title="Tutup Menu">
-            <Icon name="tabler:x" />
-        </button>
-        <div id="navbar-menu" class=`hidden absolute top-14 left-0 z-10 bg-white w-full p-4 flex-col gap-2 ${bordered ? '' : 'border-t border-gray-300 sm:border-0'} sm:top-18 sm:rounded-lg md:top-[unset] md:left-1/2 md:-translate-x-1/2 md:w-auto md:bg-transparent md:p-0 md:rounded-0 md:flex md:flex-row md:items-center md:gap-4`>
+        <div id="navbar-mobile-action" class="flex items-center gap-3 md:hidden">
+            <button id="navbar-sidebar-toggle" title="Buka Menu">
+                <Icon name="tabler:menu-2" />
+            </button>
+            <button id="navbar-sidebar-close" class="hidden" title="Tutup Menu">
+                <Icon name="tabler:x" />
+            </button>
+            <Link href="/">
+                <Icon name={'tabler:home'} />
+            </Container>
+        </div>
+        <div id="navbar-menu" class=`hidden absolute top-14 left-0 z-10 bg-white w-full p-4 flex-col gap-2 border-b border-gray-300 ${bordered ? '' : 'border-t'} sm:border-0 sm:top-18 sm:rounded-lg md:top-[unset] md:left-1/2 md:-translate-x-1/2 md:w-auto md:bg-transparent md:p-0 md:rounded-0 md:flex md:flex-row md:items-center md:gap-4`>
             {menus.map(menu => <Link href={menu.href} color={menu.href === activeMenu ? 'primary' : 'dark'} class={menu.href === activeMenu ? 'font-bold' : ''}>{menu.name}</Link>)}
         </div>
         <button id="navbar-search-close" class="hidden" title="Tutup Pencarian">
@@ -70,6 +75,7 @@ const searchOpen = document.querySelector('#navbar-search-open')
 const searchClose = document.querySelector('#navbar-search-close')
 const sidebarToggle = document.querySelector('#navbar-sidebar-toggle')
 const sidebarClose = document.querySelector('#navbar-sidebar-close')
+const mobileAction = document.querySelector('#navbar-mobile-action')
 
 searchOpen?.addEventListener('click', () => {
     search?.classList.remove('hidden')
@@ -78,7 +84,7 @@ searchOpen?.addEventListener('click', () => {
     logo?.classList.remove('md:block')
     logo?.classList.add('lg:block')
     searchOpen.classList.add('hidden')
-    sidebarToggle?.classList.add('hidden')
+    mobileAction?.classList.add('hidden')
     searchClose?.classList.remove('hidden')
     searchClose?.classList.add('lg:hidden')
 })
@@ -90,7 +96,7 @@ searchClose?.addEventListener('click', () => {
     logo?.classList.add('md:block')
     logo?.classList.remove('lg:block')
     searchOpen?.classList.remove('hidden')
-    sidebarToggle?.classList.remove('hidden')
+    mobileAction?.classList.remove('hidden')
     searchClose?.classList.add('hidden')
     searchClose?.classList.remove('lg:hidden')
 })
