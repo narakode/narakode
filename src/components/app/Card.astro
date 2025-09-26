@@ -1,11 +1,12 @@
 ---
 interface Props {
     class?: string
+    tag?: 'article' | 'div' | 'aside' | 'section' | 'main'
 }
 
-const { class: className = '' } = Astro.props
+const { class: className = '', tag: Element = 'article' } = Astro.props
 ---
 
-<article class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`}>
+<Element class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`}>
     <slot />
-</article>
+</Element>
