@@ -37,11 +37,11 @@ const items = [
 ---
 
 <Layout navbarBordered>
-    <Container class="py-20 grid grid-cols-2 gap-4 items-start">
+    <Container class="py-8 grid gap-4 items-start md:py-12 lg:py-16 lg:grid-cols-2 xl:py-20">
         <Card>
             <div class="prose max-w-none">
-                <h1 class="flex items-center gap-3">
-                    <Icon name={course.data.icon} />
+                <h1 class="flex items-start gap-3">
+                    <Icon name={course.data.icon} class="shrink-0" />
                     {course.data.title}
                 </h1>
                 <Content />
