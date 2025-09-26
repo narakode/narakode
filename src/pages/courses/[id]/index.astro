@@ -44,7 +44,7 @@ const items = await getCollection('article', article => article.data.course?.id 
                         {course.data.title}
                     </h1>
                     <Content />
-                    <Button icon='tabler:arrow-right'>Mulai Belajar</Button>
+                    {items.length > 0 && <Button class='no-underline' icon='tabler:arrow-right' tag='a' href={`/courses/${course.id}/${items[0].id}`}>Mulai Belajar</Button>}
                 </div>
             </Card>
             <Card tag='aside'>
