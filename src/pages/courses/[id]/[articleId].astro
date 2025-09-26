@@ -9,6 +9,7 @@ import { getEntry } from 'astro:content';
 import Link from '../../../components/app/Link.astro';
 import { Icon } from 'astro-icon/components';
 import Button from '../../../components/app/Button.astro';
+import Breadcrumb from '../../../components/app/Breadcrumb.astro';
 
 export async function getStaticPaths() {
     const articles = await getCollection('article', article => article.data.type === 'course')
@@ -35,23 +36,13 @@ const { Content, headings } = await render(article)
 <Layout navbarBordered title={article.data.title} description={article.data.description}>
     <Container class="py-8 space-y-4">
         <div class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
-            <nav class="flex items-center gap-4">
-                <Link href='/'>
-                    <Icon class={'shrink-0'} name={'tabler:home'} />
-                </Link>
-                <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
-                <Link class="line-clamp-1" href=`/courses`>
-                    Belajar
-                </Link>
-                <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
-                <Link class="line-clamp-1" href=`/courses/${course.id}`>
-                    {course.data.title}
-                </Link>
-                <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
-                <p class="line-clamp-1 text-gray-500">
-                    {article.data.title}
-                </p>
-            </nav>
+            <Breadcrumb
+                links={[
+                    { href: '/courses', name: 'Belajar' },
+                    { href: `/courses/${course.id}`, name: course.data.title }
+                ]}
+                active={article.data.title}
+            />
             <div class="flex items-center gap-2">
                 <Button class="lg:hidden" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
                 <Button class="xl:hidden" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>

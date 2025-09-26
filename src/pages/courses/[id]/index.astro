@@ -8,6 +8,7 @@ import { render } from 'astro:content';
 import Link from '../../../components/app/Link.astro';
 import Button from '../../../components/app/Button.astro';
 import Badge from '../../../components/app/Badge.astro';
+import Breadcrumb from '../../../components/app/Breadcrumb.astro';
 
 export async function getStaticPaths() {
     const courses = await getCollection('course')
@@ -25,27 +26,35 @@ const items = await getCollection('article', article => article.data.course?.id 
 ---
 
 <Layout navbarBordered title={course.data.title} description={course.data.description}>
-    <Container class="py-8 grid gap-4 items-start lg:grid-cols-2" tag='article'>
-        <Card tag='section'>
-            <div class="prose max-w-none">
-                <p class="flex items-center justify-between">
-                    <Badge>{items.length} materi</Badge>
-                    <Icon name={course.data.icon} size={32} class="shrink-0" />
-                </p>
-                <h1>
-                    {course.data.title}
-                </h1>
-                <Content />
-                <Button icon='tabler:arrow-right'>Mulai Belajar</Button>
-            </div>
-        </Card>
-        <Card tag='aside'>
-            <h2 class="font-bold text-2xl text-gray-900 mb-4">Daftar Materi</h2>
-            <ol class="space-y-2">
-                {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
-                    <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
-                </li>)}
-            </ol>
-        </Card>
+    <Container class="py-8 space-y-4">
+        <Breadcrumb
+            links={[
+                { href: '/courses', name: 'Belajar' }
+            ]}
+            active={course.data.title}
+        />
+        <main class="grid gap-4 items-start lg:grid-cols-2">
+            <Card tag='article'>
+                <div class="prose max-w-none">
+                    <p class="flex items-center justify-between">
+                        <Badge>{items.length} materi</Badge>
+                        <Icon name={course.data.icon} size={32} class="shrink-0" />
+                    </p>
+                    <h1>
+                        {course.data.title}
+                    </h1>
+                    <Content />
+                    <Button icon='tabler:arrow-right'>Mulai Belajar</Button>
+                </div>
+            </Card>
+            <Card tag='aside'>
+                <h2 class="font-bold text-2xl text-gray-900 mb-4">Daftar Materi</h2>
+                <ol class="space-y-2">
+                    {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
+                        <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
+                    </li>)}
+                </ol>
+            </Card>
+        </main>
     </Container>
 </Layout>
