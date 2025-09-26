@@ -2,11 +2,12 @@
 interface Props {
     class?: string
     tag?: 'article' | 'div' | 'aside' | 'section' | 'main'
+    id?: string
 }
 
-const { class: className = '', tag: Element = 'article' } = Astro.props
+const { id, class: className = '', tag: Element = 'article' } = Astro.props
 ---
 
-<Element class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`}>
+<Element id={id} class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`}>
     <slot />
 </Element>
