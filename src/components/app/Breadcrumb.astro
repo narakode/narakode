@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+interface Props {
+    links: {
+        href: string
+        name: string
+    }[]
+    active: string
+}
+
+const { links, active } = Astro.props
+---
+
+<nav class="flex items-center gap-4">
+    <Link href='/'>
+        <Icon class={'shrink-0'} name={'tabler:home'} />
+    </Link>
+    <Icon class={'shrink-0'} name={'tabler:chevron-right'} />
+    {links.map(link => <Link class="line-clamp-1" href={link.href}>
+        {link.name}
+    </Link>
+    <Icon class={'shrink-0'} name={'tabler:chevron-right'} />)}
+    <p class="line-clamp-1 text-gray-500">
+        {active}
+    </p>
+</nav>
