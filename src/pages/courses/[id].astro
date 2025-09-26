@@ -21,20 +21,7 @@ export async function getStaticPaths() {
 const { course } = Astro.props
 const { Content } = await render(course)
 
-const items = [
-    'Mengenal Apa Itu HTML',
-    'Cara Membuat dan Menjalankan HTML',
-    'Struktur Dasar HTML',
-    'Elemen, Tag, dan Atribut di HTML',
-    'Membuat Judul dengan HTML',
-    'Membuat Paragraf dengan HTML',
-    'Membuat Link dengan HTML',
-    'Membuat Gambar dengan HTML',
-    'Membuat Daftar dengan HTML',
-    'Membuat Tabel dengan HTML',
-    'Membuat Form dengan HTML',
-    'Kesimpulan dan Langkah Selanjutnya'
-]
+const items = await getCollection('article', article => article.data.course?.id === course.id)
 ---
 
 <Layout navbarBordered title={course.data.title} description={course.data.description}>
@@ -56,7 +43,7 @@ const items = [
             <h2 class="font-bold text-2xl text-gray-900 mb-4">Daftar Materi</h2>
             <ol class="space-y-2">
                 {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
-                    <Link>{index + 1}. {item}</Link>
+                    <Link>{index + 1}. {item.data.title}</Link>
                 </li>)}
             </ol>
         </Card>

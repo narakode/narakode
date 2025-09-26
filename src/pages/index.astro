@@ -17,7 +17,7 @@ const courses = await getCollection('course')
 const tutorials = await getCollection('tutorial')
 const books = await getCollection('book')
 const videos = await getCollection('video')
-const articles =  await getCollection('article')
+const articles =  await getCollection('article', article => article.data.type === 'article')
 ---
 
 <Layout>
