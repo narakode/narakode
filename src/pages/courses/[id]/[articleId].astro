@@ -10,6 +10,7 @@ import Link from '../../../components/app/Link.astro';
 import { Icon } from 'astro-icon/components';
 import Button from '../../../components/app/Button.astro';
 import Breadcrumb from '../../../components/app/Breadcrumb.astro';
+import Dropdown from '../../../components/app/Dropdown.astro';
 
 export async function getStaticPaths() {
     const articles = await getCollection('article', article => article.data.type === 'course')
@@ -43,9 +44,26 @@ const { Content, headings } = await render(article)
                 ]}
                 active={article.data.title}
             />
-            <div class="flex items-center gap-2">
-                <Button class="lg:hidden" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
-                <Button class="xl:hidden" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
+            <div class="w-full flex items-center justify-between gap-2 lg:w-auto xl:hidden">
+                <Dropdown id="articles-mobile-dropdown" position='left' class="lg:hidden">
+                    <Button slot="trigger" dataToggle="dropdown" dataTarget="#articles-mobile-dropdown" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
+
+                    <ol class="space-y-1">
+                        {courseItems.map((item, index) => <li>
+                            {article.id === item.id
+                                ? <p class="font-semibold text-red-900">{index + 1}. {item.data.title}</p>
+                                : <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
+                            }
+                        </li>)}
+                    </ol>
+                </Dropdown>
+                <Dropdown id="toc-mobile-dropdown" class="xl:hidden">
+                    <Button slot="trigger" dataToggle="dropdown" dataTarget="#toc-mobile-dropdown" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
+
+                    <ol class="space-y-1">
+                        {headings.map(heading => <li><Link href={`#${heading.slug}`}>{heading.text}</Link></li>)}
+                    </ol>
+                </Dropdown>
             </div>
         </div>
         <main class="grid gap-4 items-start lg:grid-cols-6 xl:grid-cols-5">
@@ -60,7 +78,7 @@ const { Content, headings } = await render(article)
                     </li>)}
                 </ol>
             </Card>
-            <Card tag='article' class="col-span-4 xl:col-span-3 prose max-w-none p-5">
+            <Card tag='article' class="col-span-4 xl:col-span-3 prose w-full max-w-none p-5">
                 <h1>{article.data.title}</h1>
                 <Content />
             </Card>

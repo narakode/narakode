@@ -2,5 +2,21 @@
 
 - [x] Detail courses breadcrumb
 - [x] Detail courses connect cta
-- [ ] Course article toggle toc
+- [x] Detail course article toggle toc
 - [x] Add course html basic content
+
+## 2025-09-27
+
+- [ ] Detail course article highlight active heading
+- [ ] Detail course article next / prev navigation
+- [ ] Course card connect item count
+- [ ] Fix overflow detail course article on mobile
+- [ ] Layout footer
+- [ ] Dropdown click outside
+- [ ] Navbar toggle click outside
+
+## 2025-09-28
+
+- [ ] Hide draft content
+- [ ] Config defauld code theme
+- [ ] Start content
