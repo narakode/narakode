@@ -7,7 +7,7 @@
 
 ## 2025-09-27
 
-- [ ] Detail course article highlight active heading
+- [x] Detail course article highlight active heading
 - [ ] Detail course article next / prev navigation
 - [ ] Course card connect item count
 - [ ] Fix overflow detail course article on mobile
