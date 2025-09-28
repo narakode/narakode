@@ -4,6 +4,7 @@ import Card from './app/Card.astro'
 import Link from './app/Link.astro'
 import Badge from './app/Badge.astro'
 import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 
 interface Props {
     course: CollectionEntry<'course'>,
@@ -12,6 +13,7 @@ interface Props {
 
 const { course, level = 3 } = Astro.props
 const Title: 'h2' | 'h3' = `h${level}`
+const itemsLength: number = (await getCollection('article', article => article.data.course?.id === course.id)).length
 ---
 
 <Card class="space-y-2">
@@ -20,5 +22,5 @@ const Title: 'h2' | 'h3' = `h${level}`
         <Link href={`/courses/${course.id}`}>{course.data.title}</Link>
     </Title>
     <p class="text-gray-700">{course.data.description}</p>
-    <Badge>{10} Materi</Badge>
+    <Badge>{itemsLength} Materi</Badge>
 </Card>
