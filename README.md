@@ -11,7 +11,7 @@
 - [x] Detail course article next / prev navigation
 - [x] Course card connect item count
 - [x] Fix overflow detail course article on mobile
-- [ ] Layout footer
+- [x] Layout footer
 - [ ] Dropdown click outside
 - [ ] Navbar toggle click outside
 

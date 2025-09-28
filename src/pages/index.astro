@@ -6,8 +6,6 @@ import TutorialCard from '../components/TutorialCard.astro';
 import BookCard from '../components/BookCard.astro';
 import VideoCard from '../components/VideoCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import Subscribe from '../components/Subscribe.astro';
-import Footer from '../components/Footer.astro';
 import Container from '../components/app/Container.astro';
 import Section from '../components/app/Section.astro';
 import Button from '../components/app/Button.astro';
@@ -60,6 +58,4 @@ const articles =  await getCollection('article', article => article.data.type ==
 			</div>
 		</Section>
 	</Container>
-	<Subscribe />
-	<Footer />
 </Layout>

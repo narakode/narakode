@@ -3,6 +3,8 @@ import '@fontsource/ubuntu';
 import "../styles/global.css";
 import { SEO } from "astro-seo";
 import Navbar from '../components/Navbar.astro';
+import Subscribe from '../components/Subscribe.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	navbarBordered?: boolean
@@ -57,6 +59,9 @@ const config = {
 		<Navbar bordered={navbarBordered} />
 
 		<slot />
+		
+		<Subscribe />
+		<Footer />
 	</body>
 	<script>
 		const dropdownToggles = document.querySelectorAll<HTMLElement>('[data-toggle="dropdown"]')
