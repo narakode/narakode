@@ -11,4 +11,4 @@ Belajar HTML wajib bagi Anda yang ingin menjadi web developer, karena untuk bisa
 
 Di pelajaran ini, kita akan belajar HTML dari dasar-dasarnya yang bisa diikuti siapa saja termasuk pemula yang belum tau apa itu HTML.
 
-Target dari pelajaran ini adalah Anda mampu mengetahui cara menggunakan HTML untuk membuat website sederhana.
+Target dari pelajaran ini adalah Anda dapat menggunakan HTML untuk membuat website sederhana.
