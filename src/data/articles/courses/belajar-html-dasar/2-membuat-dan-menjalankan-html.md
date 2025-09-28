@@ -4,6 +4,7 @@ title: Membuat dan Menjalankan Dokumen HTML
 description: Ada dua aplikasi yang perlu diinstal untuk membuat dan menjalankan dokumen HTML, yaitu kode editor dan browser.
 type: course
 course: belajar-html-dasar
+publishedAt: 2025-09-26 10:00:00 +0700
 ---
 
 Di sini kita akan belajar cara membuat dan menjalankan dokumen HTML. Ada dua aplikasi yang perlu diinstal untuk melakukan keduanya, yaitu kode editor dan browser.

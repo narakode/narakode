@@ -14,7 +14,7 @@ import TableOfContent from '../../../components/TableOfContent.astro';
 import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
-    const articles = await getCollection('article', article => article.data.type === 'course')
+    const articles = await getCollection('article', article => article.data.type === 'course' && article.data.publishedAt)
 
     return articles.map(article => {
         const course = article.data.course as CollectionEntry<'course'>

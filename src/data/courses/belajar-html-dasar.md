@@ -2,6 +2,7 @@
 title: Belajar HTML Dasar
 description: Mengenal HTML dari nol sampai bisa membuat web sederhana.
 icon: logos:html-5
+publishedAt: 2025-09-26 10:00:00 +0700
 ---
 
 HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur halaman website. Pada dasarnya semua website di internet strukturnya dibuat dalam bentuk HTML.

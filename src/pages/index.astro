@@ -2,20 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import CourseCard from '../components/CourseCard.astro';
-import TutorialCard from '../components/TutorialCard.astro';
-import BookCard from '../components/BookCard.astro';
-import VideoCard from '../components/VideoCard.astro';
-import ArticleCard from '../components/ArticleCard.astro';
+// import TutorialCard from '../components/TutorialCard.astro';
+// import BookCard from '../components/BookCard.astro';
+// import VideoCard from '../components/VideoCard.astro';
+// import ArticleCard from '../components/ArticleCard.astro';
 import Container from '../components/app/Container.astro';
 import Section from '../components/app/Section.astro';
 import Button from '../components/app/Button.astro';
 import { getCollection } from 'astro:content'
 
-const courses = await getCollection('course')
-const tutorials = await getCollection('tutorial')
-const books = await getCollection('book')
-const videos = await getCollection('video')
-const articles =  await getCollection('article', article => article.data.type === 'article')
+const courses = await getCollection('course', course => !!course.data.publishedAt)
+// const tutorials = await getCollection('tutorial', tutorial => !!tutorial.data.publishedAt)
+// const books = await getCollection('book', book => !!book.data.publishedAt)
+// const videos = await getCollection('video', video => !!video.data.publishedAt)
+// const articles =  await getCollection('article', article => article.data.publishedAt && article.data.type === 'article')
 ---
 
 <Layout>
@@ -29,7 +29,7 @@ const articles =  await getCollection('article', article => article.data.type ==
 				{courses.map(course => <CourseCard course={course} />)}
 			</div>
 		</Section>
-		<Section title='Ikuti Tutorial Terbaru' description='Belajar pemrograman dengan praktek langsung terjun ke studi kasus tertentu.'>
+		<!-- <Section title='Ikuti Tutorial Terbaru' description='Belajar pemrograman dengan praktek langsung terjun ke studi kasus tertentu.'>
 			<Button slot="action" tag='a' href='/tutorials' icon='tabler:arrow-right'>Lihat Semua</Button>
 			
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -56,6 +56,6 @@ const articles =  await getCollection('article', article => article.data.type ==
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{articles.map(article => <ArticleCard article={article} />)}
 			</div>
-		</Section>
+		</Section> -->
 	</Container>
 </Layout>

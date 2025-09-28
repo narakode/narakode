@@ -55,12 +55,14 @@ const config = {
 			}}
 		/>
 	</head>
-	<body class="bg-gray-100">
-		<Navbar bordered={navbarBordered} />
+	<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
+		<div>
+			<Navbar bordered={navbarBordered} />
 
-		<slot />
+			<slot />
+		</div>
 		
-		<Subscribe />
+		<!-- <Subscribe /> -->
 		<Footer />
 	</body>
 	<script>

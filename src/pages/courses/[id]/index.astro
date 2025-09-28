@@ -11,7 +11,7 @@ import Badge from '../../../components/app/Badge.astro';
 import Breadcrumb from '../../../components/app/Breadcrumb.astro';
 
 export async function getStaticPaths() {
-    const courses = await getCollection('course')
+    const courses = await getCollection('course', course => course.data.publishedAt)
 
     return courses.map(course => ({
         params: { id: course.id },
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 const { course } = Astro.props
 const { Content } = await render(course)
 
-const items = await getCollection('article', article => article.data.course?.id === course.id)
+const items = await getCollection('article', article => article.data.course?.id === course.id && article.data.publishedAt)
 ---
 
 <Layout navbarBordered title={course.data.title} description={course.data.description}>

@@ -4,6 +4,7 @@ title: Mengenal Apa Itu HTML
 description: HTML (HyperText Markup Language) adalah bahasa markup untuk membuat struktur halaman website
 type: course
 course: belajar-html-dasar
+publishedAt: 2025-09-26 10:00:00 +0700
 ---
 
 Mari kita mulai belajar HTML dasar dengan mengenal apa itu HTML terlebih dahulu.

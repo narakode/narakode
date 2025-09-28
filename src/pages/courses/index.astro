@@ -6,7 +6,7 @@ import Section from "../../components/app/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 import CourseCard from "../../components/CourseCard.astro";
 
-const courses = await getCollection('course')
+const courses = await getCollection('course', course => course.data.publishedAt)
 const description = 'Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'
 ---
 

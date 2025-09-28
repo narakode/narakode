@@ -4,6 +4,7 @@ title: Struktur Dasar HTML
 description: Struktur dasar HTML adalah elemen-elemen yang disusun untuk membuat sebuah dokumen HTML
 type: course
 course: belajar-html-dasar
+publishedAt: 2025-09-26 10:00:00 +0700
 ---
 
 Struktur dasar HTML adalah elemen-elemen yang disusun untuk membuat sebuah dokumen HTML. Struktur HTML penting ketika membuat dokumen HTML agar halaman website tidak berantakan secara tampilan di browser atau ketika diakses mesin pencari.

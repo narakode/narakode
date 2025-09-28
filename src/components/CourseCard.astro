@@ -13,7 +13,7 @@ interface Props {
 
 const { course, level = 3 } = Astro.props
 const Title: 'h2' | 'h3' = `h${level}`
-const itemsLength: number = (await getCollection('article', article => article.data.course?.id === course.id)).length
+const itemsLength: number = (await getCollection('article', article => article.data.course?.id === course.id && article.data.publishedAt)).length
 ---
 
 <Card class="space-y-2">
