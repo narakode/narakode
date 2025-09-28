@@ -44,17 +44,15 @@ const activeMenu = Astro.url.pathname
             <Image id="navbar-logo" src={Logo} alt="Narakode" width={40} class="rounded-full" />
         </Link>
         <div id="navbar-mobile-action" class="flex items-center gap-3 md:hidden">
-            <button id="navbar-sidebar-toggle" title="Buka Menu">
-                <Icon name="tabler:menu-2" />
-            </button>
-            <button id="navbar-sidebar-close" class="hidden" title="Tutup Menu">
-                <Icon name="tabler:x" />
+            <button id="navbar-sidebar-toggle" class="group" title="Buka Menu" data-toggle="#navbar-menu">
+                <Icon name="tabler:menu-2" class="group-[.toggle-open]:hidden" />
+                <Icon name="tabler:x" class="hidden group-[.toggle-open]:block" />
             </button>
             <Link href="/">
                 <Icon name={'tabler:home'} />
             </Container>
         </div>
-        <div id="navbar-menu" class=`hidden absolute top-14 left-0 z-10 bg-white w-full p-4 flex-col gap-2 border-b border-gray-300 ${bordered ? '' : 'border-t'} sm:border-0 sm:top-18 sm:rounded-lg md:top-[unset] md:left-1/2 md:-translate-x-1/2 md:w-auto md:bg-transparent md:p-0 md:rounded-0 md:flex md:flex-row md:items-center md:gap-4`>
+        <div id="navbar-menu" data-click-outside data-trigger="#navbar-sidebar-toggle" class=`hidden flex absolute top-14 left-0 z-10 bg-white w-full p-4 flex-col gap-2 border-b border-gray-300 ${bordered ? 'sm:border sm:shadow md:border-0 md:shadow-none' : 'border-t sm:border-0'} sm:top-18 sm:rounded-lg md:top-[unset] md:left-1/2 md:-translate-x-1/2 md:w-auto md:bg-transparent md:p-0 md:rounded-0 md:flex md:flex-row md:items-center md:gap-4`>
             {menus.map(menu => <Link href={menu.href} color={menu.href === activeMenu ? 'primary' : 'dark'} class={menu.href === activeMenu ? 'font-bold' : ''}>{menu.name}</Link>)}
         </div>
         <button id="navbar-search-close" class="hidden" title="Tutup Pencarian">
@@ -73,8 +71,6 @@ const menu = document.querySelector('#navbar-menu')
 const search = document.querySelector('#navbar-search')
 const searchOpen = document.querySelector('#navbar-search-open')
 const searchClose = document.querySelector('#navbar-search-close')
-const sidebarToggle = document.querySelector('#navbar-sidebar-toggle')
-const sidebarClose = document.querySelector('#navbar-sidebar-close')
 const mobileAction = document.querySelector('#navbar-mobile-action')
 
 searchOpen?.addEventListener('click', () => {
@@ -99,19 +95,5 @@ searchClose?.addEventListener('click', () => {
     mobileAction?.classList.remove('hidden')
     searchClose?.classList.add('hidden')
     searchClose?.classList.remove('lg:hidden')
-})
-
-sidebarToggle?.addEventListener('click', () => {
-    menu?.classList.remove('hidden')
-    menu?.classList.add('flex')
-    sidebarToggle?.classList.add('hidden')
-    sidebarClose?.classList.remove('hidden')
-})
-
-sidebarClose?.addEventListener('click', () => {
-    menu?.classList.add('hidden')
-    menu?.classList.remove('flex')
-    sidebarToggle?.classList.remove('hidden')
-    sidebarClose?.classList.add('hidden')
 })
 </script>

@@ -12,8 +12,8 @@
 - [x] Course card connect item count
 - [x] Fix overflow detail course article on mobile
 - [x] Layout footer
-- [ ] Dropdown click outside
-- [ ] Navbar toggle click outside
+- [x] Dropdown click outside
+- [x] Navbar toggle click outside
 
 ## 2025-09-28
 
