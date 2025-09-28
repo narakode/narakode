@@ -51,9 +51,9 @@ Anda bisa menggunakan browser yang sudah terinstal di perangkat Anda, seperti Go
 
 ## Membuat Dokumen HTML
 
-Pertama, buka aplikasi kode editor VS Code.
+Untuk membuat dokumen HTML, buka aplikasi kode editor VS Code.
 
-Kemudian tekan `ctrl + n` untuk membuat file baru. Akan muncul sebuah tab editor yang di editor tersebut bisa ditulis sesuatu menggunakan keyboard.
+Kemudian tekan `ctrl + n` untuk membuat file baru. Akan muncul sebuah tab editor yang di dalamnya bisa ditulis sesuatu menggunakan keyboard.
 
 Masukkan kode berikut di editor tersebut.
 
@@ -65,16 +65,18 @@ Masukkan kode berikut di editor tersebut.
 
 Tekan `ctrl + s` untuk menyimpan file dokumen HTML. Nama file-nya bisa apa saja, extensinya harus `.html`, folder penyimpanannya bebas di mana saja.
 
-Jika sudah tersimpan maka pada editor akan tampil nama file dokumen HTML.
+Jika sudah tersimpan, maka nama file dokumen HTML akan tampil di atas editor.
 
-Setiap kali mengubah isi file HTML, jangan lupa untuk menyimpan file tersebut dengan `ctrl + s`. Ketika ada perubahan yang belum disimpan akan ada tanda bulat putih di sebelah nama file, ketika sudah disimpan tanda tersebut akan hilang.
+Setiap kali mengubah isi file dokumen HTML, jangan lupa untuk menyimpan file tersebut dengan `ctrl + s`. Ketika ada perubahan yang belum disimpan akan ada tanda bulat putih di sebelah nama file, ketika sudah disimpan tanda tersebut akan hilang.
 
-Untuk membuka file dokumen HTML lain, tekan `ctrl + o` lalu pilih file HTML yang akan dibuka. 
+Untuk membuka file dokumen HTML lain, tekan `ctrl + o` lalu pilih file dokumen HTML yang akan dibuka. 
 
 ## Menjalankan Dokumen HTML
 
-Pertama buka browser, kemudian buat tab baru.
+Untuk menjalankan dokumen HTML, buka browser kemudian buat tab baru.
 
-Tekan `ctrl + o`, lalu pilih file dokumen HTML yang ingin dijalankan di browser. Setelah dipilih, browser akan menjalankan dokumen HTML dalam bentuk halaman website.
+Tekan `ctrl + o`, lalu pilih file dokumen HTML yang ingin dijalankan di browser.
 
-Setiap kali mengubah isi file HTML, jangan lupa untuk merefresh tab untuk melihat hasil perubahan dokumen HTML.
+Setelah dipilih, browser akan menjalankan dokumen HTML dalam bentuk halaman website.
+
+Setiap kali mengubah isi file dokumen HTML, jangan lupa untuk merefresh tab untuk melihat hasil perubahan dokumen HTML.

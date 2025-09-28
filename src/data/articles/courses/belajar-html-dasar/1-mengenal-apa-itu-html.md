@@ -19,13 +19,13 @@ Intinya, HTML adalah bahasa untuk membuat struktur halaman website.
 
 HTML ditemukan oleh [Tim Berners-Lee](https://id.wikipedia.org/wiki/Tim_Berners-Lee), seorang ilmuwan komputer yang pada saat itu bekerja lepas di [CERN](https://home.cern/), sebuah organisasi riset nuklir eropa.
 
-Tim awalnya mengusulkan proyek "HyperText" untuk menggabungkan dan menghubungkan dokumen-dokumen riset para peneliti di CERN.
+Tim awalnya mengusulkan proyek bernama "HyperText" untuk menggabungkan dan menghubungkan dokumen-dokumen riset para peneliti di CERN.
 
 Tim kemudian membuat HTML sebagai format standar untuk dokumen hiperteks.
 
 Tim kemudian merilis versi pertama HTML pada september tahun 1991.
 
-HTML terus dikembangkan dengan merilis versi-versi baru, sampai sekarang versi HTML terbaru adalah [HTML Living Standard](https://html.spec.whatwg.org/multipage/), ini adalah kelanjutan pengembangan dari versi HTML 5.
+Setelah itu, HTML terus dikembangkan dengan merilis versi-versi baru, sampai sekarang versi HTML terbaru adalah [HTML Living Standard](https://html.spec.whatwg.org/multipage/), ini adalah kelanjutan pengembangan dari versi HTML 5.
 
 Ada beberapa pihak yang mengembangkan HTML, awalnya Tim Berners-Lee, kemudian HTML Working Group, kemudian [W3C](https://www.w3.org/), kemudian [WHATWG](https://whatwg.org/), dan sekarang W3C dan WHATWG berkolaborasi untuk mengembangkan HTML versi Living Standard. 
 
@@ -56,7 +56,7 @@ Berikut alur cara kerja HTML sampai tampil menjadi sebuah halaman website:
 5. Browser menerjemahkan dokumen HTML ke bentuk halaman website.
 6. Pengunjung melihat tampilan halaman website.
 
-Dokumen HTML berisi teks kode-kode HTML. Kode HTML terdiri dari kode markah dan teks biasa. Kode markah adalah penanda untuk memformat teks biasa menjadi sebuah elemen di website. Contohnya:
+Dokumen HTML berisi teks kode-kode HTML. Kode HTML terdiri dari kode markah dan teks biasa. Kode markah adalah penanda untuk memformat teks biasa menjadi sebuah elemen di website. Contoh kode HTML:
 
 ```html
 <h1>Judul Satu</h1>
@@ -66,8 +66,8 @@ Dokumen HTML berisi teks kode-kode HTML. Kode HTML terdiri dari kode markah dan 
 
 ## Kenapa Belajar HTML
 
-HTML sangat penting untuk dipelajari jika kita ingin membuat website, karena tanpa menggunakan HTML maka kita tidak bisa membuat struktur website dengan baik sesuai standar. Akibatnya tampilan webiste pun menjadi berantakan di mata pengunjung.
+HTML sangat penting untuk dipelajari jika kita ingin membuat website, karena tanpa menggunakan HTML maka kita tidak bisa membuat struktur website dengan baik dan benar sesuai standar. Akibatnya tampilan webiste pun menjadi berantakan di mata pengunjung.
 
-Selain itu, jika ingin website yang dibuat muncul di mesin pencari seperti Google, maka penggunaan HTML sangat berpengaruh. Karena untuk menentukan apakah website kita bisa dimasukkan ke Google struktur website harus sesuai standar. Ranking website di Google juga dipengaruhi oleh struktur kode HTML.
+Selain itu, jika ingin website yang dibuat muncul di mesin pencari seperti Google, maka penggunaan HTML sangat penting. Karena untuk menentukan posisi website di Google itu sangat dipengaruhi oleh struktur kode HTML yang dibuat.
 
 Jadi, kenapa belajar HTML penting? Jawabannya agar kita bisa membuat website yang terstruktur sehingga tampilannya baik di mata pengunjung dan memiliki nilai yang tinggi di mesin pencari seperti Google.

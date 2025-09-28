@@ -27,7 +27,7 @@ Doctype wajib ada di awal dokumen HTML untuk memastikan browser menjalankan doku
 
 Setelah doctype, di bawahnya ada tag html. Fungsinya untuk mewadahi semua elemen HTML. Semua elemen HTML harus ditulis di dalam tag HTML.
 
-Cara menuliskan tag head:
+Cara menuliskan tag html:
 
 ```html
 <html lang="id">
@@ -56,7 +56,7 @@ Pada kode di atas teks "Website Saya" tidak akan tampil di halaman website, tapi
 
 ## 4. Tag Body
 
-Setalah tag head, di bawahnya ada tag body. Fungsinya untuk menempatkan semua elemen-elemen yang akan muncul di halaman website, dapat dilihat oleh pengunjung.
+Setalah tag head, di bawahnya ada tag body. Fungsinya untuk menempatkan semua elemen-elemen yang akan muncul di halaman website dan dapat dilihat oleh pengunjung.
 
 Cara menuliskan tag body:
 
