@@ -5,6 +5,8 @@ interface Props {
     color?: Color
     class?: string
     href?: string
+    ariaLabel?: string
+    title?: string
 }
 
 const colorClass: Record<Color, string> = {
@@ -14,9 +16,9 @@ const colorClass: Record<Color, string> = {
     'light-muted': 'text-gray-300 hover:text-white'
 }
 
-const { color = 'dark', class: className = '', href } = Astro.props
+const { color = 'dark', class: className = '', href, ariaLabel, title } = Astro.props
 ---
 
-<a href={href} class=`hover:underline ${colorClass[color]} ${className}`>
+<a href={href} title={title} aria-label={ariaLabel} class=`hover:underline ${colorClass[color]} ${className}`>
     <slot />
 </a>

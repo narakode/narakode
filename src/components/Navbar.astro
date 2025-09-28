@@ -40,15 +40,15 @@ const activeMenu = Astro.url.pathname
 
 <nav class=`h-14 bg-white text-gray-900 relative ${bordered ? 'border-b border-gray-300' : ''} md:h-16`>
     <Container class="h-full flex items-center justify-between gap-2 relative md:static lg:gap-0">
-        <Link href="/" class="hidden md:block">
-            <Image id="navbar-logo" src={Logo} alt="Narakode" width={40} class="rounded-full" />
+        <Link href="/" class="hidden md:block" ariaLabel="Narakode">
+            <Image id="navbar-logo" src={Logo} alt="Narakode" loading={'eager'} width={40} class="rounded-full" />
         </Link>
         <div id="navbar-mobile-action" class="flex items-center gap-3 md:hidden">
             <button id="navbar-sidebar-toggle" class="group" title="Buka Menu" data-toggle="#navbar-menu">
                 <Icon name="tabler:menu-2" class="group-[.toggle-open]:hidden" />
                 <Icon name="tabler:x" class="hidden group-[.toggle-open]:block" />
             </button>
-            <Link href="/">
+            <Link href="/" ariaLabel="Beranda">
                 <Icon name={'tabler:home'} />
             </Container>
         </div>

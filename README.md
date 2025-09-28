@@ -17,7 +17,7 @@
 
 ## 2025-09-28
 
-- [ ] Cek seo, a11y home, course index, course detail, course item
+- [x] Cek seo, a11y home, course index, course detail, course item
 - [x] Hide draft content
 - [ ] Config defauld code theme
 - [ ] Start content

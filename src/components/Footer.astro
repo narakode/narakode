@@ -2,6 +2,11 @@
 import { Icon } from "astro-icon/components";
 import Container from "./app/Container.astro";
 import Link from "./app/Link.astro";
+
+const info = {
+    email: 'info@narakode.com',
+    phone: '082236654884'
+}
 ---
 
 <footer class="bg-gray-900 text-white py-20">
@@ -9,16 +14,16 @@ import Link from "./app/Link.astro";
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
             <div class="lg:col-span-2">
                 <div class="flex flex-col gap-2 xl:max-w-3/4">
-                    <a href="" class="font-bold text-xl uppercase tracking-tight">Narakode</a>
+                    <a href="/" class="font-bold text-xl uppercase tracking-tight">Narakode</a>
                     <p class="text-gray-300">Jl. Raya Timur Wanadadi, KM 3, Wanadadi, Banjarnegara, Jawa Tengah</p>
                     <div class="space-y-1">
-                        <Link color="light-muted" class="flex items-center gap-2">
+                        <Link color="light-muted" href={`mailto:${info.email}`} class="flex items-center gap-2">
                             <Icon name={'tabler:mail'} />
-                            info@narakode.com
+                            {info.email}
                         </Link>
-                        <Link color="light-muted" class="flex items-center gap-2">
+                        <Link color="light-muted" href={`tel:082236654884`} class="flex items-center gap-2">
                             <Icon name={'tabler:phone'} />
-                            082236654884
+                            {info.phone}
                         </Link>
                     </div>
                 </div>
@@ -26,20 +31,20 @@ import Link from "./app/Link.astro";
             <div class="space-y-2 md:order-3 lg:order-none">
                 <p class="text-lg font-bold">Fitur</p>
                 <div class="flex flex-col space-y-2">
-                    <Link color="light-muted">Belajar</Link>
-                    <Link color="light-muted">Tutorial</Link>
+                    <Link color="light-muted" href="/courses">Belajar</Link>
+                    <!-- <Link color="light-muted">Tutorial</Link>
                     <Link color="light-muted">Artikel</Link>
                     <Link color="light-muted">Video</Link>
-                    <Link color="light-muted">Buku</Link>
+                    <Link color="light-muted">Buku</Link> -->
                 </div>
             </div>
             <div class="space-y-2 md:order-4 lg:order-none">
                 <p class="text-lg font-bold">Terhubung</p>
                 <div class="flex flex-col space-y-2">
-                    <Link color="light-muted">Tentang Kami</Link>
+                    <!-- <Link color="light-muted">Tentang Kami</Link>
                     <Link color="light-muted">Hubungi Kami</Link>
                     <Link color="light-muted">Dukung Kami</Link>
-                    <Link color="light-muted">Kerjasama</Link>
+                    <Link color="light-muted">Kerjasama</Link> -->
                 </div>
             </div>
             <div class="space-y-4 lg:col-span-2">
@@ -48,16 +53,16 @@ import Link from "./app/Link.astro";
                     <p class="text-gray-300">Ikuti sosial media kami untuk mendapatkan informasi dan update terbaru dari kami.</p>
                 </div>
                 <div class="flex gap-2">
-                    <a target="_blank" href="https://facebook.com/narakode" title="Facebook" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                    <a target="_blank" href="https://facebook.com/narakode" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
                         <Icon name={'tabler:brand-facebook'} />
                     </a>
-                    <a target="_blank" href="https://instagram.com/narakode" title="Instagram" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                    <a target="_blank" href="https://instagram.com/narakode" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
                         <Icon name={'tabler:brand-instagram'} />
                     </a>
-                    <a target="_blank" href="https://twitter.com/narakode" title="Twitter" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                    <a target="_blank" href="https://twitter.com/narakode" aria-label="Twitter" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
                         <Icon name={'tabler:brand-twitter'} />
                     </a>
-                    <a target="_blank" href="https://youtube.com/narakode" title="Youtube" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
+                    <a target="_blank" href="https://youtube.com/narakode" aria-label="Youtube" class="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-red-900">
                         <Icon name={'tabler:brand-youtube'} />
                     </a>
                 </div>
