@@ -11,6 +11,7 @@ import Button from '../../../components/app/Button.astro';
 import Breadcrumb from '../../../components/app/Breadcrumb.astro';
 import Dropdown from '../../../components/app/Dropdown.astro';
 import TableOfContent from '../../../components/TableOfContent.astro';
+import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
     const articles = await getCollection('article', article => article.data.type === 'course')
@@ -32,6 +33,11 @@ const { article, articleCourse } = Astro.props
 const course = await getEntry(articleCourse)
 const courseItems = await getCollection('article', article => article.data.course?.id === course.id)
 const { Content, headings } = await render(article)
+const currentItemIndex = courseItems.findIndex(item => item.id === article.id)
+const hasNext = courseItems.length > 1 && currentItemIndex < courseItems.length - 1
+const nextItem = hasNext ? courseItems[currentItemIndex + 1] : null
+const hasPrev = courseItems.length > 1 && currentItemIndex > 0
+const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
 ---
 
 <Layout navbarBordered title={article.data.title} description={article.data.description}>
@@ -76,10 +82,27 @@ const { Content, headings } = await render(article)
                     </li>)}
                 </ol>
             </Card>
-            <Card id='article-content' tag='article' class="col-span-4 xl:col-span-3 prose w-full max-w-none p-5">
-                <h1>{article.data.title}</h1>
-                <Content />
-            </Card>
+            <div class="col-span-4 space-y-4 xl:col-span-3">
+                <Card id='article-content' tag='article' class="prose w-full max-w-none p-5">
+                    <h1>{article.data.title}</h1>
+                    <Content />
+                </Card>
+
+                <nav class=`flex flex-col ${hasPrev ? 'justify-between' : 'justify-end'} gap-2 sm:flex-row sm:items-center`>
+                    {hasPrev && <Link href={`/courses/${course.id}/${prevItem?.id}`} class="flex items-center gap-2">
+                        <Icon name="tabler:chevron-left" />
+                        <p class=" line-clamp-1">
+                            {prevItem?.data.title}
+                        </p>
+                    </Link>}
+                    {hasNext && <Link href={`/courses/${course.id}/${nextItem?.id}`} class="flex items-center justify-end text-right gap-2">
+                        <p class=" line-clamp-1">
+                            {nextItem?.data.title}
+                        </p>
+                        <Icon name="tabler:chevron-right" />
+                    </Link>}
+                </nav>
+            </div>
             <Card tag='aside' class='hidden xl:block xl:sticky xl:top-4 xl:right-0'>
                 <h2 class="font-bold text-2xl mb-4">Daftar Isi</h2>
                 <TableOfContent headings={headings} />
