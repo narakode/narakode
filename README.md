@@ -10,7 +10,7 @@
 - [x] Detail course article highlight active heading
 - [x] Detail course article next / prev navigation
 - [x] Course card connect item count
-- [ ] Fix overflow detail course article on mobile
+- [x] Fix overflow detail course article on mobile
 - [ ] Layout footer
 - [ ] Dropdown click outside
 - [ ] Navbar toggle click outside

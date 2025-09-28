@@ -83,7 +83,7 @@ const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
                 </ol>
             </Card>
             <div class="col-span-4 space-y-4 xl:col-span-3">
-                <Card id='article-content' tag='article' class="prose w-full max-w-none p-5">
+                <Card id='article-content' tag='article' class="prose prose-pre:whitespace-pre-wrap w-full max-w-none p-5">
                     <h1>{article.data.title}</h1>
                     <Content />
                 </Card>
