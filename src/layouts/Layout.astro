@@ -64,16 +64,38 @@ const config = {
 		<Footer />
 	</body>
 	<script>
-		const dropdownToggles = document.querySelectorAll<HTMLElement>('[data-toggle="dropdown"]')
+		const dropdownToggles = document.querySelectorAll<HTMLElement>('[data-toggle]')
 
 		dropdownToggles.forEach(toggle => {
-			if (toggle.dataset.target) {
-				const target = document.querySelector(`${toggle.dataset.target}`)
+			if (toggle.dataset.toggle) {
+				const target = document.querySelector(`${toggle.dataset.toggle}`)
 
 				toggle.addEventListener('click', () => {
+					toggle.classList.toggle('toggle-open')
 					target?.classList.toggle('hidden')
 				})
 			}
+		})
+
+		const clickOutsides = document.querySelectorAll<HTMLElement>('[data-click-outside]')
+
+		clickOutsides.forEach(target => {
+			const trigger = document.querySelector(`${target.dataset.trigger}`)
+
+			document.addEventListener('click', e => {
+				const clicked = e.target as HTMLElement
+
+				if (trigger) {
+					if (!target?.contains(clicked) && !trigger.contains(clicked)) {
+						target?.classList.add('hidden')
+						trigger.classList.remove('toggle-open')
+					}
+				} else {
+					if (!target?.contains(clicked)) {
+						target?.classList.add('hidden')
+					}
+				}				
+			})
 		})
 	</script>
 </html>

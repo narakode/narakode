@@ -5,19 +5,15 @@ interface Props {
     id?: string
     position?: 'left' | 'right'
     class?: string
+    triggerId: string
 }
 
-const { id, position = 'right', class: className = '' } = Astro.props
+const { id, position = 'right', class: className = '', triggerId } = Astro.props
 ---
 
 <div class=`relative ${className}`>
     <slot name="trigger" />
-    <Card id={id} class=`hidden absolute top-10 ${position === 'right' ? 'right-0' : 'left-0'} w-60 shadow`>
+    <Card id={id} class=`hidden absolute top-10 ${position === 'right' ? 'right-0' : 'left-0'} w-60 shadow` dataClickOutside="true" dataTrigger=`#${triggerId}`>
         <slot />
     </Card>
 </div>
-
-<script>
-
-
-</script>

@@ -51,8 +51,8 @@ const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
                 active={article.data.title}
             />
             <div class="w-full flex items-center justify-between gap-2 lg:w-auto xl:hidden">
-                <Dropdown id="articles-mobile-dropdown" position='left' class="lg:hidden">
-                    <Button slot="trigger" dataToggle="dropdown" dataTarget="#articles-mobile-dropdown" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
+                <Dropdown id="articles-mobile-dropdown" triggerId="toggle-articles-mobile-dropdown" position='left' class="lg:hidden">
+                    <Button slot="trigger" id="toggle-articles-mobile-dropdown" dataToggle="#articles-mobile-dropdown" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
 
                     <ol class="space-y-1">
                         {courseItems.map((item, index) => <li>
@@ -63,8 +63,8 @@ const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
                         </li>)}
                     </ol>
                 </Dropdown>
-                <Dropdown id="toc-mobile-dropdown" class="xl:hidden">
-                    <Button slot="trigger" dataToggle="dropdown" dataTarget="#toc-mobile-dropdown" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
+                <Dropdown id="toc-mobile-dropdown" triggerId="toggle-toc-mobile-dropdown" class="xl:hidden">
+                    <Button slot="trigger" id="toggle-toc-mobile-dropdown" dataToggle="#toc-mobile-dropdown" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
 
                     <TableOfContent headings={headings} />
                 </Dropdown>

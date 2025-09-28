@@ -3,11 +3,13 @@ interface Props {
     class?: string
     tag?: 'article' | 'div' | 'aside' | 'section' | 'main'
     id?: string
+    dataClickOutside?: string
+    dataTrigger?: string
 }
 
-const { id, class: className = '', tag: Element = 'article' } = Astro.props
+const { id, class: className = '', tag: Element = 'article', dataClickOutside, dataTrigger } = Astro.props
 ---
 
-<Element id={id} class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`}>
+<Element id={id} class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`} data-click-outside={dataClickOutside} data-trigger={dataTrigger}>
     <slot />
 </Element>
