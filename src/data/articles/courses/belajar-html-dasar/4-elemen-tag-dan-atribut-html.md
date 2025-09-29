@@ -4,7 +4,7 @@ title: Elemen, Tag, dan Atribut di HTML
 description: Elemen, Tag dan Atribut adalah tiga hal dasar untuk menulis kode HTML
 type: course
 course: belajar-html-dasar
-publishedAt: 2025-09-28 10:00:00 +0700
+publishedAt: 2025-09-28 14:00:00 +0700
 ---
 
 Setelah mengetahui struktur dasar HTML, sekarang kita akan belajar mengenai elemen, tag, dan atribut di HTML. Tiga hal ini sangat penting untuk dipelajari karena kode HTML tidak bisa ditulis tanpa tiga hal ini.
@@ -15,17 +15,47 @@ Elemen adalah bagian di halaman website. Contohnya gambar, judul, paragraf, form
 
 Di HTML elemen ada banyak jenisnya, setiap elemen memiliki nama dan fungsinya masing-masing. Contoh:
 
-1. _Image_, untuk menampilkan gambar.
-2. _Heading_, untuk menampilkan judul.
-3. _Paragraph_, untuk menampilkan paragraf.
+1. _Image_ / gambar, untuk menampilkan gambar.
+2. _Heading_ / judu;, untuk menampilkan judul.
+3. _Paragraph_ / paragraf, untuk menampilkan paragraf.
 
 Jadi, ketika kita ingin menampilkan suatu konten di halaman website maka cari elemen yang sesuai dengan konten yang ingin ditampilkan.
 
-<!-- struktur elemen terdiri dari tag pembuka konten dan tag penutup -->
+### Struktur Elemen
 
-<!-- ### Elemen Beranak -->
-<!-- elemen beranak adalah elemen yang di dalamnya ada elemen-elemen lainnya -->
-<!-- ### Elemen Void -->
+Setiap elemen terdiri dari tag dan konten.
+
+![Struktur Elemen](./images/4-elemen-tag-dan-atribut-html/struktur-elemen.png)
+
+### Nested Element (Elemen Beranak)
+
+Elemen beranak adalah elemen yang kontennya berisi elemen-elemen lainnya. Contoh:
+
+```html
+<article>
+    <h1>Judul Artikel</h1>
+    <p>Isi Artikel</p>
+</article>
+```
+
+Pada kode di atas, elemen artikel adalah elemen yang beranak, anak-anaknya adalah elemen judul dan elemen paragraf.
+
+### Void Element (Elemen Tanpa Konten)
+
+_Void Element_ adalah elemen yang tidak memiliki konten. Contoh:
+
+```html
+<br>
+<input>
+<img src="gambar.png">
+```
+
+Elemen-elemen pada kode tersebut tidak memiliki konten, namun masil ada fungsi dan tampilannya di halaman website, yaitu:
+
+- Elemen _break_ (`<br>`) fungsinya untuk membuat baris baru.
+- Elemen _input_ (`<input>`) fungsinya untuk menampilkan kotak input.
+- Elemen _image_ (`<img>`) fungsinya untuk menampilkan gambar.
+
 <!-- elemen void adalah ... -->
 
 ## Tag

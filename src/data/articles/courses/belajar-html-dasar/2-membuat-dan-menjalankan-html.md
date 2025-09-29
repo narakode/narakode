@@ -4,7 +4,7 @@ title: Membuat dan Menjalankan Dokumen HTML
 description: Ada dua aplikasi yang perlu diinstal untuk membuat dan menjalankan dokumen HTML, yaitu kode editor dan browser.
 type: course
 course: belajar-html-dasar
-publishedAt: 2025-09-26 10:00:00 +0700
+publishedAt: 2025-09-26 11:00:00 +0700
 ---
 
 Di sini kita akan belajar cara membuat dan menjalankan dokumen HTML. Ada dua aplikasi yang perlu diinstal untuk melakukan keduanya, yaitu kode editor dan browser.
@@ -53,7 +53,11 @@ Anda bisa menggunakan browser yang sudah terinstal di perangkat Anda, seperti Go
 
 Untuk membuat dokumen HTML, buka aplikasi kode editor VS Code.
 
+![Kode editor VS Code](./images/2-membuat-dan-menjalankan-html/vs-code.png)
+
 Kemudian tekan `ctrl + n` untuk membuat file baru. Akan muncul sebuah tab editor yang di dalamnya bisa ditulis sesuatu menggunakan keyboard.
+
+![Kode editor file baru VS Code](./images/2-membuat-dan-menjalankan-html/kode-editor-file-baru.png)
 
 Masukkan kode berikut di editor tersebut.
 
@@ -67,7 +71,11 @@ Tekan `ctrl + s` untuk menyimpan file dokumen HTML. Nama file-nya bisa apa saja,
 
 Jika sudah tersimpan, maka nama file dokumen HTML akan tampil di atas editor.
 
+![Nama file kode editor VS Code](./images/2-membuat-dan-menjalankan-html/nama-file-kode-editor.png)
+
 Setiap kali mengubah isi file dokumen HTML, jangan lupa untuk menyimpan file tersebut dengan `ctrl + s`. Ketika ada perubahan yang belum disimpan akan ada tanda bulat putih di sebelah nama file, ketika sudah disimpan tanda tersebut akan hilang.
+
+![File belum tersimpan kode editor VS Code](./images/2-membuat-dan-menjalankan-html/file-belum-tersimpan-kode-edtior.png)
 
 Untuk membuka file dokumen HTML lain, tekan `ctrl + o` lalu pilih file dokumen HTML yang akan dibuka. 
 
@@ -78,5 +86,7 @@ Untuk menjalankan dokumen HTML, buka browser kemudian buat tab baru.
 Tekan `ctrl + o`, lalu pilih file dokumen HTML yang ingin dijalankan di browser.
 
 Setelah dipilih, browser akan menjalankan dokumen HTML dalam bentuk halaman website.
+
+![File dokumen HTML dibuka di browser](./images/2-membuat-dan-menjalankan-html/file-html-di-browser.png)
 
 Setiap kali mengubah isi file dokumen HTML, jangan lupa untuk merefresh tab untuk melihat hasil perubahan dokumen HTML.
