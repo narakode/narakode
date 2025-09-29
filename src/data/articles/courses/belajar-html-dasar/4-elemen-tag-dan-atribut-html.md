@@ -96,5 +96,50 @@ Untuk elemen yang tanpa konten (_void element_) bisa ditulis tanpa tag penutup. 
 
 ## Atribut
 
-<!-- atribut adalah informasi / definisi tambahan elemen ditulis di tag -->
-<!-- contoh atribut -->
+Atribut adalah informasi tambahan pada elemen yang dituliskan di dalam tag.
+
+Misalnya elemen gambar, elemen ini membutuhkan informasi gambar yang ingin ditampilkan, maka informasi gambar tersebut bisa ditulis di atribut di dalam tag.
+
+Setiap atribut memiliki nama dan fungsinya masing-masing, contoh-contoh atribut:
+
+1. `src`, pada elemen gambar, atribut ini digunakan untuk menyisipkan nama file gambar yang ingin ditampilkan.
+2. `href`, pada lemen link, atribut ini digunakan untuk menyisipkan url link tujuan ketika link diklik.
+3. `type`, pada elemen input, atribut ini digunakan untuk menentukan jenis inputan pada input (teks, angka, email, tanggal, dsb).
+
+Tidak semua elemen membutuhkan atribut, elemen seperti judul, paragraf, tombol tidak membutuhkan atribut apa-apa.
+
+### Cara Menuliskan Atribut
+
+Atribut ditulis di dalam tag pembuka elemen, formatnya:
+
+```html
+nama-atribut="isi atribut"
+```
+
+- Antara nama atribut dan isi atribut dipisahkan dengan sama dengan (`=`).
+- Isi atribut umumnya ditulis di dalam petik dua.
+- Jika ada lebih dari satu atribut, maka setiap atribut dipisahkan dengan spasi.
+
+Contoh:
+
+```html
+<img src="bunga.png" width="100" height="100">
+```
+
+Pada contoh di atas, elemen gambar akan menampilkan gambar dari file `bunga.png`, dengan ukuran 100x100.
+
+### Atribut Wajib dan Opsional
+
+Ada juga atribut yang wajib ada di elemen-elemen tertentu, seperti:
+
+1. Elemen gambar, wajib ada atribut `src`.
+2. Elemen link, wajib ada atribut `href`.
+3. dll
+
+Ada juga atribut yang optional di elemen-elemen tertentu, boleh ada, boleh juga tidak ada, misalnya:
+
+1. Atribut `width` dan `height` di elemen gambar.
+2. Atribut `target` di elemen link.
+3. dll
+
+<!-- ## kode html lengkap tag, elemen, atribut -->
