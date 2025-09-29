@@ -9,6 +9,7 @@ import Link from '../../../components/app/Link.astro';
 import Button from '../../../components/app/Button.astro';
 import Badge from '../../../components/app/Badge.astro';
 import Breadcrumb from '../../../components/app/Breadcrumb.astro';
+import { getCourseItems } from '../../../utils/course'
 
 export async function getStaticPaths() {
     const courses = await getCollection('course', course => course.data.publishedAt)
@@ -22,7 +23,7 @@ export async function getStaticPaths() {
 const { course } = Astro.props
 const { Content } = await render(course)
 
-const items = await getCollection('article', article => article.data.course?.id === course.id && article.data.publishedAt)
+const items = await getCourseItems(course)
 ---
 
 <Layout navbarBordered title={course.data.title} description={course.data.description}>

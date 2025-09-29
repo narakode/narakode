@@ -12,6 +12,7 @@ import Breadcrumb from '../../../components/app/Breadcrumb.astro';
 import Dropdown from '../../../components/app/Dropdown.astro';
 import TableOfContent from '../../../components/TableOfContent.astro';
 import { Icon } from 'astro-icon/components';
+import { getCourseItems } from '../../../utils/course';
 
 export async function getStaticPaths() {
     const articles = await getCollection('article', article => article.data.type === 'course' && article.data.publishedAt)
@@ -31,7 +32,7 @@ export async function getStaticPaths() {
 
 const { article, articleCourse } = Astro.props
 const course = await getEntry(articleCourse)
-const courseItems = await getCollection('article', article => article.data.course?.id === course.id)
+const courseItems = await getCourseItems(course)
 const { Content, headings } = await render(article)
 const currentItemIndex = courseItems.findIndex(item => item.id === article.id)
 const hasNext = courseItems.length > 1 && currentItemIndex < courseItems.length - 1
@@ -83,7 +84,7 @@ const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
                 </ol>
             </Card>
             <div class="col-span-4 space-y-4 xl:col-span-3">
-                <Card id='article-content' tag='article' class="prose prose-pre:whitespace-pre-wrap w-full max-w-none p-5">
+                <Card id='article-content' tag='article' class="prose prose-img:border prose-img:border-gray-300 prose-img:rounded-lg prose-img:mx-auto prose-pre:whitespace-pre-wrap w-full max-w-none p-5">
                     <h1>{article.data.title}</h1>
                     <Content />
                 </Card>
