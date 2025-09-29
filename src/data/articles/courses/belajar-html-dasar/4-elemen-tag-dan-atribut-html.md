@@ -50,20 +50,49 @@ _Void Element_ adalah elemen yang tidak memiliki konten. Contoh:
 <img src="gambar.png">
 ```
 
-Elemen-elemen pada kode tersebut tidak memiliki konten, namun masil ada fungsi dan tampilannya di halaman website, yaitu:
+Elemen-elemen pada kode tersebut tidak memiliki konten, namun masih ada fungsi dan tampilannya di halaman website, yaitu:
 
 - Elemen _break_ (`<br>`) fungsinya untuk membuat baris baru.
 - Elemen _input_ (`<input>`) fungsinya untuk menampilkan kotak input.
 - Elemen _image_ (`<img>`) fungsinya untuk menampilkan gambar.
 
-<!-- elemen void adalah ... -->
-
 ## Tag
 
-<!-- tag adalah cara untuk membuat elemen -->
-<!-- contoh tag -->
-<!-- tag ada tag pembuka dan tag penutup -->
-<!-- ### Tag yang tidak membutuhkan tag penutup -->
+Tag adalah kode HTML untuk membuat sebuah elemen. Setiap elemen memiliki tag-nya masing masing, contoh:
+
+- Elemen judul, tag-nya: `<h1> - <h6>`.
+- Elemen gambar, tag-nya: `<img>`.
+- Elemen paragraf, tag-nya: `<p>`.
+- dll
+
+### Jenis Tag
+
+Tag ada dua jenis, tag pembuka dan tag penutup.
+
+Tag pembuka digunakan untuk mengawali elemen, tag penutup digunakan untuk mengakhiri elemen. Semua kode dari tag pembuka sampai tag penutup adalah bagian dari elemen.
+
+Tag penutup harus selalu ada di akhir elemen, jika tidak maka semua kode setelah tag pembuka sampai ujung dokumen HTML akan mengikuti elemen tersebut. Hal ini berlaku untuk semua elemen kecuali untuk _void element_ (elemen tanpa konten).
+
+### Cara Menulis Tag
+
+Tag ditulis dengan format: kurung siku buka (`<`), nama tag-nya, kurung siku tutup (`>`). Untuk tag penutup ditambah garis miring (`/`) sebelum nama tag-nya.
+
+1. Tag pembuka: `<nama-tag>`.
+2. Tag penutup: `</nama-tag>`.
+
+Contoh:
+
+```html
+<h1>Tag judul</h1>
+<p>Tag paragraf</p>
+```
+
+Untuk elemen yang tanpa konten (_void element_) bisa ditulis tanpa tag penutup. Contoh:
+
+```html
+<img src="bunga.png">
+<input>
+```
 
 ## Atribut
 
