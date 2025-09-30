@@ -1,14 +1,25 @@
 ---
-import SearchPageFind from "astro-pagefind/components/Search";
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/app/Container.astro";
 import Section from "../components/app/Section.astro";
+import Input from "../components/app/Input.astro";
 ---
 
 <Layout navbarBordered>
     <Container class="py-8">
-        <Section tag="main" title="Pencarian" description="Ketikkan apa saja yang ingin dicari, judul artikel, tutorial, dll.">
-            <SearchPageFind id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+        <Section tag="main" level={1} title="Pencarian" description="Cari panduan, artikel, tutorial atau topik yang kamu butuhkan.">
+            <Input id="search" color="light" class="w-full" placeholder="Cari sesuatu" name="q" type="search" size="lg" />
         </Section>
     </Container>
 </Layout>
+
+<script>
+const query = new URLSearchParams(window.location.search)
+const searchNavbarInput = document.querySelector<HTMLInputElement>('#navbar-search') 
+const searchInput = document.querySelector<HTMLInputElement>('#search')
+
+const q = query.get('q') ?? ''
+
+searchNavbarInput?.setAttribute('value', q)
+searchInput?.setAttribute('value', q)
+</script>

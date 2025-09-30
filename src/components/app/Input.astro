@@ -1,5 +1,6 @@
 ---
 type Color = 'transparent' | 'light'
+type Size = 'md' | 'lg'
 
 interface Props {
     type?: 'search' | 'email'
@@ -9,14 +10,19 @@ interface Props {
     name?: string
     class?: string
     id?: string
+    size?: Size
 }
 
-const { name, id, placeholder, type, color = 'transparent', bordered = true, class: className = '' } = Astro.props
+const { name, id, placeholder, type, color = 'transparent', bordered = true, class: className = '', size = 'md' } = Astro.props
 
 const colorClass: Record<Color, string> = {
     transparent: '',
     light: 'bg-white placeholder-gray-400'
 }
+const sizeClass: Record<Size, string> = {
+    md: 'h-10 px-2.5',
+    lg: 'h-12 px-3.5'
+}
 ---
 
-<input id={id} name={name} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} h-10 px-2.5 rounded-lg ${className}`>
+<input id={id} name={name} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} rounded-lg ${className} ${sizeClass[size]}`>
