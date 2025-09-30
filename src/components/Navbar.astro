@@ -58,7 +58,9 @@ const activeMenu = Astro.url.pathname
         <button id="navbar-search-close" class="hidden" title="Tutup Pencarian">
             <Icon name="tabler:x" />
         </button>
-        <Input id="navbar-search" type="search" placeholder="Cari sesuatu" name="Pencarian" class="hidden w-full lg:block lg:w-auto" />
+        <form action="/search">
+            <Input id="navbar-search" type="search" placeholder="Cari sesuatu" name="Pencarian" name="q" class="hidden w-full lg:block lg:w-auto" />
+        </form>
         <button id="navbar-search-open" class="lg:hidden" title="Pencarian">
             <Icon name="tabler:search" />
         </button>

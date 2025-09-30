@@ -1,0 +1,14 @@
+---
+import SearchPageFind from "astro-pagefind/components/Search";
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/app/Container.astro";
+import Section from "../components/app/Section.astro";
+---
+
+<Layout navbarBordered>
+    <Container class="py-8">
+        <Section tag="main" title="Pencarian" description="Ketikkan apa saja yang ingin dicari, judul artikel, tutorial, dll.">
+            <SearchPageFind id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+        </Section>
+    </Container>
+</Layout>
