@@ -1,7 +1,7 @@
 ---
 slug: membuat-judul-di-html
 title: Membuat Judul di HTML
-description: Elemen, Tag dan Atribut adalah tiga hal dasar untuk menulis kode HTML
+description: Judul adalah elemen untuk membuat struktur konten di halaman website
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-09-30 09:00:00 +0700
@@ -9,7 +9,7 @@ publishedAt: 2025-09-30 09:00:00 +0700
 
 Judul adalah elemen yang penting dan hampir selalu ada di halaman website.
 
-Judul berfungsi untuk membuat struktur konten pada halaman website, sehingga memudahkan pengunjung dan mesin pencari untuk memahami isi konten halaman tersebut.
+Judul berfungsi untuk membuat struktur konten di halaman website, sehingga memudahkan pengunjung dan mesin pencari untuk memahami isi konten halaman tersebut.
 
 ## Cara Membuat Judul di HTML
 
