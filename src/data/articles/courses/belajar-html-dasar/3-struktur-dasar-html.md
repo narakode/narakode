@@ -54,6 +54,8 @@ Di dalam tag head, minimal ada satu elemen, yaitu elemen `<title>` untuk menulis
 
 Pada kode di atas teks "Website Saya" tidak akan tampil di halaman website, tapi akan dibaca browser dan ditampilkan sebagai nama tab. Mesin pencari seperti Google juga akan membacanya sebagai judul website.
 
+![Judul Dokumen HTML](./images/3-struktur-dasar-html/judul-dokumen-html.png)
+
 ## 4. Tag Body
 
 Setalah tag head, di bawahnya ada tag body. Fungsinya untuk menempatkan semua elemen-elemen yang akan muncul di halaman website dan dapat dilihat oleh pengunjung.

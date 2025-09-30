@@ -141,5 +141,3 @@ Ada juga atribut yang optional di elemen-elemen tertentu, boleh ada, boleh juga 
 1. Atribut `width` dan `height` di elemen gambar.
 2. Atribut `target` di elemen link.
 3. dll
-
-<!-- ## kode html lengkap tag, elemen, atribut -->
