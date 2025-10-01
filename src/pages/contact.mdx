@@ -1,0 +1,41 @@
+---
+layout: ../layouts/LayoutMd.astro
+title: Hubungi Kami
+description: Hubungi kami untuk memberikan saran, kritik, masukan dan kerja sama
+---
+import FormItem from '../components/app/FormItem.astro'
+import Input from '../components/app/Input.astro'
+import Button from '../components/app/Button.astro'
+
+Hubungi kami dengan mengisi form berikut untuk memberikan saran, kritik, masukan dan kerja sama.
+
+<form class="space-y-4">
+    <FormItem id="name" label="Nama">
+        <Input fullwidth id="name" name="name" placeholder="Andi" type="text" />
+    </FormItem>
+
+    <FormItem id="email" label="Email">
+        <Input fullwidth id="email" name="email" placeholder="andi@gmail.com" type="email" />
+    </FormItem>
+
+    <FormItem id="subject" label="Subjek">
+        <Input fullwidth id="subject" name="subject" placeholder="Saran tutorial" />
+    </FormItem>
+
+    <FormItem id="content" label="Isi">
+        <Input fullwidth id="content" label="content" placeholder="Coba buat tutorial tentang..." tag="textarea" rows="5" />
+    </FormItem>
+
+    <Button>Kirim Pesan</Button>
+</form>
+
+---
+
+Atau langsung melalui alamat berikut:
+
+- Email: [info@narakode.com](mailto:info@narakode.com)
+- Github: [narakode](https://github.com/narakode)
+- Facebook: [narakode.id](https://facebook.com/narakode.id)
+- X: [narakode](https://twitter.com/narakode)
+- Instagram: [narakode.id](https://instagram.com/narakode.id)
+- Youtube: [@narakode_id](https://youtube.com/@narakode_id)
