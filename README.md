@@ -20,3 +20,19 @@
 - [x] Cek seo, a11y home, course index, course detail, course item
 - [x] Hide draft content
 - [x] Config defauld code theme
+
+## 2025-10-01
+
+- [ ] Contact Form API
+- [ ] Submit Contact Form
+- [ ] Subscribe Form API
+- [ ] Submit Subscribe Form
+
+## 2025-10-02
+
+- [ ] Nofollow search
+- [ ] Course in progress badge
+- [ ] Deploy form api
+- [ ] Deploy site
+- [ ] Domain configure
+- [ ] Verify SEO
