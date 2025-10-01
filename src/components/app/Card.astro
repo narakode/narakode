@@ -5,11 +5,12 @@ interface Props {
     id?: string
     dataClickOutside?: string
     dataTrigger?: string
+    padless?: boolean
 }
 
-const { id, class: className = '', tag: Element = 'article', dataClickOutside, dataTrigger } = Astro.props
+const { id, class: className = '', tag: Element = 'article', dataClickOutside, dataTrigger, padless = false } = Astro.props
 ---
 
-<Element id={id} class={`bg-white border border-gray-300 p-4 rounded-lg ${className}`} data-click-outside={dataClickOutside} data-trigger={dataTrigger}>
+<Element id={id} class={`bg-white border border-gray-300 ${padless ? '' : 'p-4'} rounded-lg ${className}`} data-click-outside={dataClickOutside} data-trigger={dataTrigger}>
     <slot />
 </Element>
