@@ -1,21 +1,23 @@
 ---
 interface Props {
     title: string
-    description: string
+    description?: string
     id?: string
-    tag?: 'section' | 'main'
+    tag?: 'section' | 'main' | 'article'
     level?: 1 | 2
+    class?: string
+    titleCenter?: boolean
 }
 
-const { title, description, id, tag: Element = 'section', level = 2 } = Astro.props
+const { title, description, id, tag: Element = 'section', level = 2, class: className, titleCenter = false } = Astro.props
 const Title: 'h1' | 'h2' = `h${level}`
 ---
 
-<Element id={id} class="space-y-6">
+<Element id={id} class=`space-y-6 ${className}``>
     <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-8 lg:gap-0">
-        <div class="space-y-2">
+        <div class=`space-y-2 ${titleCenter ? 'grow text-center' : ''}`>
             <Title class="font-bold text-3xl text-gray-900 xl:text-4xl">{title}</Title>
-            <p class="text-lg text-gray-700">{description}</p>
+            {description && <p class="text-lg text-gray-700">{description}</p>}
         </div>
         <slot name="action" />
     </div>
