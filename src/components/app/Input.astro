@@ -11,18 +11,21 @@ interface Props {
     class?: string
     id?: string
     size?: Size
+    fullwidth?: boolean
+    tag?: 'input' | 'textarea'
+    rows?: string
 }
 
-const { name, id, placeholder, type, color = 'transparent', bordered = true, class: className = '', size = 'md' } = Astro.props
+const { tag: Element = 'input', name, id, placeholder, type, color = 'transparent', bordered = true, class: className = '', size = 'md', fullwidth = false, rows } = Astro.props
 
 const colorClass: Record<Color, string> = {
     transparent: '',
     light: 'bg-white placeholder-gray-400'
 }
 const sizeClass: Record<Size, string> = {
-    md: 'h-10 px-2.5',
-    lg: 'h-12 px-3.5'
+    md: Element === 'textarea' ? 'min-h-10 py-1 px-2.5' : 'h-10 px-2.5',
+    lg: Element === 'textarea' ? 'min-h-12 py-3 px-3.5' : 'h-12 px-3.5'
 }
 ---
 
-<input id={id} name={name} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} rounded-lg ${className} ${sizeClass[size]}`>
+<Element id={id} name={name} rows={rows} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} rounded-lg ${className} ${fullwidth ? 'w-full' : ''} ${sizeClass[size]}` />
