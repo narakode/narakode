@@ -47,7 +47,7 @@ function search() {
         searchResultContainer?.classList.remove('hidden')
     }
     
-    const found = searchData.filter(article => article.title.toLowerCase().includes(q) || article.description.toLowerCase().includes(q))
+    const found = searchData.filter(article => article.title.toLowerCase().includes(q.toLowerCase()) || article.description.toLowerCase().includes(q.toLowerCase()))
 
     searchResultContainer?.replaceChildren()
 

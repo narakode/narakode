@@ -41,5 +41,5 @@
 - [ ] Submit google verification
 - [ ] Add domain mail
 - [x] Fix search navbar
-- [ ] Fix search mobile
-- [ ] 404
+- [x] Fix search mobile
+- [x] 404
