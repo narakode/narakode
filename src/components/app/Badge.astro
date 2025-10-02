@@ -12,6 +12,6 @@ const colorClass: Record<Color, string> = {
 }
 ---
 
-<span class=`text-xs h-5 inline-flex items-center px-1.5 rounded-lg font-medium ${colorClass[color]}`>
+<span class=`text-xs h-5 inline-flex items-center px-1.5 rounded-lg font-medium whitespace-nowrap ${colorClass[color]}`>
     <slot />
 </span>

@@ -54,7 +54,7 @@ const items = await getCourseItems(course)
                     {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
                         {new Date > new Date(item.data.publishedAt!)
                             ? <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
-                            : <p class="flex items-center justify-between">
+                            : <p class="flex items-center justify-between gap-2">
                                 <span class="text-gray-900 opacity-50">{index + 1}. {item.data.title}</span>
                                 <Badge color='warning'>Coming Soon</Badge>
                             </p>
