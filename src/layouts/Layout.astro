@@ -55,6 +55,19 @@ const config = {
 				imageAlt: config.title
 			}}
 		/>
+
+		<!-- Google tag (gtag.js) -->
+		<script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-KXZJ6HNC09"></script>
+
+		<script is:inline type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "G-KXZJ6HNC09");
+		</script>
 	</head>
 	<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
 		<div>
