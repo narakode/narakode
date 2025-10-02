@@ -12,10 +12,11 @@ import Breadcrumb from '../../../components/app/Breadcrumb.astro';
 import Dropdown from '../../../components/app/Dropdown.astro';
 import TableOfContent from '../../../components/TableOfContent.astro';
 import { Icon } from 'astro-icon/components';
-import { getCourseItems } from '../../../utils/course';
+import { filterPublishedItems, getCourseItems } from '../../../utils/course';
+import TableOfCourseArticle from '../../../components/TableOfCourseArticle.astro';
 
 export async function getStaticPaths() {
-    const articles = await getCollection('article', article => article.data.type === 'course' && article.data.publishedAt)
+    const articles = await getCollection('article', article => article.data.type === 'course' && article.data.publishedAt && new Date > new Date(article.data.publishedAt))
 
     return articles.map(article => {
         const course = article.data.course as CollectionEntry<'course'>
@@ -33,12 +34,13 @@ export async function getStaticPaths() {
 const { article, articleCourse } = Astro.props
 const course = await getEntry(articleCourse)
 const courseItems = await getCourseItems(course)
+const coursePublishedItems = filterPublishedItems(courseItems)
 const { Content, headings } = await render(article)
-const currentItemIndex = courseItems.findIndex(item => item.id === article.id)
-const hasNext = courseItems.length > 1 && currentItemIndex < courseItems.length - 1
-const nextItem = hasNext ? courseItems[currentItemIndex + 1] : null
-const hasPrev = courseItems.length > 1 && currentItemIndex > 0
-const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
+const currentItemIndex = coursePublishedItems.findIndex(item => item.id === article.id)
+const hasNext = coursePublishedItems.length > 1 && currentItemIndex < coursePublishedItems.length - 1
+const nextItem = hasNext ? coursePublishedItems[currentItemIndex + 1] : null
+const hasPrev = coursePublishedItems.length > 1 && currentItemIndex > 0
+const prevItem = hasPrev ? coursePublishedItems[currentItemIndex - 1] : null
 ---
 
 <Layout navbarBordered title={article.data.title} description={article.data.description}>
@@ -55,14 +57,7 @@ const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
                 <Dropdown id="articles-mobile-dropdown" triggerId="toggle-articles-mobile-dropdown" position='left' class="lg:hidden">
                     <Button slot="trigger" id="toggle-articles-mobile-dropdown" dataToggle="#articles-mobile-dropdown" size="sm" color='light' icon='tabler:checkup-list' iconPosition='start'>Daftar Materi</Button>
 
-                    <ol class="space-y-1">
-                        {courseItems.map((item, index) => <li>
-                            {article.id === item.id
-                                ? <p class="font-semibold text-red-900">{index + 1}. {item.data.title}</p>
-                                : <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
-                            }
-                        </li>)}
-                    </ol>
+                    <TableOfCourseArticle course={course} activeArticle={article} />
                 </Dropdown>
                 <Dropdown id="toc-mobile-dropdown" triggerId="toggle-toc-mobile-dropdown" class="xl:hidden">
                     <Button slot="trigger" id="toggle-toc-mobile-dropdown" dataToggle="#toc-mobile-dropdown" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
@@ -74,14 +69,7 @@ const prevItem = hasPrev ? courseItems[currentItemIndex - 1] : null
         <main class="grid gap-4 items-start lg:grid-cols-6 xl:grid-cols-5">
             <Card tag='aside' class='hidden lg:block lg:col-span-2 lg:sticky lg:top-4 lg:left-0 xl:col-span-1'>
                 <h2 class="font-bold text-2xl mb-4">{course.data.title}</h2>
-                <ol class="space-y-1">
-                    {courseItems.map((item, index) => <li>
-                        {article.id === item.id
-                            ? <p class="font-semibold text-red-900">{index + 1}. {item.data.title}</p>
-                            : <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
-                        }
-                    </li>)}
-                </ol>
+                <TableOfCourseArticle course={course} activeArticle={article} />
             </Card>
             <div class="col-span-4 space-y-4 xl:col-span-3">
                 <Card id='article-content' tag='article' class="prose prose-img:border prose-img:border-gray-300 prose-img:rounded-lg prose-img:mx-auto prose-pre:whitespace-pre-wrap w-full max-w-none p-5">

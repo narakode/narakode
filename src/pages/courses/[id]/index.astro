@@ -52,7 +52,13 @@ const items = await getCourseItems(course)
                 <h2 class="font-bold text-2xl text-gray-900 mb-4">Daftar Materi</h2>
                 <ol class="space-y-2">
                     {items.map((item, index) => <li class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5">
-                        <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
+                        {new Date > new Date(item.data.publishedAt!)
+                            ? <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
+                            : <p class="flex items-center justify-between">
+                                <span class="text-gray-900 opacity-50">{index + 1}. {item.data.title}</span>
+                                <Badge color='warning'>Coming Soon</Badge>
+                            </p>
+                        }
                     </li>)}
                 </ol>
             </Card>
