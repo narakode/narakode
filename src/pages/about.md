@@ -12,7 +12,7 @@ Kami juga menyediakan konten di [facebook](https://facebook.com/narakode.id), [x
 
 Jika anda ingin memberikan saran, kritik atau ingin bekerja sama dengan kami, silakan hubungi kami di alamat berikut:
 
-- Email: [info@narakode.com](mailto:info@narakode.com)
+- Email: [info@narakode.id](mailto:info@narakode.id)
 - Github: [narakode](https://github.com/narakode)
 - Facebook: [narakode.id](https://facebook.com/narakode.id)
 - X: [narakode](https://twitter.com/narakode)

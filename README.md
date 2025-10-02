@@ -32,7 +32,11 @@
 
 - [x] Nofollow search
 - [x] Course in progress badge
-- [ ] Deploy form api
-- [ ] Deploy site
-- [ ] Domain configure
-- [ ] Verify SEO
+- [x] Beli domain
+- [x] Register domain cloudflare
+- [x] Deploy Form API
+- [x] Configure Form API Subdomain
+- [ ] Deploy Web
+- [ ] Configure Web Domain
+- [ ] Submit google verification
+- [ ] Add domain mail

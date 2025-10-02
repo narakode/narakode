@@ -8,7 +8,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://narakode.com',
+  site: 'https://narakode.id',
   integrations: [icon(), sitemap(), mdx()],
 
   vite: {
