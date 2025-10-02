@@ -7,7 +7,7 @@ import Input from "./app/Input.astro";
 ---
 
 <form class="space-y-4" id="contact">
-    <Alert message="Terima kasih sudah menghubungi kami! Kami akan merespons secepatnya" />
+    <Alert message="Terima kasih sudah menghubungi kami! Kami akan merespons secepatnya" class="hidden" id="success" />
     <FormItem id="name" label="Nama">
         <Input fullwidth id="name" name="name" placeholder="Andi" required />
     </FormItem>
@@ -25,15 +25,46 @@ import Input from "./app/Input.astro";
     </FormItem>
 
     <Button class="group">
-        <Icon name={'tabler:loader'} class={'hidden group-[.loading]:block'} />
+        <Icon name={'tabler:loader'} class={'hidden group-[.loading]:block animate-spin'} />
         Kirim Pesan
     </Button>
 </form>
 
 <script>
 const contactForm = document.querySelector('#contact')
+const alertSuccess = document.querySelector('#success')
 
-contactForm?.addEventListener('submit', () => {
-    
-})
+if (contactForm) {
+    const submitButton = contactForm.querySelector('button')
+
+    contactForm?.addEventListener('submit', async e => {
+        e.preventDefault()
+
+        alertSuccess?.classList.add('hidden')
+        submitButton?.classList.add('loading')
+        submitButton?.setAttribute('disabled', 'disabled')
+
+        const data = Object.fromEntries(
+            Array.from(contactForm.querySelectorAll<HTMLInputElement>('[name]'))
+                .map(input => [input.getAttribute('name'), input.value])
+        )
+
+        try {
+            const res = await fetch(`${import.meta.env.PUBLIC_FORM_API_URL}/contact`, {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+
+            if (res.status === 200) {
+                alertSuccess?.classList.remove('hidden')
+            }
+        } finally {
+            submitButton?.classList.remove('loading')
+            submitButton?.removeAttribute('disabled')
+        }
+    })
+}
 </script>

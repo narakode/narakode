@@ -1,10 +1,16 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 interface Props {
-    message: string,
+    message: string
     class?: string
+    id?: string
 }
 
-const { message, class: className = '' } = Astro.props
+const { message, class: className = '', id } = Astro.props
 ---
 
-<div class={className}>{message}</div>
+<div class={`${className} bg-green-100 border border-green-500 text-green-700 px-3 py-2 rounded-md flex gap-2`} id={id}>
+    <Icon name={'tabler:circle-check'} class={'mt-1.5'} />
+    {message}
+</div>
