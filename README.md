@@ -36,7 +36,10 @@
 - [x] Register domain cloudflare
 - [x] Deploy Form API
 - [x] Configure Form API Subdomain
-- [ ] Deploy Web
-- [ ] Configure Web Domain
+- [x] Deploy Web
+- [x] Configure Web Domain
 - [ ] Submit google verification
 - [ ] Add domain mail
+- [x] Fix search navbar
+- [ ] Fix search mobile
+- [ ] 404
