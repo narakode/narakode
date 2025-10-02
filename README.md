@@ -30,8 +30,8 @@
 
 ## 2025-10-02
 
-- [ ] Nofollow search
-- [ ] Course in progress badge
+- [x] Nofollow search
+- [x] Course in progress badge
 - [ ] Deploy form api
 - [ ] Deploy site
 - [ ] Domain configure

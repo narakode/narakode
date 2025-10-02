@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCourseItems } from '../utils/course'
+import Link from './app/Link.astro'
+
+interface Props {
+    course: CollectionEntry<'course'>
+    activeArticle: CollectionEntry<'article'>
+}
+
+const { course, activeArticle } = Astro.props
+
+const courseItems = await getCourseItems(course)
+---
+
+<ol class="space-y-1">
+    {courseItems.map((item, index) => <li>
+        {activeArticle.id === item.id
+            ? <p class="font-semibold text-red-900">{index + 1}. {item.data.title}</p>
+            : new Date > new Date(item.data.publishedAt!)
+                ? <Link href={`/courses/${course.id}/${item.id}`}>{index + 1}. {item.data.title}</Link>
+                : <p class="text-gray-900 opacity-50" title="Coming Soon">{index + 1}. {item.data.title}</p>
+        }
+    </li>)}
+</ol>
