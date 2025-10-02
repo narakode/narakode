@@ -7,7 +7,7 @@ import Input from "./app/Input.astro";
 ---
 
 <form class="space-y-4" id="contact">
-    <Alert message="Terima kasih sudah menghubungi kami! Kami akan merespons secepatnya" class="hidden" id="success" />
+    <Alert message="Terima kasih sudah menghubungi kami! Kami akan merespons secepatnya" class="hidden" id="contact-alert-success" />
     <FormItem id="name" label="Nama">
         <Input fullwidth id="name" name="name" placeholder="Andi" required />
     </FormItem>
@@ -32,7 +32,7 @@ import Input from "./app/Input.astro";
 
 <script>
 const contactForm = document.querySelector('#contact')
-const alertSuccess = document.querySelector('#success')
+const alertSuccess = document.querySelector('#contact-alert-success')
 
 if (contactForm) {
     const submitButton = contactForm.querySelector('button')

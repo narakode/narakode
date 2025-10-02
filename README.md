@@ -23,10 +23,10 @@
 
 ## 2025-10-01
 
-- [ ] Contact Form API
-- [ ] Submit Contact Form
-- [ ] Subscribe Form API
-- [ ] Submit Subscribe Form
+- [x] Contact Form API
+- [x] Submit Contact Form
+- [x] Subscribe Form API
+- [x] Submit Subscribe Form
 
 ## 2025-10-02
 
