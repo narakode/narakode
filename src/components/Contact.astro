@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+import Alert from "./app/Alert.astro";
+import Button from "./app/Button.astro";
+import FormItem from "./app/FormItem.astro";
+import Input from "./app/Input.astro";
+---
+
+<form class="space-y-4" id="contact">
+    <Alert message="Terima kasih sudah menghubungi kami! Kami akan merespons secepatnya" />
+    <FormItem id="name" label="Nama">
+        <Input fullwidth id="name" name="name" placeholder="Andi" required />
+    </FormItem>
+
+    <FormItem id="email" label="Email">
+        <Input fullwidth id="email" name="email" placeholder="andi@gmail.com" type="email" required />
+    </FormItem>
+
+    <FormItem id="subject" label="Subjek">
+        <Input fullwidth id="subject" name="subject" placeholder="Saran tutorial" required />
+    </FormItem>
+
+    <FormItem id="content" label="Isi">
+        <Input fullwidth id="content" name="content" placeholder="Coba buat tutorial tentang..." tag="textarea" rows="5" required />
+    </FormItem>
+
+    <Button class="group">
+        <Icon name={'tabler:loader'} class={'hidden group-[.loading]:block'} />
+        Kirim Pesan
+    </Button>
+</form>
+
+<script>
+const contactForm = document.querySelector('#contact')
+
+contactForm?.addEventListener('submit', () => {
+    
+})
+</script>

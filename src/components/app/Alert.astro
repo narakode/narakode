@@ -1,0 +1,10 @@
+---
+interface Props {
+    message: string,
+    class?: string
+}
+
+const { message, class: className = '' } = Astro.props
+---
+
+<div class={className}>{message}</div>

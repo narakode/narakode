@@ -14,9 +14,10 @@ interface Props {
     fullwidth?: boolean
     tag?: 'input' | 'textarea'
     rows?: string
+    required?: boolean
 }
 
-const { tag: Element = 'input', name, id, placeholder, type, color = 'transparent', bordered = true, class: className = '', size = 'md', fullwidth = false, rows } = Astro.props
+const { tag: Element = 'input', required = false, name, id, placeholder, type, color = 'transparent', bordered = true, class: className = '', size = 'md', fullwidth = false, rows } = Astro.props
 
 const colorClass: Record<Color, string> = {
     transparent: '',
@@ -28,4 +29,4 @@ const sizeClass: Record<Size, string> = {
 }
 ---
 
-<Element id={id} name={name} rows={rows} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} rounded-lg ${className} ${fullwidth ? 'w-full' : ''} ${sizeClass[size]}` />
+<Element id={id} required={required} name={name} rows={rows} type={type} placeholder={placeholder} class=`${colorClass[color]} ${bordered ? 'border border-gray-300' : ''} rounded-lg ${className} ${fullwidth ? 'w-full' : ''} ${sizeClass[size]}` />
