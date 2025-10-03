@@ -69,15 +69,19 @@ const config = {
 		gtag("config", "G-KXZJ6HNC09");
 		</script>
 	</head>
-	<body class="bg-gray-100 min-h-screen flex flex-col justify-between">
-		<div>
-			<Navbar bordered={navbarBordered} />
+	<body class="bg-gray-100">
+		<div class="min-h-screen flex flex-col justify-between">
+			<div>
+				<Navbar bordered={navbarBordered} />
 
-			<slot />
+				<slot />
+			</div>
+			
+			<div>
+				<Subscribe />
+				<Footer />
+			</div>
 		</div>
-		
-		<Subscribe />
-		<Footer />
 	</body>
 	<script>
 		const dropdownToggles = document.querySelectorAll<HTMLElement>('[data-toggle]')
