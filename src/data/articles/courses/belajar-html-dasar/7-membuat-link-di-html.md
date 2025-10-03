@@ -19,6 +19,10 @@ Elemen link di HTML dibuat dengan tag _anchor_ (`<a>`). Url tujuan link dimasukk
 <a href="https://google.com">Pergi ke Google</a>
 ```
 
+Hasilnya:
+
+![Elemen Link HTML](./images/7-membuat-link-di-html/elemen-link.gif)
+
 ## Membuat Link ke Website Lain
 
 Caranya, masukkan url website lain ke dalam url link lengkap dengan protokol (`http` atau `https`) dan domainnya. Contoh:
@@ -84,7 +88,9 @@ Lalu buat elemen link yang urlnya berisi `id` dari elemen yang ingin dituju dita
 <a href="#cara-membuat-roti">Klik untuk melihat cara membuat roti</a>
 ```
 
-Ketika link diklik, browser akan scroll ke elemen dengan atribut `id` yang sesuai.
+Ketika link diklik, browser akan scroll ke elemen dengan atribut `id` yang sesuai. Contoh hasilnya:
+
+![Link ke Elemen Lain](./images/7-membuat-link-di-html/link-ke-elemen-lain.gif)
 
 ## Membuat Link ke Email dan Nomor Telepon
 
@@ -107,7 +113,9 @@ Untuk membuat link dengan gambar, tambahkan elemen gambar di dalam elemen link. 
 </a>
 ```
 
-Ketika gambar `google.jpg` diklik, browser akan membuka url `https://google.com`.
+Ketika gambar `google.jpg` diklik, browser akan membuka url `https://google.com`. Contoh hasilnya:
+
+![Link dengan Gambar](./images/7-membuat-link-di-html/link-gambar.gif)
 
 <!-- [Baca disini untuk belajar menampilkan elemen gambar di HTML](/courses/belajar-html-dasar/menampilkan-gambar-di-html). -->
 
