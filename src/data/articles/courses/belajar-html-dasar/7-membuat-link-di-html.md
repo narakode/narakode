@@ -33,14 +33,11 @@ Url yang lengkap dengan protokol dan domainnya disebut dengan __absolute url__.
 
 ## Membuat Link ke Halaman Lain
 
-Caranya, masukkan url lokasi atau nama file HTML halaman lain ke dalam url link. Contoh:
-
+Caranya, masukkan url lokasi halaman lain ke dalam url link. Contoh:
 
 ```html
 <a href="/about">Tentang Kami</a>
-<a href="/kontak.html">Hubungi Kami</a>
 <a href="pencarian">Pencarian</a>
-<a href="komentar.html">Buka Komentar</a>
 ```
 
 Url yang seperti ini disebut dengan __relative url__. Jika diawali dengan `/` maka url relatif terhadap domain website, jika tidak diawali dengan `/` maka url relatif terhadap lokasi halaman yang sedang dibuka.
@@ -50,10 +47,26 @@ Contohnya, jika kode di atas dibuka di halaman `narakode.id/daftar-artikel`, mak
 ```bash
 # narakode.id/daftar-artikel
 /about -> /narakode.id/about
-/kontak.html -> /narakode.id/kontak.html
 pencarian -> /narakode.id/daftar-artikel/pencarian
-komentar.html -> /narakode.id/daftar-artikel/komentar.html
 ```
+
+## Membuat Link ke File HTML Lain
+
+Caranya, masukkan nama file lengkap dengan lokasi filenya dalam url link. Contoh:
+
+
+```html
+<a href="komentar.html">Tambah Komentar</a>
+<a href="artikel/cara-membuat-kue.html">Cara Membuat Kue</a>
+<a href="/kontak.html">Hubungi Kami</a>
+<a href="../login.html">Masuk ke Aplikasi</a>
+```
+
+Penjelasan:
+
+- Jika nama filenya diawali dengan `/` maka file HTML akan dicari dari root (di `C:/` atau di `/` di Linux).
+- Jika nama filenya tidak diawali dengan `/` maka file HTML akan dicari di folder yang sama dengan file HTML yang sedang dibuka.
+- Kode `../` maksudnya adalah mencari file HTML di folder luar dari folder file HTML yang sedang dibuka.
 
 ## Membuat Link ke Elemen Tertentu di Halaman Website
 

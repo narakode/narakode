@@ -72,7 +72,7 @@ const prevItem = hasPrev ? coursePublishedItems[currentItemIndex - 1] : null
                 <TableOfCourseArticle course={course} activeArticle={article} />
             </Card>
             <div class="col-span-4 space-y-4 xl:col-span-3">
-                <Card id='article-content' tag='article' class="prose prose-img:border prose-img:border-gray-300 prose-img:rounded-lg prose-img:mx-auto prose-pre:whitespace-pre-wrap w-full max-w-none p-5">
+                <Card id='article-content' tag='article' class="prose prose-img:border prose-img:border-gray-300 prose-img:rounded-lg prose-img:mx-auto prose-pre:whitespace-pre-wrap prose-pre:break-all prose-pre:overflow-auto w-full max-w-none p-5">
                     <h1>{article.data.title}</h1>
                     <Content />
                 </Card>
