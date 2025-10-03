@@ -4,7 +4,7 @@ title: Menampilkan Gambar di HTML
 description: Menampilkan Gambar di HTML
 type: course
 course: belajar-html-dasar
-publishedAt: 2026-10-03 20:00:00 +0700
+publishedAt: 2025-10-10 20:00:00 +0700
 ---
 
 Gambar adalah elemen sering ada di halaman website. Fungsinya untuk menampilkan informasi dalam bentuk grafis.
