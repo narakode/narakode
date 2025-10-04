@@ -117,7 +117,7 @@ Ketika gambar `google.jpg` diklik, browser akan membuka url `https://google.com`
 
 ![Link dengan Gambar](./images/7-membuat-link-di-html/link-gambar.gif)
 
-<!-- [Baca disini untuk belajar menampilkan elemen gambar di HTML](/courses/belajar-html-dasar/menampilkan-gambar-di-html). -->
+[Baca disini untuk belajar menampilkan elemen gambar di HTML](/courses/belajar-html-dasar/menampilkan-gambar-di-html).
 
 ## Membuka Link di Tab Baru
 
