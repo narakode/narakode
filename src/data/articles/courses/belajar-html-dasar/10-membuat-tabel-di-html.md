@@ -4,7 +4,7 @@ title: Membuat Tabel di HTML
 description: Membuat Tabel di HTML
 type: course
 course: belajar-html-dasar
-publishedAt: 2025-10-05 16:30:00 +0700
+publishedAt: 2025-10-06 09:00:00 +0700
 ---
 
 Tabel adalah elemen yang digunakan untuk menampilkan data yang terstruktur dalam bentuk baris dan kolom. Contohnya data pengguna, data penjualan, data barang, dsb.
@@ -57,6 +57,8 @@ Contoh:
 ```
 
 Hasilnya:
+
+![Membuat Tabel HTML](./images/10-membuat-tabel-di-html/tabel-html.png)
 
 ## Tips Membuat Tabel
 
