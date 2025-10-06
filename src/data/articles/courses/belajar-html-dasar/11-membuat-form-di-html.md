@@ -4,7 +4,7 @@ title: Membuat Form di HTML
 description: Membuat Form di HTML
 type: course
 course: belajar-html-dasar
-publishedAt: 2026-01-01 05:00:00 +0700
+publishedAt: 2025-10-06 20:00:00 +0700
 ---
 
 Form adalah elemen yang memungkinkan pengunjung untuk mengisi informasi ke halaman website. Contohnya form pendaftaran, login, kontak, pemesanan, dll.
@@ -52,7 +52,7 @@ Hasilnya:
 
 ## Membuat Input
 
-Input di HTML adalah kotak yang bisa diisi dengan keyboard oleh pengguna. Input dibuat dengan tag `<input>`. Contoh:
+Input di HTML adalah kotak yang bisa diisi dengan keyboard oleh pengunjung. Input dibuat dengan tag `<input>`. Contoh:
 
 ```html
 <input>
@@ -62,9 +62,27 @@ Hasilnya:
 
 Tag input tidak membutuhkan tag penutup, cukup ditulis tag pembukanya saja.
 
-Tag input ada beberapa jenis. Setiap jenis memiliki fungsi dan tampilan yang berbeda-beda. Berikut jenis-jenis tag input:
+Tag input ada beberapa jenis. Setiap jenis memiliki fungsi dan tampilan yang berbeda-beda. Jenis input ditentukan dengan menambahkan atribut `type` di tag `<input>`. 
+
+Berikut jenis-jenis tag input:
 
 ### Membuat Input Teks, Angka dan Email
+
+- Jenis input teks (`text`) adalah input yang pengunjung bisa memasukkan teks apa saja dari keyboard.
+- Jenis input angka (`number`) adalah input yang pengunjung hanya bisa memasukkan angka dari keyboard.
+- Jenis input email (`email`) adalah input yang pengunjung hanya bisa memasukkan teks berupa email dari keyboard.
+
+Contoh:
+
+```html
+<input type="text">
+<br>
+<input type="number">
+<br>
+<input type="email">
+```
+
+Hasilnya seperti berikut, input angka (`number`) ketika coba diketikkan huruf tidak akan masuk, karena hanya menerima input angka:
 
 ### Membuat Input Tanggal
 
