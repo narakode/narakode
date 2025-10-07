@@ -66,11 +66,12 @@ Tag input ada beberapa jenis. Setiap jenis memiliki fungsi dan tampilan yang ber
 
 Berikut jenis-jenis tag input:
 
-### Membuat Input Teks, Angka dan Email
+### Membuat Input Teks, Angka Email, dan Password
 
 - Jenis input teks (`text`) adalah input yang pengunjung bisa memasukkan teks apa saja dari keyboard.
 - Jenis input angka (`number`) adalah input yang pengunjung hanya bisa memasukkan angka dari keyboard.
 - Jenis input email (`email`) adalah input yang pengunjung hanya bisa memasukkan teks berupa email dari keyboard.
+- Jenis input password (`password`) adalah input yang pengunjung hanya bisa memasukkan teks berupa kata sandi dari keyboard.
 
 Contoh:
 
@@ -84,7 +85,10 @@ Contoh:
 
 Hasilnya:
 
-Pada contoh di atas, input angka (`number`) ketika coba diketikkan huruf tidak akan masuk, karena hanya menerima input angka.
+Pada contoh di atas setiap tipe input memiliki perbedaan seperti:
+
+- Input angka (`number`) ketika coba diketikkan huruf tidak akan masuk, karena hanya menerima input angka.
+- Input password (`password`) teks yang diketikkan tidak akan terlihat tapi diganti dengan simbol bulat hitam.
 
 ### Membuat Input Tanggal
 
@@ -202,6 +206,29 @@ Untuk mengatur jumlah barisnya tambahkan atribut `rows` berisi angka jumlah bari
 
 Hasilnya:
 
-## Membuat Label Pada Input
+## Menambahkan Label Pada Input
+
+Label adalah teks penanda suatu input. Biasanya digunakan untuk memberitahukan pengguna tentang tujuan atau jenis input tersebut. Label juga bisa digunakan pada `select` dan `textarea`.
+
+Label dibuat dengan tag `<label>`.
+
+Agar label terhubung dengan input, label perlu ditambahkan atribut `for` dan inputnya juga perlu ditambahkan atribut `id`, kemudian isi atribut `for` dan `id` harus sama. Contoh:
+
+```html
+<h2>Form Login</h2>
+
+<form>
+	<label for="email">Email</label>
+	<input id="email" type="email">
+	<br>
+
+	<label for="password">Password</label>
+	<input id="password" type="password">
+</form>
+```
+
+Hasilnya:
+
+## Menambahkan Placeholder (Teks Bantuan) Pada Input
 
 ## Membuat Tombol
