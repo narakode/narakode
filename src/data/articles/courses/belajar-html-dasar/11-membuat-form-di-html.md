@@ -34,9 +34,9 @@ Contoh:
 
 	<label for="jurusan">Jurusan</label>
 	<select id="jurusan" name="jurusan">
-		<option value="informatika">Informatika</option>
-		<option value="sistem_informasi">Sistem Informasi</option>
-		<option value="teknik_komputer">Teknik Komputer</option>
+		<option>Informatika</option>
+		<option>Sistem Informasi</option>
+		<option>Teknik Komputer</option>
 	</select>
 	<br>
 	
@@ -152,7 +152,31 @@ Agar teks pilihan (`<label>`) dan radio (`<input>`) dapat terhubung, tambahkan a
 
 Hasil kode di atas:
 
-## Membuat Kotak Pilihan
+## Membuat Select (Kotak Pilihan)
+
+Select adalah elemen form yang digunakan untuk membuat kotak berisi beberapa pilihan yang bisa dipilih oleh pengunjung.
+
+Select biasa digunakan untuk memilih jenis tertentu, memilih negara, kota, desa, dll.
+
+Select dibuat dengan dua tag:
+
+1. `<select>` untuk membuat wadah select.
+2. `<option>` untuk membuat pilihan select.
+
+Contoh:
+
+```html
+<h2>Pilih Negara</h2>
+
+<select>
+	<option>Indonesia</option>
+	<option>Malaysia</option>
+	<option>Singapua</option>
+	<option>Brunei</option>
+</select>
+```
+
+Hasilnya:
 
 ## Membuat Input Multi Baris
 
