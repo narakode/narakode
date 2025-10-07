@@ -82,11 +82,29 @@ Contoh:
 <input type="email">
 ```
 
-Hasilnya seperti berikut, input angka (`number`) ketika coba diketikkan huruf tidak akan masuk, karena hanya menerima input angka:
+Hasilnya:
+
+Pada contoh di atas, input angka (`number`) ketika coba diketikkan huruf tidak akan masuk, karena hanya menerima input angka.
 
 ### Membuat Input Tanggal
 
+Input tanggal dibuat dengan tag `<input>` dengan atribut `type` berisi `date`. Input tersebut ketika diklik akan memunculkan kalender yang bisa dipilih tanggal tertentu oleh pengguna. Contoh:
+
+```html
+<input type="date">
+```
+
+Hasilnya:
+
 ### Membuat Input File
+
+Input juga bisa digunakan untuk memasukan file dari perangkat yang nantinya bisa digunakan misalnya untuk upload. Caranya dengan menambahkan atribut `type` berisi `file` pada tag `<input>`. Contoh:
+
+```html
+<input type="file">
+```
+
+Hasilnya, ketika input diklik akan memunculkan _file explorer_ untuk pengunjung file dari perangkat mereka:
 
 ### Membuat Input Centang
 
