@@ -106,9 +106,51 @@ Input juga bisa digunakan untuk memasukan file dari perangkat yang nantinya bisa
 
 Hasilnya, ketika input diklik akan memunculkan _file explorer_ untuk pengunjung file dari perangkat mereka:
 
-### Membuat Input Centang
+### Membuat Input Checkbox (Centang)
+
+Input checkbox (centang) adalah input berbentuk kotak yang bisa dicentang, biasnya terdiri dari beberapa pilihan yang pengunjung bisa mencentang lebih dari satu pilihan.
+
+Input checkbox dibuat dengan tag `<input>` dengan atribut `type` berisi `checkbox`. Teks pada centangnya dibuat dengan tag `<label>`. Contoh:
+
+```html
+<h2>Ceklist Perlengkapan Kemah</h2>
+
+<input type="checkbox" id="tenda">
+<label for="tenda">Tenda</label>
+<br>
+
+<input type="checkbox" id="selimut">
+<label for="selimut">Selimut</label>
+<br>
+
+<input type="checkbox" id="kompor">
+<label for="kompor">Kompor</label>
+```
+
+Agar teks centang (`<label>`) dan kotak centang (`<input>`) dapat terhubung, tambahkan atribut `id` di `<input>` dan `for` di `<label>` dengan nilai yang sama. Penjelasan lebih lanjut akan dijelaskan di [membuat label pada input](#membuat-label-pada-input).
+
+Hasil kode di atas:
 
 ### Membuat Input Radio
+
+Input radio adalah input berbentuk lingkaran yang bisa dipilih, biasanya terdiri dari beberapa pilihan, pengunjung hanya bisa memilih satu pilihan saja.
+
+Input radio dibuat dengan tag `<input>` dengan atribut `type` berisi `radio`. Teks pada pilihannya dibuat dengan tag `<label>`. Contoh:
+
+```html
+<h2>Jenis Kelamin</h2>
+
+<input type="checkbox" id="laki-laki">
+<label for="laki-laki">Laki-Laki</label>
+<br>
+
+<input type="checkbox" id="perempuan">
+<label for="perempuan">Perempuan</label>
+```
+
+Agar teks pilihan (`<label>`) dan radio (`<input>`) dapat terhubung, tambahkan atribut `id` di `<input>` dan `for` di `<label>` dengan nilai yang sama. Penjelasan lebih lanjut akan dijelaskan di [membuat label pada input](#membuat-label-pada-input).
+
+Hasil kode di atas:
 
 ## Membuat Kotak Pilihan
 
