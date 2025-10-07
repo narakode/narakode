@@ -4,7 +4,7 @@ title: Membuat Form di HTML
 description: Membuat Form di HTML
 type: course
 course: belajar-html-dasar
-publishedAt: 2025-10-06 20:00:00 +0700
+publishedAt: 2025-10-07 21:00:00 +0700
 ---
 
 Form adalah elemen yang memungkinkan pengunjung untuk mengisi informasi ke halaman website. Contohnya form pendaftaran, login, kontak, pemesanan, dll.
@@ -28,11 +28,11 @@ Contoh:
 ```html
 <h2>Form Pendaftaran</h2>
 <form>
-	<label for="nama">Nama Lengkap</label>
+	<label for="nama">Nama Lengkap: </label>
 	<input id="nama">
 	<br>
 
-	<label for="jurusan">Jurusan</label>
+	<label for="jurusan">Jurusan: </label>
 	<select id="jurusan">
 		<option>Informatika</option>
 		<option>Sistem Informasi</option>
@@ -40,7 +40,7 @@ Contoh:
 	</select>
 	<br>
 	
-	<label for="alamat">Alamat Lengkap</label>
+	<label for="alamat">Alamat Lengkap: </label>
 	<textarea id="alamat"></textarea>
 	<br>
 	
@@ -49,6 +49,8 @@ Contoh:
 ```
 
 Hasilnya:
+
+![Form HTML](./images/11-membuat-form-di-html/form-html.png)
 
 ## Membuat Input
 
@@ -59,6 +61,8 @@ Input di HTML adalah kotak yang bisa diisi dengan keyboard oleh pengunjung. Inpu
 ```
 
 Hasilnya:
+
+![Input HTML](./images/11-membuat-form-di-html/input-html.png)
 
 Tag input tidak membutuhkan tag penutup, cukup ditulis tag pembukanya saja.
 
@@ -76,14 +80,22 @@ Berikut jenis-jenis tag input:
 Contoh:
 
 ```html
+<h2>Input Teks</h2>
 <input type="text">
-<br>
+
+<h2>Input Angka</h2>
 <input type="number">
-<br>
+
+<h2>Input Email</h2>
 <input type="email">
+
+<h2>Input Password</h2>
+<input type="password">
 ```
 
 Hasilnya:
+
+![Input teks, angka, email, password](./images/11-membuat-form-di-html/input-teks-angka-email-password.gif)
 
 Pada contoh di atas setiap tipe input memiliki perbedaan seperti:
 
@@ -100,6 +112,8 @@ Input tanggal dibuat dengan tag `<input>` dengan atribut `type` berisi `date`. I
 
 Hasilnya:
 
+![Input tanggal](./images/11-membuat-form-di-html/input-tanggal.gif)
+
 ### Membuat Input File
 
 Input juga bisa digunakan untuk memasukan file dari perangkat yang nantinya bisa digunakan misalnya untuk upload. Caranya dengan menambahkan atribut `type` berisi `file` pada tag `<input>`. Contoh:
@@ -108,7 +122,11 @@ Input juga bisa digunakan untuk memasukan file dari perangkat yang nantinya bisa
 <input type="file">
 ```
 
-Hasilnya, ketika input diklik akan memunculkan _file explorer_ untuk pengunjung file dari perangkat mereka:
+Hasilnya:
+
+![Input File](./images/11-membuat-form-di-html/input-file.png)
+
+Ketika input diklik akan memunculkan _file explorer_ untuk pengunjung file dari perangkat mereka.
 
 ### Membuat Input Checkbox (Centang)
 
@@ -135,26 +153,32 @@ Agar teks centang (`<label>`) dan kotak centang (`<input>`) dapat terhubung, tam
 
 Hasil kode di atas:
 
+![Input Checkbox](./images/11-membuat-form-di-html/input-checkbox.gif)
+
 ### Membuat Input Radio
 
 Input radio adalah input berbentuk lingkaran yang bisa dipilih, biasanya terdiri dari beberapa pilihan, pengunjung hanya bisa memilih satu pilihan saja.
 
-Input radio dibuat dengan tag `<input>` dengan atribut `type` berisi `radio`. Teks pada pilihannya dibuat dengan tag `<label>`. Contoh:
+Input radio dibuat dengan tag `<input>` dengan atribut `type` berisi `radio`. Teks pada pilihannya dibuat dengan tag `<label>`. Setiap pilihan radio harus memiliki atribut `name` dengan nilai yang sama.
+
+Contoh:
 
 ```html
 <h2>Jenis Kelamin</h2>
 
-<input type="checkbox" id="laki-laki">
+<input type="radio" id="laki-laki" name="jenis_kelamin">
 <label for="laki-laki">Laki-Laki</label>
 <br>
 
-<input type="checkbox" id="perempuan">
+<input type="radio" id="perempuan" name="jenis_kelamin">
 <label for="perempuan">Perempuan</label>
 ```
 
 Agar teks pilihan (`<label>`) dan radio (`<input>`) dapat terhubung, tambahkan atribut `id` di `<input>` dan `for` di `<label>` dengan nilai yang sama. Penjelasan lebih lanjut akan dijelaskan di [membuat label pada input](#membuat-label-pada-input).
 
 Hasil kode di atas:
+
+![Input Radio](./images/11-membuat-form-di-html/input-radio.gif)
 
 ## Membuat Select (Kotak Pilihan)
 
@@ -182,6 +206,8 @@ Contoh:
 
 Hasilnya:
 
+![Select HTML](./images/11-membuat-form-di-html/select.gif)
+
 ## Membuat Input Multi Baris (Textarea)
 
 Textarea adalah input teks yang bisa ditambahkan beberapa baris. Biasanya digunakan untuk input alamat, biodata, deskripsi, dll.
@@ -197,6 +223,8 @@ Textarea dibuat dengan tag `<textarea>`, tag ini wajib ditulis dengan tag penutu
 
 Hasilnya:
 
+![Textarea HTML](./images/11-membuat-form-di-html/textarea.png)
+
 Untuk mengatur jumlah barisnya tambahkan atribut `rows` berisi angka jumlah barisnya. Contoh:
 
 ```html
@@ -205,6 +233,8 @@ Untuk mengatur jumlah barisnya tambahkan atribut `rows` berisi angka jumlah bari
 ```
 
 Hasilnya:
+
+![Textarea dangan tinggi diatur](./images/11-membuat-form-di-html/textarea-rows.png)
 
 ## Menambahkan Label Pada Input
 
@@ -229,6 +259,8 @@ Agar label terhubung dengan input, label perlu ditambahkan atribut `for` dan inp
 
 Hasilnya:
 
+![Form Login](./images/11-membuat-form-di-html/form-login.png)
+
 ## Menambahkan Placeholder (Teks Bantuan) Pada Input
 
 Placeholder adalah teks bantuan yang muncul di dalam kotak input ketika kondisi input kosong. Biasanya digunakan untuk membantu pengguna untuk contoh isian inputnya. Placeholder bisa digunakan di `input` dan `textarea`.
@@ -250,6 +282,8 @@ Untuk menambahkan placeholder, tambahkan atribut `placeholder` berisi teks place
 ```
 
 Hasilnya:
+
+![Input Placeholder](./images/11-membuat-form-di-html/form-placeholder.png)
 
 ## Membuat Button (Tombol)
 
@@ -289,3 +323,5 @@ Contoh:
 ```
 
 Hasilnya:
+
+![Form Pendaftaran](./images/11-membuat-form-di-html/form-pendaftaran.png)
