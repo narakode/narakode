@@ -29,11 +29,11 @@ Contoh:
 <h2>Form Pendaftaran</h2>
 <form>
 	<label for="nama">Nama Lengkap</label>
-	<input id="nama" name="nama">
+	<input id="nama">
 	<br>
 
 	<label for="jurusan">Jurusan</label>
-	<select id="jurusan" name="jurusan">
+	<select id="jurusan">
 		<option>Informatika</option>
 		<option>Sistem Informasi</option>
 		<option>Teknik Komputer</option>
@@ -41,7 +41,7 @@ Contoh:
 	<br>
 	
 	<label for="alamat">Alamat Lengkap</label>
-	<textarea id="alamat" name="alamat"></textarea>
+	<textarea id="alamat"></textarea>
 	<br>
 	
 	<button>Simpan</button>
@@ -178,7 +178,29 @@ Contoh:
 
 Hasilnya:
 
-## Membuat Input Multi Baris
+## Membuat Input Multi Baris (Textarea)
+
+Input multi baris adalah input teks yang bisa ditambahkan baris. Biasanya digunakan untuk input alamat, biodata, deskripsi, dll.
+
+Perbedaan input multi baris dengan input biasa adalah ketika di-`Enter`, input biasa akan memicu form untuk disimpan, sedangkan input multi baris akan membuat baris baru yang bisa ditambahkan teks lagi.
+
+Input multi baris dibuat dengan tag `<textarea>`, tag ini wajib ditulis dengan tag penutupnya. Contoh:
+
+```html
+<h2>Masukkan Alamat Lengkap</h2>
+<textarea></textarea>
+```
+
+Hasilnya:
+
+Untuk mengatur jumlah barisnya tambahkan atribut `rows` berisi angka jumlah barisnya. Contoh:
+
+```html
+<h2>Masukkan Alamat Lengkap</h2>
+<textarea rows="10"></textarea>
+```
+
+Hasilnya:
 
 ## Membuat Label Pada Input
 
