@@ -180,11 +180,11 @@ Hasilnya:
 
 ## Membuat Input Multi Baris (Textarea)
 
-Input multi baris adalah input teks yang bisa ditambahkan baris. Biasanya digunakan untuk input alamat, biodata, deskripsi, dll.
+Textarea adalah input teks yang bisa ditambahkan beberapa baris. Biasanya digunakan untuk input alamat, biodata, deskripsi, dll.
 
-Perbedaan input multi baris dengan input biasa adalah ketika di-`Enter`, input biasa akan memicu form untuk disimpan, sedangkan input multi baris akan membuat baris baru yang bisa ditambahkan teks lagi.
+Perbedaan textarea dengan input biasa adalah ketika di-`Enter`, input biasa akan memicu form untuk disimpan, sedangkan textarea akan membuat baris baru yang bisa ditambahkan teks lagi.
 
-Input multi baris dibuat dengan tag `<textarea>`, tag ini wajib ditulis dengan tag penutupnya. Contoh:
+Textarea dibuat dengan tag `<textarea>`, tag ini wajib ditulis dengan tag penutupnya. Contoh:
 
 ```html
 <h2>Masukkan Alamat Lengkap</h2>
