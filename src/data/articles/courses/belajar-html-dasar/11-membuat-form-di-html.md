@@ -186,7 +186,7 @@ Hasilnya:
 
 Textarea adalah input teks yang bisa ditambahkan beberapa baris. Biasanya digunakan untuk input alamat, biodata, deskripsi, dll.
 
-Perbedaan textarea dengan input biasa adalah ketika di-`Enter`, input biasa akan memicu form untuk disimpan, sedangkan textarea akan membuat baris baru yang bisa ditambahkan teks lagi.
+Perbedaan textarea dengan input biasa adalah ketika di-`Enter`, input biasa akan memicu form untuk dikirim, sedangkan textarea akan membuat baris baru yang bisa ditambahkan teks lagi.
 
 Textarea dibuat dengan tag `<textarea>`, tag ini wajib ditulis dengan tag penutupnya. Contoh:
 
@@ -208,7 +208,7 @@ Hasilnya:
 
 ## Menambahkan Label Pada Input
 
-Label adalah teks penanda suatu input. Biasanya digunakan untuk memberitahukan pengguna tentang tujuan atau jenis input tersebut. Label juga bisa digunakan pada `select` dan `textarea`.
+Label adalah teks penanda suatu input. Biasanya digunakan untuk memberitahukan pengguna tentang tujuan atau jenis input tersebut. Label bisa digunakan pada tag `<input>`, `<select>` dan `<textarea>`.
 
 Label dibuat dengan tag `<label>`.
 
@@ -231,4 +231,61 @@ Hasilnya:
 
 ## Menambahkan Placeholder (Teks Bantuan) Pada Input
 
-## Membuat Tombol
+Placeholder adalah teks bantuan yang muncul di dalam kotak input ketika kondisi input kosong. Biasanya digunakan untuk membantu pengguna untuk contoh isian inputnya. Placeholder bisa digunakan di `input` dan `textarea`.
+
+Untuk menambahkan placeholder, tambahkan atribut `placeholder` berisi teks placeholder-nya ke tag `<input>` atau `<textarea>`. Contoh:
+
+```html
+<h2>Form Biodata Pengguna</h2>
+
+<form>
+	<label for="nama">Nama</label>
+	<input type="text" id="nama" placeholder="Contoh: Andi">
+	<br>
+	
+	<label for="biodata">Biodata</label>
+	<textarea id="biodata" placeholder="Contoh: Saya seorang web developer dengan pengalaman ... tahun."></textarea>
+	<br>
+</form>
+```
+
+Hasilnya:
+
+## Membuat Button (Tombol)
+
+Button (tombol) adalah elemen form yang bisa diklik. Fungsinya untuk memicu suatu aksi tertentu pada form, seperti mengirim form atau mereset form.
+
+Button dibuat dengan tag `<button>`, teks tombol dimasukkan di dalam tag tersebut.
+
+Button memiliki tiga tipe, untuk dimasukkan ke dalam atribut `type` pada tag button, yaitu:
+
+1. `submit`, untuk mengirim form ketika tombol diklik (default).
+2. `reset`, untuk mereset isian form.
+3. `button`, untuk mengatur button agar tidak melakukan aksi apapun ketika diklik.
+
+`submit` adalah default tipe button, jadi ketika button diklik form akan otomatis dikirim.
+
+Contoh:
+
+```html
+<h2>Form Pendaftaran</h2>
+
+<form>
+	<label for="nama">Nama Lengkap</label>
+	<input id="nama" type="nama">
+	<br>
+
+	<label for="email">Email</label>
+	<input id="email" type="email">
+	<br>
+
+	<label for="password">Password</label>
+	<input id="password" type="password">
+	<br>
+
+	<button type="submit">Daftar Sekarang</button>
+	<button type="reset">Reset Form</button>
+</form>
+```
+
+Hasilnya:
