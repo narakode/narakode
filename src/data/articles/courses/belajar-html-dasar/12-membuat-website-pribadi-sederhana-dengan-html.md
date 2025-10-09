@@ -15,7 +15,7 @@ Website pribadi yang akan dibuat akan terdiri dari beberapa bagian, yaitu:
 
 1. Foto pribadi
 2. Judul (Nama pribadi)
-3. Biodata singkat
+3. Biodata
 4. Daftar keahlian / skills
 5. Tabel pengalaman kerja
 6. Daftar link kontak
@@ -31,15 +31,128 @@ Agar lebih cantik, nanti juga akan diberikan cara untuk menambahkan style sederh
 
 Langsung saja berikut langkah-langkah pembuatannya:
 
+## Membuat File HTML
+
+Pertama, buat file HTML untuk website pribadi yang akan dibuat, beri nama misalnya `index.html`. Lalu buka dengan kode editor. Penjelasannya dapat dilihat di [cara membuat dan menjalankan file HTML](/courses/belajar-html-dasar/membuat-dan-menjalankan-html).
+
 ## Membuat Struktur Dasar
 
-Pertama, buat struktur dasar HTML terlebih dahulu. Penjelasannya dapat dilihat di [cara membuat struktur dasar html](/).
+Buat struktur dasar HTML terlebih dahulu. Penjelasannya dapat dilihat di [cara membuat struktur dasar HTML](/courses/belajar-html-dasar/struktur-dasar-html).
 
-## Menampilkan Foto pribadi
-## Membuat Judul (Nama pribadi)
-## Membuat Biodata singkat
-## Membuat Daftar keahlian / skills
-## Membuat Tabel pengalaman kerja
+Untuk teks di dalam `title` diisi dengan judul website, misalnya `Website Pribadi - Nama`.
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Website Pribadi - Andi Job</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+## Menampilkan Foto Pribadi
+
+Elemen pertama di website pribadi yang akan dibuat adalah foto pribadi.
+
+Siapkan sebuah foto pribadi dan letakkan di folder yang sama dengan file HTML yang sudah dibuat sebelumnya, misal nama file fotonya `foto.png`.
+
+Tampilkan foto tersebut ke halaman website dengan menambahkan tag `<img>` di dalam tag `<body>`, lalu masukkan nama file foto ke dalam atribut `src`.
+
+```html
+<img src="foto.png" alt="Foto Profil" width="100">
+```
+
+Baca disini untuk [cara menampilkan gambar di HTML](/courses/belajar-html-dasar/menampilkan-gambar-di-html)
+
+## Membuat Judul (Nama Pribadi)
+
+Tampilkan nama pribadi Anda di halaman website dalam bentuk judul (`heading`).
+
+Buat tag `<h1>` dengan isi teks nama Anda. Letakkan di bawah tag `<img>` foto pribadi.
+
+```html
+<h1>Andi Job</h1>
+```
+
+Baca disini untuk [cara membuat judul di HTML](/courses/belajar-html-dasar/membuat-judul-di-html)
+
+## Membuat Biodata
+
+Tampilkan biodata Anda di halaman website dalam bentuk paragraf.
+
+Buat tag `<p>` dengan isi teks paragraf biodata Anda. Letakkan di bawah tag `<h1>` nama pribadi.
+
+```html
+<p>
+  Halo! Saya <b>Andi Job</b>, seorang web developer dari kota Jakarta. Saya
+  terbiasa membuat website menggunakan HTML, CSS dan Javascript.
+</p>
+```
+
+> Anda boleh menambahkan lebih dari satu paragraf jika ingin biodata yang lebih panjang.
+
+Baca disini untuk [cara membuat paragraf di HTML](/courses/belajar-html-dasar/membuat-paragraf-di-html)
+
+## Membuat Daftar Keahlian / Skills
+
+Tunjukan apa saja keahlian Anda di halaman website dalam bentuk daftar.
+
+Buat tag `<ul>`, letakkan di bawah tag `<p>` biodata. Di dalamnya tampilkan daftar keahlian Anda, setiap keahlian dibuat dengan tag `<li>`.
+
+```html
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Javascript</li>
+  <li>Bootstrap</li>
+  <li>Tailwind CSS</li>
+  <li>Laravel</li>
+  <li>MySQL</li>
+</ul>
+```
+
+> Jika ingin daftarnya urut, maka ganti tag `<ul>` menjadi tag `<ol>`.
+
+Baca disini untuk [cara membuat daftar di HTML](/courses/belajar-html-dasar/membuat-daftar-di-html)
+
+## Membuat Tabel Pengalaman Kerja
+
+Tampilkan pengalaman kerja anda di halaman website dalam bentuk tabel yang terstruktur. Langkah-langkahnya:
+
+1. Pertama buat tag `<table>`, letakkan di bawah tag `<ul>` daftar keahlian.
+2. Buat sebuah baris dengan tag `<tr>`, di dalam baris tersebut buat 3 buah kolom tabel dengan tag `<th>`. Kolom-kolomnya: tahun, perusahaan dan posisi.
+3. Tampilkan pengalaman kerja anda, setiap pengalaman kerja dibuat per baris dengan tag `<tr>`, di dalam baris tersebut buat 3 buah sel dengan tag `<td>`. Sel pertama diisi tahun kerja, sel kedua diisi nama perusahaan, sel ketiga diisi posisi jabatan.
+
+```html
+<table>
+  <tr>
+    <th>Tahun</th>
+    <th>Perusahaan</th>
+    <th>Posisi</th>
+  </tr>
+  <tr>
+    <td>2020 - 2021</td>
+    <td>PT Webgist Solution</td>
+    <td>Junior Web Developer</td>
+  </tr>
+  <tr>
+    <td>2021 - 2022</td>
+    <td>PT Teknis Web House</td>
+    <td>Senior Web Developer</td>
+  </tr>
+  <tr>
+    <td>2022 - Sekarang</td>
+    <td>GoJek</td>
+    <td>Senior Web Developer di GoJek</td>
+  </tr>
+</table>
+```
+
+Baca disini untuk [cara membuat tabel di HTML](/courses/belajar-html-dasar/membuat-tabel-di-html)
+
 ## Membuat Daftar link kontak
 ## Membuat Form kontak
 ## Hasil Akhir
