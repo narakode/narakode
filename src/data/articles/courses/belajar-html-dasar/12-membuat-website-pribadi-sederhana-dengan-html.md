@@ -4,7 +4,7 @@ title: Membuat Website Pribadi Sederhana dengan HTML
 description: Membuat Website Pribadi Sederhana dengan HTML
 type: course
 course: belajar-html-dasar
-publishedAt: 2025-10-08 03:00:00 +0700
+publishedAt: 2025-10-10 10:30:00 +0700
 ---
 
 Setelah mempelajari struktur dasar HTML dan beberapa tag-tag dasar HTML, sekarang saatnya kita praktek mengaplikasikan pengetahuan tersebut dengan membuat sebuah website sederhana, yaitu website pribadi.
