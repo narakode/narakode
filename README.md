@@ -1,45 +1,31 @@
-## 2025-09-26
+```js
+import fs from 'fs'
 
-- [x] Detail courses breadcrumb
-- [x] Detail courses connect cta
-- [x] Detail course article toggle toc
-- [x] Add course html basic content
+if (!fs.existsSync('courses')) {
+    fs.mkdirSync('courses')
+}
 
-## 2025-09-27
+const course = ''
+const articles = []
 
-- [x] Detail course article highlight active heading
-- [x] Detail course article next / prev navigation
-- [x] Course card connect item count
-- [x] Fix overflow detail course article on mobile
-- [x] Layout footer
-- [x] Dropdown click outside
-- [x] Navbar toggle click outside
+articles.forEach((article, index) => {
+    const slug = article
+        .replace(/\s*\([^)]*\)/g, '')
+        .replace(/[^\w\s]/g, '')
+        .replace(/\b(itu|dan|ke|di|dengan|pada)\b/gi, '')
+        .replace(/\s+/g, '-')
+        .trim()
+        .toLowerCase()
 
-## 2025-09-28
+    const frontmatter = `---
+slug: ${slug}
+title: ${article}
+description: ${article}
+type: course
+course: ${course}
+publishedAt: 2026-01-${`${index + 1}`.padStart(2, '0')} 10:00:00 +0700
+---`
 
-- [x] Cek seo, a11y home, course index, course detail, course item
-- [x] Hide draft content
-- [x] Config defauld code theme
-
-## 2025-10-01
-
-- [x] Contact Form API
-- [x] Submit Contact Form
-- [x] Subscribe Form API
-- [x] Submit Subscribe Form
-
-## 2025-10-02
-
-- [x] Nofollow search
-- [x] Course in progress badge
-- [x] Beli domain
-- [x] Register domain cloudflare
-- [x] Deploy Form API
-- [x] Configure Form API Subdomain
-- [x] Deploy Web
-- [x] Configure Web Domain
-- [ ] Submit google verification
-- [ ] Add domain mail
-- [x] Fix search navbar
-- [x] Fix search mobile
-- [x] 404
+    fs.writeFileSync(`courses/${index + 1}-${slug}.md`, frontmatter, null, 'w')
+})
+```
