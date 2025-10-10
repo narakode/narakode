@@ -9,9 +9,9 @@ import CourseCard from '../components/CourseCard.astro';
 import Container from '../components/app/Container.astro';
 import Section from '../components/app/Section.astro';
 import Button from '../components/app/Button.astro';
-import { getCollection } from 'astro:content'
+import { getCourses } from '../utils/course';
 
-const courses = await getCollection('course', course => !!course.data.publishedAt)
+const courses = await getCourses()
 // const tutorials = await getCollection('tutorial', tutorial => !!tutorial.data.publishedAt)
 // const books = await getCollection('book', book => !!book.data.publishedAt)
 // const videos = await getCollection('video', video => !!video.data.publishedAt)

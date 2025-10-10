@@ -24,6 +24,7 @@ const { course } = Astro.props
 const { Content } = await render(course)
 
 const items = await getCourseItems(course)
+const itemsReady = items.filter(item => item.data.publishedAt && new Date > new Date(item.data.publishedAt))
 ---
 
 <Layout navbarBordered title={course.data.title} description={course.data.description}>
@@ -45,7 +46,7 @@ const items = await getCourseItems(course)
                         {course.data.title}
                     </h1>
                     <Content />
-                    {items.length > 0 && <Button class='no-underline' icon='tabler:arrow-right' tag='a' href={`/courses/${course.id}/${items[0].id}`}>Mulai Belajar</Button>}
+                    {itemsReady.length > 0 && <Button class='no-underline' icon='tabler:arrow-right' tag='a' href={`/courses/${course.id}/${items[0].id}`}>Mulai Belajar</Button>}
                 </div>
             </Card>
             <Card tag='aside'>

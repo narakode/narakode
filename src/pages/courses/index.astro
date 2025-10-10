@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 import Container from "../../components/app/Container.astro";
 import Input from "../../components/app/Input.astro";
 import Section from "../../components/app/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 import CourseCard from "../../components/CourseCard.astro";
+import { getCourses } from "../../utils/course";
 
-const courses = await getCollection('course', course => course.data.publishedAt)
+const courses = await getCourses()
 const description = 'Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'
 ---
 
