@@ -71,7 +71,7 @@ Baca disini untuk [cara menampilkan gambar di HTML](/courses/belajar-html-dasar/
 
 Tampilkan nama pribadi Anda di halaman website dalam bentuk judul (`heading`).
 
-Buat tag `<h1>` dengan isi teks nama Anda. Letakkan di bawah tag `<img>` foto pribadi.
+Buat tag `<h1>` dengan isi teks nama Anda.
 
 ```html
 <h1>Andi Job</h1>
@@ -83,7 +83,7 @@ Baca disini untuk [cara membuat judul di HTML](/courses/belajar-html-dasar/membu
 
 Tampilkan biodata Anda di halaman website dalam bentuk paragraf.
 
-Buat tag `<p>` dengan isi teks paragraf biodata Anda. Letakkan di bawah tag `<h1>` nama pribadi.
+Buat tag `<p>` dengan isi teks paragraf biodata Anda.
 
 ```html
 <p>
@@ -98,11 +98,16 @@ Baca disini untuk [cara membuat paragraf di HTML](/courses/belajar-html-dasar/me
 
 ## Membuat Daftar Keahlian / Skills
 
-Tunjukan apa saja keahlian Anda di halaman website dalam bentuk daftar.
+Tunjukan apa saja keahlian Anda di halaman website dalam bentuk daftar. Langkah-langkahnya:
 
-Buat tag `<ul>`, letakkan di bawah tag `<p>` biodata. Di dalamnya tampilkan daftar keahlian Anda, setiap keahlian dibuat dengan tag `<li>`.
+1. Buat subjudul untuk menandai bagian daftar keahlian dengan tag `<h2>`, disii dengan teks subjudul "Skill".
+2. Tambahkan paragraf singkat untuk pengantar sebelum menampilkan daftar keahlian dengan tag `<p>`.
+3. Buat daftar keahlian dengan tag `<ul>`.
+4. Di dalam tag `<ul>`, tampilkan daftar keahlian Anda, setiap keahlian dibuat dengan tag `<li>`.
 
 ```html
+<h2>Skill</h2>
+<p>Berikut daftar skill atau teknologi yang biasa saya gunakan:</p>
 <ul>
   <li>HTML</li>
   <li>CSS</li>
@@ -122,11 +127,18 @@ Baca disini untuk [cara membuat daftar di HTML](/courses/belajar-html-dasar/memb
 
 Tampilkan pengalaman kerja anda di halaman website dalam bentuk tabel yang terstruktur. Langkah-langkahnya:
 
-1. Pertama buat tag `<table>`, letakkan di bawah tag `<ul>` daftar keahlian.
-2. Buat sebuah baris dengan tag `<tr>`, di dalam baris tersebut buat 3 buah kolom tabel dengan tag `<th>`. Kolom-kolomnya: tahun, perusahaan dan posisi.
-3. Tampilkan pengalaman kerja anda, setiap pengalaman kerja dibuat per baris dengan tag `<tr>`, di dalam baris tersebut buat 3 buah sel dengan tag `<td>`. Sel pertama diisi tahun kerja, sel kedua diisi nama perusahaan, sel ketiga diisi posisi jabatan.
+1. Buat subjudul untuk menandai bagian tabel pengalaman kerja dengan tag `<h2>`, disii dengan teks subjudul "Pengalaman Kerja".
+2. Tambahkan paragraf singkat untuk pengantar sebelum menampilkan tabel pengalaman kerja dengan tag `<p>`.
+3. Buat tabel pengalaman kerja dengan tag `<table>`.
+4. Di dalam tabel, buat sebuah baris dengan tag `<tr>`, di dalam baris tersebut buat 3 buah kolom tabel dengan tag `<th>`. Kolom-kolomnya: tahun, perusahaan dan posisi.
+5. Tampilkan pengalaman kerja anda di dalam tabel, setiap pengalaman kerja dibuat per baris dengan tag `<tr>`, di dalam baris tersebut buat 3 buah sel dengan tag `<td>`. Sel pertama diisi tahun kerja, sel kedua diisi nama perusahaan, sel ketiga diisi posisi jabatan.
 
 ```html
+<h2>Pengalaman Kerja</h2>
+<p>
+  Saya telah bekerja di bidang web development selama lebih dari 3 tahun,
+  berikut riwayat pengalaman kerja saya:
+</p>
 <table>
   <tr>
     <th>Tahun</th>
