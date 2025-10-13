@@ -1,4 +1,5 @@
 ---
+import { formatDate } from '../utils/date'
 import Badge from './app/Badge.astro'
 import Card from './app/Card.astro'
 import Link from './app/Link.astro'
@@ -13,12 +14,13 @@ const { article } = Astro.props
 ---
 
 <Card class="space-y-4">
-    {article.data.type === 'article' && article.data.thumbnail && <Image src={article.data.thumbnail} alt={article.data.title} class={'rounded-md'} />}
+    {article.data.type === 'article' && article.data.thumbnail && <Image src={article.data.thumbnail} alt={article.data.title} class={'rounded-md'} loading={'eager'} />}
     <div class="space-y-2">
         <Badge>{article.data.category}</Badge>
         <h3 class="font-bold text-gray-900 text-lg">
-            <Link>{article.data.title}</Link>
+            <Link href={`/articles/${article.id}`}>{article.data.title}</Link>
         </h3>
-        <p class="text-gray-700">{article.data.description}</p>
+        <p class="text-gray-700 line-clamp-3">{article.data.description}</p>
+        <time class="text-sm text-gray-600" datetime={article.data.publishedAt?.toISOString()}>{formatDate(article.data.publishedAt!)}</time>
     </div>
 </Card>
