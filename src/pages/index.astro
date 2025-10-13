@@ -5,17 +5,18 @@ import CourseCard from '../components/CourseCard.astro';
 // import TutorialCard from '../components/TutorialCard.astro';
 // import BookCard from '../components/BookCard.astro';
 // import VideoCard from '../components/VideoCard.astro';
-// import ArticleCard from '../components/ArticleCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
 import Container from '../components/app/Container.astro';
 import Section from '../components/app/Section.astro';
 import Button from '../components/app/Button.astro';
 import { getCourses } from '../utils/course';
+import { getCollection } from 'astro:content';
 
 const courses = await getCourses()
 // const tutorials = await getCollection('tutorial', tutorial => !!tutorial.data.publishedAt)
 // const books = await getCollection('book', book => !!book.data.publishedAt)
 // const videos = await getCollection('video', video => !!video.data.publishedAt)
-// const articles =  await getCollection('article', article => article.data.publishedAt && article.data.type === 'article')
+const articles =  await getCollection('article', article => article.data.publishedAt && article.data.type === 'article')
 ---
 
 <Layout>
@@ -49,13 +50,13 @@ const courses = await getCourses()
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{videos.map(video => <VideoCard video={video} />)}
 			</div>
-		</Section>
+		</Section> -->
 		<Section title='Baca Artikel Terbaru' description='Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'>
 			<Button slot="action" tag='a' href='/articles' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{articles.map(article => <ArticleCard article={article} />)}
 			</div>
-		</Section> -->
+		</Section>
 	</Container>
 </Layout>

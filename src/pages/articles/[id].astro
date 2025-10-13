@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/app/Container.astro';
+import Card from '../../components/app/Card.astro';
+import { Icon } from 'astro-icon/components';
+import { render } from 'astro:content';
+import Link from '../../components/app/Link.astro';
+import Button from '../../components/app/Button.astro';
+import Badge from '../../components/app/Badge.astro';
+import Breadcrumb from '../../components/app/Breadcrumb.astro';
+import { getCourseItems } from '../../utils/course'
+import { formatDate } from '../../utils/date'
+import TableOfContent from '../../components/TableOfContent.astro';
+import Dropdown from '../../components/app/Dropdown.astro';
+
+export async function getStaticPaths() {
+    const articles = await getCollection('article', article => article.data.type === 'article' && article.data.publishedAt)
+
+    return articles.map(article => ({
+        params: { id: article.id },
+        props: { article }
+    }))
+}
+
+const { article } = Astro.props
+const { Content, headings } = await render(article)
+---
+
+<Layout navbarBordered title={article.data.title} description={article.data.description}>
+    <Container class="py-8 space-y-4 xl:max-w-6xl">
+        <div class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
+            <Breadcrumb
+                links={[
+                    { href: '/articles', name: 'Artikel' }
+                ]}
+                active={article.data.title}
+            />
+            
+            <div class="w-full flex items-center justify-between gap-2 md:w-auto lg:hidden">
+                <Dropdown id="toc-mobile-dropdown" triggerId="toggle-toc-mobile-dropdown" class="xl:hidden" position='left'>
+                    <Button slot="trigger" id="toggle-toc-mobile-dropdown" dataToggle="#toc-mobile-dropdown" size="sm" color='light' icon='tabler:list' iconPosition='start'>Daftar Isi</Button>
+
+                    <TableOfContent headings={headings} />
+                </Dropdown>
+            </div>
+        </div>
+        <main class="grid grid-cols-1 gap-4 items-start lg:grid-cols-12">
+            <Card tag='article' id="article-content" class="col-span-full lg:col-span-8 xl:col-span-9">
+                <div class="prose max-w-none">
+                    <p class="flex items-center justify-between">
+                        <Badge>{article.data.category}</Badge>
+                        <time datetime={article.data.publishedAt?.toISOString()}>{formatDate(article.data.publishedAt!)}</time>
+                    </p>
+                    <h1>
+                        {article.data.title}
+                    </h1>
+                    <Content />
+                </div>
+            </Card>
+            <Card tag='aside' class='hidden col-span-full lg:block lg:col-span-4 xl:col-span-3 lg:sticky lg:top-4 lg:right-0'>
+                <h2 class="font-bold text-2xl mb-4">Daftar Isi</h2>
+                <TableOfContent headings={headings} />
+            </Card>
+        </main>
+    </Container>
+</Layout>
