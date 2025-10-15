@@ -15,6 +15,8 @@ Style bawaan browser tentu tidak cukup untuk sebuah website karena tidak bisa me
 
 Hampir semua website modern di internet pasti menggunakan style CSS, karena website membutuhkan identitas, tampilan yang menarik, dan interaktivitas.
 
+![Perbandingan Website tanpa CSS dan dengan CSS](./images/1-mengenal-apa-css/website-dengan-css-tanpa-css.png)
+
 ## Fungsi CSS
 
 CSS memiliki beberapa fungsi:
