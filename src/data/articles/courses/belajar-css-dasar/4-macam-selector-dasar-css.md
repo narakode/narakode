@@ -1,7 +1,7 @@
 ---
 slug: macam-selector-dasar-css
 title: Macam-Macam Selector Dasar CSS
-description: Selector, Property dan Value di CSS
+description: Selector adalah elemen HTML yang ingin diberikan style CSS. Ada tiga selector dasar, Tag, Class dan Id Selector
 type: course
 course: belajar-css-dasar
 publishedAt: 2025-10-17 09:30:00 +0700
