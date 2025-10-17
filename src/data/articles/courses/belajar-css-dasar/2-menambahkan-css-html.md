@@ -128,7 +128,7 @@ Kekurangan external CSS:
 
 ---
 
-## Menggabungkan Inline, Internal dan External
+## Menggabungkan Inline, Internal dan External CSS
 
 Tiga cara diatas bisa digunakan secara bersamaan, ketika suatu elemen memiliki style CSS dari inline, internal dan external maka browser akan menerapkan prioritas style dengan urutan berikut:
 
