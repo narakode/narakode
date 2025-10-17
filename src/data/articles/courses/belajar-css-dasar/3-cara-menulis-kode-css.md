@@ -1,7 +1,7 @@
 ---
 slug: cara-menulis-kode-css
 title: Cara Menulis Kode CSS (Syntax Dasar CSS)
-description: Cara Menulis Kode (Syntax Dasar) CSS
+description: Kode CSS terdiri dari selector (elemen yang mau dipilih) dan declaration block (style CSS yang mau diterapkan)
 type: course
 course: belajar-css-dasar
 publishedAt: 2025-10-17 09:00:00 +0700
@@ -69,7 +69,7 @@ Hasilnya:
 
 ![Hasil kode Selector](./images/3-cara-menulis-kode-css.md/hasil-selector.png)
 
-Selector ada banyak jenisnya, bukan hanya nama tag, bisa dengan nama `class` pada tag, atau nama `id` pada tag, dsb. Untuk penjelasan lengkapnya bisa dibaca di [macam-macam selector dasar CSS]().
+Selector ada banyak jenisnya, bukan hanya nama tag, bisa dengan nama `class` pada tag, atau nama `id` pada tag, dsb. Untuk penjelasan lengkapnya bisa dibaca di [macam-macam selector dasar CSS](./macam-selector-dasar-css).
 
 ## Declaration Block
 
