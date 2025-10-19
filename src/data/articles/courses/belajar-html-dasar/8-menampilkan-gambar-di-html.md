@@ -1,7 +1,7 @@
 ---
 slug: menampilkan-gambar-di-html
 title: Menampilkan Gambar di HTML
-description: Menampilkan Gambar di HTML
+description: Gambar adalah elemen untuk menampilkan informasi dalam bentuk grafis di halaman website
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-10-04 10:00:00 +0700

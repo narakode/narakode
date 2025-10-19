@@ -1,13 +1,13 @@
 ---
 slug: membuat-daftar-di-html
 title: Membuat Daftar di HTML
-description: Membuat Daftar di HTML
+description: Daftar adalah cara untuk menampilkan informasi yang terdiri dari beberapa jenis di halaman website
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-10-04 13:50:00 +0700
 ---
 
-Daftar adalah salah satu cara untuk menampilkan informasi yang terdiri dari beberapa jenis di halaman website. Misalnya untuk menampilkan daftar barang belanja, daftar bahan masakan, daftar pengguna, dll.
+Daftar adalah cara untuk menampilkan informasi yang terdiri dari beberapa jenis di halaman website. Misalnya untuk menampilkan daftar barang belanja, daftar bahan masakan, daftar pengguna, dll.
 
 ## Cara Membuat Daftar di HTML
 

@@ -1,7 +1,7 @@
 ---
 slug: membuat-tabel-di-html
 title: Membuat Tabel di HTML
-description: Membuat Tabel di HTML
+description: Tabel adalah elemen yang digunakan untuk menampilkan data yang terstruktur dalam bentuk baris dan kolom di halaman website
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-10-06 09:00:00 +0700

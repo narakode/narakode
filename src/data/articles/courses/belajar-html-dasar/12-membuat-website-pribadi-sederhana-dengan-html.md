@@ -1,7 +1,7 @@
 ---
 slug: membuat-website-pribadi-sederhana-dengan-html
 title: Membuat Website Pribadi Sederhana dengan HTML
-description: Membuat Website Pribadi Sederhana dengan HTML
+description: Website pribadi adalah website yang menampilkan informasi-informasi pribadi seperti nama, biografi, pengalaman kerja
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-10-10 10:30:00 +0700

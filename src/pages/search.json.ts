@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content"
 
 export async function GET() {
-    const articles = await getCollection('article', article => article.data.publishedAt)
+    const articles = await getCollection('article', article => article.data.publishedAt && new Date > new Date(article.data.publishedAt))
     
     return new Response(JSON.stringify(
         articles.map(article => {

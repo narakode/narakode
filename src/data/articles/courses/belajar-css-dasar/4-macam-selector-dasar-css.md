@@ -170,9 +170,9 @@ Hasilnya:
 
 ![Hasil Group Selector](./images/4-macam-selector-dasar-css/hasil-group-selector.png)
 
-## Mana Selector yang Harus Saya Gunakan?
+## Panduan Memilih Selector
 
-Berikut tabel panduan memilih selector:
+Berikut tabel panduan memilih selector yang tepat sesuai kebutuhan:
 
 | Kebutuhan | Selector yang Tepat |
 | -------- | -------- |

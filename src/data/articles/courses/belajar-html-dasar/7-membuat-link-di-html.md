@@ -1,7 +1,7 @@
 ---
 slug: membuat-link-di-html
 title: Membuat Link di HTML
-description: Membuat Link di HTML
+description: Link adalah elemen untuk menghubungkan halaman website ke halaman lain atau ke website lain
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-10-03 14:00:00 +0700

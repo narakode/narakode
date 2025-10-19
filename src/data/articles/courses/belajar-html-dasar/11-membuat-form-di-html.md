@@ -1,7 +1,7 @@
 ---
 slug: membuat-form-di-html
 title: Membuat Form di HTML
-description: Membuat Form di HTML
+description: Form adalah elemen yang memungkinkan pengunjung untuk mengisi informasi ke halaman website
 type: course
 course: belajar-html-dasar
 publishedAt: 2025-10-07 21:00:00 +0700
