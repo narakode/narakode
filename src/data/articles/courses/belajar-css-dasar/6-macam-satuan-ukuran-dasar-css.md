@@ -4,7 +4,7 @@ title: Macam-Macam Satuan Ukuran Dasar CSS
 description: Properti CSS untuk mengatur ukuran pada elemen memiliki satuan yang bermacam-macam jenisnya, seperti pixel, persen, rem, vw dan vh
 type: course
 course: belajar-css-dasar
-publishedAt: 2026-01-04 10:00:00 +0700
+publishedAt: 2025-10-20 09:30:00 +0700
 ---
 
 Ada beberapa properti CSS untuk mengatur ukuran pada elemen, seperti:
@@ -50,6 +50,8 @@ img {
 
 Hasilnya.
 
+![Hasil satuan ukuran pixel](./images/6-macam-satuan-ukuran-dasar-css/hasil-satuan-pixel.png)
+
 ## 2. Persen (%)
 
 Persen adalah satuan yang nilainya relatif ke elemen yang membungkusnya. Nilainya berupa angka 0 - 100.
@@ -73,11 +75,13 @@ img {
 
 ```html
 <div>
-    <img src="pria.jpg">
+    <img src="logo.png">
 </div>
 ```
 
 Hasilnya, gambar ditampilkan dengan lebar setengah (50%) dari ukuran elemen yang membungkusnya, yaitu elemen `div` yang lebarnya 500px. Sehingga gambar ditampilkan dengan ukuran 250px.
+
+![Hasil satuan ukuran persen](./images/6-macam-satuan-ukuran-dasar-css/hasil-satuan-persen.png)
 
 ## 3. REM
 
@@ -110,11 +114,14 @@ h2 {
     <body>
         <h1>Judul Level 1</h1>
         <h2>Judul Level 2</h2>
+        <p>Teks biasa</p>
     </body>
 </html>
 ```
 
-Hasilnya, ukuran font `<h1>` akan bernilai `4 x 16px` yaitu `64px`, `<h2>` akan bernilai `3 x 16px` yaitu `48px`.
+Hasilnya, ukuran font `<h1>` akan bernilai `4 * 16px = 64px`, `<h2>` akan bernilai `3 * 16px = 48px`.
+
+![Hasil satuan ukuran rem](./images/6-macam-satuan-ukuran-dasar-css/hasil-satuan-rem.png)
 
 ## 4. Viewport Width (VW) dan Viewport Height (VH)
 
@@ -137,10 +144,12 @@ img {
 ```
 
 ```html
-<img src="matahari.jpg">
+<img src="logo.png">
 ```
 
 Hasilnya, gambar akan tampil memenuhi lebar dan tinggi layar browser.
+
+![Hasil satuan ukuran viewport](./images/6-macam-satuan-ukuran-dasar-css/hasil-satuan-viewport.png)
 
 ## Panduan Memilih Satuan Ukuran
 
