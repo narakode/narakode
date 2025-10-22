@@ -1,7 +1,7 @@
 ---
 slug: mengubah-warna-teks-ukuran-font-css
 title: Mengubah Warna Teks, Ukuran dan Font dengan CSS
-description: Mengatur Warna, Font, dan Ukuran Teks dengan CSS
+description: Dengan CSS kita bisa mengubah warna teks, ukuran dan jenis font.
 type: course
 course: belajar-css-dasar
 publishedAt: 2025-10-21 08:30:00 +0700
