@@ -1,5 +1,5 @@
 ---
-slug: mengatur-lebar-tinggi-css
+slug: menambahkan-style-dasar-global-css
 title: Menambahkan Style Dasar dan Style Global di CSS
 description: Menambahkan Style Dasar dan Style Global di CSS
 type: course
