@@ -7,7 +7,11 @@ course: belajar-css-dasar
 publishedAt: 2025-10-24 09:00:00 +0700
 ---
 
-Elemen dapat diatur lebar dan tingginya dengan CSS, berikut penjelasannya:
+Setiap elemen HTML memiliki ukuran lebar dan tinggi, yang dapat diatur dengan CSS `width` dan `height`.
+
+![Illustrasi lebar dan tinggi elemen](./images/10-mengatur-lebar-tinggi-css/elemen-lebar-tinggi.png)
+
+Berikut cara mengatur lebar dan tinggi elemen dengan CSS.
 
 ## Mengatur Lebar Elemen
 
