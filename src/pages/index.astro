@@ -10,13 +10,13 @@ import Container from '../components/app/Container.astro';
 import Section from '../components/app/Section.astro';
 import Button from '../components/app/Button.astro';
 import { getCourses } from '../utils/course';
-import { getCollection } from 'astro:content';
+import { getArticles } from '../utils/article';
 
 const courses = await getCourses()
 // const tutorials = await getCollection('tutorial', tutorial => !!tutorial.data.publishedAt)
 // const books = await getCollection('book', book => !!book.data.publishedAt)
 // const videos = await getCollection('video', video => !!video.data.publishedAt)
-const articles =  await getCollection('article', article => article.data.publishedAt && article.data.type === 'article')
+const articles =  await getArticles()
 ---
 
 <Layout>

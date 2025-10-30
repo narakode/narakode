@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 import Container from "../../components/app/Container.astro";
 import Input from "../../components/app/Input.astro";
 import Section from "../../components/app/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import { getArticles } from "../../utils/article";
 
-const articles =  await getCollection('article', article => article.data.type === 'article' && article.data.publishedAt)
+const articles =  await getArticles()
 const description = 'Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'
 ---
 
