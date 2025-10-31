@@ -17,8 +17,8 @@ const itemsLength: number = (await getCollection('article', article => article.d
 ---
 
 <Card class="space-y-2">
-    <Title class="flex items-center gap-2 font-bold text-lg text-gray-900">
-        <Icon name={course.data.icon} size={20} />
+    <Title class="flex items-start gap-2 font-bold text-lg text-gray-900">
+        <Icon name={course.data.icon} size={20} class="mt-1.5 shrink-0" />
         <Link href={`/courses/${course.id}`}>{course.data.title}</Link>
     </Title>
     <p class="text-gray-700">{course.data.description}</p>
