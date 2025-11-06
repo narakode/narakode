@@ -1,7 +1,7 @@
 ---
 slug: mengatur-tampilan-elemen-css-display
 title: Mengatur Tampilan Elemen dengan CSS Display
-description: Mengatur Tampilan Elemen dengan CSS Display
+description: Display adalah properti CSS untuk menentukan elemen ditampilkan sebagai elemen blok atau elemen inline.
 type: course
 course: belajar-css-layout
 publishedAt: 2025-11-04 20:43:00 +0700
