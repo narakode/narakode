@@ -1,7 +1,7 @@
 ---
 slug: membuat-layout-website-css-flexbox
 title: Membuat Layout Website Dengan CSS Flexbox
-description: Membuat Layout Website Dengan CSS Flexbox
+description: Flexbox adalah layout satu dimensi, bisa baris atau kolom. Defaultnya baris.
 type: course
 course: belajar-css-layout
 publishedAt: 2025-11-06 13:30:00 +0700
