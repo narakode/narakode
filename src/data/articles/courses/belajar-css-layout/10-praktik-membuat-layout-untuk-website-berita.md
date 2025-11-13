@@ -27,7 +27,7 @@ Berikut langkah-langkahnya:
 
 ## 1. Persiapan HTML, CSS dan Gambar
 
-Pertama, download [semua gambar thumbnail berita dan logo sosial media](https://github.com/narakode/web-berita-responsive).
+Pertama, download [semua gambar thumbnail berita dan logo sosial media](https://github.com/narakode/praktik-web-berita-responsive).
 
 Kemudian, buat dua file `index.html` dan `style.css`.
 
@@ -633,7 +633,7 @@ footer img {
 }
 ```
 
-Untuk seluruh kode lengkap dari HTML, CSS dan gambar bisa dilihat di [repository website berita](https://github.com/narakode/web-berita-responsive).
+Untuk seluruh kode lengkap dari HTML, CSS dan gambar bisa dilihat di [repository website berita](https://github.com/narakode/praktik-web-berita-responsive).
 
 Hasil akhirnya seperti berikut:
 
