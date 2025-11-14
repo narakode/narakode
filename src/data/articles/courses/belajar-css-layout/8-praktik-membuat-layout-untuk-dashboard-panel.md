@@ -1,7 +1,7 @@
 ---
 slug: praktik-membuat-layout-untuk-dashboard-panel
 title: Praktik Membuat Layout untuk Dashboard Panel
-description: Praktik Membuat Layout untuk Dashboard Panel
+description: Dashboard panel adalah halaman website yang biasanya digunakan oleh admin atau user tertentu untuk mengelola data, melihat statistik dll. Biasanya dashboard panel diakses setelah login.
 type: course
 course: belajar-css-layout
 publishedAt: 2025-11-13 12:50:00 +0700
@@ -314,7 +314,7 @@ aside .menu a.active, aside .menu a:hover {
 }
 ```
 
-Untuk seluruh kode HTML dan CSS bisa dilihat di [repository website dashbboard panel](https://github.com/narakode/praktik-dashboard-panel).
+Untuk seluruh kode HTML dan CSS bisa dilihat di [repository praktik layout dashbboard panel](https://github.com/narakode/praktik-layout-dashboard-panel).
 
 Hasil akhirnya seperti berikut:
 

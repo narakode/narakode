@@ -633,7 +633,7 @@ footer img {
 }
 ```
 
-Untuk seluruh kode lengkap dari HTML, CSS dan gambar bisa dilihat di [repository website berita](https://github.com/narakode/praktik-web-berita-responsive).
+Untuk seluruh kode lengkap dari HTML, CSS dan gambar bisa dilihat di [repository praktik layout website berita](https://github.com/narakode/praktik-layout-web-berita).
 
 Hasil akhirnya seperti berikut:
 
