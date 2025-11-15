@@ -4,7 +4,7 @@ description: Link adalah elemen di website untuk menghubungkan halaman website k
 category: html
 thumbnail: './images/3-tips-membuat-link-html.png'
 type: article
-publishedAt: 2026-10-30 13:20:00 +0700
+publishedAt: 2025-10-30 13:20:00 +0700
 ---
 
 Link adalah elemen di website untuk menghubungkan halaman website ke halaman lain atau website lain.

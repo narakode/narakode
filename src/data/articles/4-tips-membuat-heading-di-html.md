@@ -4,7 +4,7 @@ description: Heading adalah elemen untuk menampilkan judul dan subjudul di halam
 category: html
 thumbnail: './images/4-tips-membuat-heading-html.png'
 type: article
-publishedAt: 2026-10-13 13:50:00 +0700
+publishedAt: 2025-10-13 13:50:00 +0700
 ---
 
 Heading adalah elemen untuk menampilkan judul dan subjudul di halaman website. Fungsi heading adalah untuk mengorganisir informasi yang ada di halaman website, sehingga memudahkan pengunjung, mesin pencari, dan *screen reader* dalam memahami isi halaman tersebut.
