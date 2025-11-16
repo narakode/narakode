@@ -24,11 +24,13 @@ const articles =  await getArticles()
 
 	<Container tag="main" class="py-20 space-y-20">
 		<Section id='courses' title='Mau Belajar Apa?' description='Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'>
-			<Button slot="action" tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
+			<Button slot="action" class='hidden md:inline-flex' customDisplay tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{courses.map(course => <CourseCard course={course} />)}
 			</div>
+
+			<Button class='md:hidden' fullwidth tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
 		</Section>
 		<!-- <Section title='Ikuti Tutorial Terbaru' description='Belajar pemrograman dengan praktek langsung terjun ke studi kasus tertentu.'>
 			<Button slot="action" tag='a' href='/tutorials' icon='tabler:arrow-right'>Lihat Semua</Button>
@@ -52,11 +54,13 @@ const articles =  await getArticles()
 			</div>
 		</Section> -->
 		<Section title='Baca Artikel Terbaru' description='Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'>
-			<Button slot="action" tag='a' href='/articles' icon='tabler:arrow-right'>Lihat Semua</Button>
+			<Button slot="action" class="hidden md:inline-flex" customDisplay tag='a' href='/articles' icon='tabler:arrow-right'>Lihat Semua</Button>
 
 			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 				{articles.map(article => <ArticleCard article={article} />)}
 			</div>
+
+			<Button class='md:hidden' fullwidth tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
 		</Section>
 	</Container>
 </Layout>

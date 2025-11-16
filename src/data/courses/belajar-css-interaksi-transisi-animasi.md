@@ -1,6 +1,6 @@
 ---
 title: Belajar CSS Interaksi, Animasi, dan Transisi
-description: Belajar menyusun elemen-elemen di website secara visual.
+description: Belajar menambahkan interaksi, transisi dan animasi pada elemen website.
 icon: logos:css-3
 publishedAt: 2025-11-17 10:50:00 +0700
 ---

@@ -16,6 +16,7 @@ interface Props {
     iconPosition?: 'start' | 'end'
     dataToggle?: string
     id?: string
+    customDisplay?: boolean
 }
 
 const colorClass: Record<Color, string> = {
@@ -39,10 +40,10 @@ const iconSize: Record<Size, number> = {
     lg: 20
 }
 
-const { tag: Element = 'button', href, color = 'primary', size = 'md', xlSize, icon, fullwidth = false, class: className = '', iconPosition = 'end', dataToggle, id } = Astro.props
+const { tag: Element = 'button', href, color = 'primary', size = 'md', xlSize, icon, fullwidth = false, class: className = '', iconPosition = 'end', dataToggle, id, customDisplay = false } = Astro.props
 ---
 
-<Element href={href} data-toggle={dataToggle} id={id} class={`font-medium inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''} ${className} disabled:opacity-50`}>
+<Element href={href} data-toggle={dataToggle} id={id} class={`font-medium ${customDisplay ? '' : 'inline-flex'} items-center justify-center gap-2 cursor-pointer whitespace-nowrap ${colorClass[color]} ${sizeClass[size]} ${xlSize ? xlSizeClass[xlSize] : ''} ${fullwidth ? 'w-full' : ''} ${className} disabled:opacity-50`}>
     {icon && iconPosition === 'start' && <Icon name={icon} size={iconSize[size]} />}
     <slot />
     {icon && iconPosition === 'end' && <Icon name={icon} size={iconSize[size]} />}
