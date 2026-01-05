@@ -9,20 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.6",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.6.0",
-    "@fontsource/ubuntu": "^5.2.8",
-    "@iconify-json/logos": "^1.2.9",
     "@iconify-json/tabler": "^1.2.23",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.8",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.4",
-    "dayjs": "^1.11.18",
     "tailwindcss": "^4.1.13"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
   }
 }

@@ -1,66 +1,103 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import CourseCard from '../components/CourseCard.astro';
-// import TutorialCard from '../components/TutorialCard.astro';
-// import BookCard from '../components/BookCard.astro';
-// import VideoCard from '../components/VideoCard.astro';
-import ArticleCard from '../components/ArticleCard.astro';
-import Container from '../components/app/Container.astro';
-import Section from '../components/app/Section.astro';
-import Button from '../components/app/Button.astro';
-import { getCourses } from '../utils/course';
-import { getArticles } from '../utils/article';
+import { Icon } from 'astro-icon/components';
+import "../styles/global.css";
+import { SEO } from "astro-seo";
 
-const courses = await getCourses()
-// const tutorials = await getCollection('tutorial', tutorial => !!tutorial.data.publishedAt)
-// const books = await getCollection('book', book => !!book.data.publishedAt)
-// const videos = await getCollection('video', video => !!video.data.publishedAt)
-const articles =  await getArticles()
+const config = {
+  title: 'Narakode - Penyedia layanan dan produk digital untuk bisnis',
+  description: 'Solusi untuk bisnis melalui layanan dan produk digital',
+  image: 'https://narakode.id/banner.png'
+}
+
+const services = [
+  { id: 'web-development', name: 'Pembuatan Website', startFrom: '300.000' },
+  { id: 'app-development', name: 'Pembuatan Aplikasi', startFrom: '1.000.000' },
+  { id: 'server-management', name: 'Pengelolaan Server', startFrom: '1.000.000' },
+]
+
+const socials = [
+  { icon: 'tabler:mail', url: 'mailto:info@narakode.id', name: 'Email' },
+  { icon: 'tabler:brand-facebook', url: 'https://facebook.com/narakode.id', name: 'Facebook' },
+  { icon: 'tabler:brand-instagram', url: 'https://instagram.com/narakode.id', name: 'Instagram' },
+  { icon: 'tabler:brand-twitter', url: 'https://twitter.com/narakode', name: 'Twitter' },
+  { icon: 'tabler:brand-youtube', url: 'https://youtube.com/@narakode_id', name: 'Youtube' }
+]
 ---
 
-<Layout>
-	<Header />
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/site.webmanifest">
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<SEO
+			title={config.title}
+			description={config.description}
+			openGraph={{
+				basic: {
+					title: config.title,
+					type: "website",
+					image: config.image,
+				},
+				optional: {
+					description: config.description
+				}
+			}}
+			twitter={{
+				card: 'summary',
+				site: '@narakode',
+				creator: "@narakode",
+				title: config.title,
+				description: config.description,
+				image: config.image,
+				imageAlt: config.title
+			}}
+		/>
 
-	<Container tag="main" class="py-20 space-y-20">
-		<Section id='courses' title='Mau Belajar Apa?' description='Telusuri dan pilih dari beragam kelas belajar pemrograman lengkap sesuai kebutuhan Anda.'>
-			<Button slot="action" class='hidden md:inline-flex' customDisplay tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
+    {import.meta.env.PROD && <script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-KXZJ6HNC09"></script>}
 
-			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-				{courses.map(course => <CourseCard course={course} />)}
-			</div>
+		{import.meta.env.PROD && <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-			<Button class='md:hidden' fullwidth tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
-		</Section>
-		<!-- <Section title='Ikuti Tutorial Terbaru' description='Belajar pemrograman dengan praktek langsung terjun ke studi kasus tertentu.'>
-			<Button slot="action" tag='a' href='/tutorials' icon='tabler:arrow-right'>Lihat Semua</Button>
-			
-			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-				{tutorials.map(tutorial => <TutorialCard tutorial={tutorial} />)}
-			</div>
-		</Section>
-		<Section title='Baca Buku Pemrograman' description='Ingin lebih fokus? Baca buku cetak dan ebook seputar pemrograman kami.'>
-			<Button slot="action" tag='a' href='/books' icon='tabler:arrow-right'>Lihat Semua</Button>
+      gtag("config", "G-KXZJ6HNC09");
+    </script>}
+	</head>
 
-			<div class="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
-				{books.map(book => <BookCard book={book} />)}
-			</div>
-		</Section>
-		<Section title='Tonton Video Terbaru' description='Bosan baca tulisan terus? Tonton video tentang pemrograman kami di Youtube.'>
-			<Button slot="action" tag='a' href='/videos' icon='tabler:arrow-right'>Lihat Semua</Button>
+  <body class="bg-neutral-900 text-white px-6 py-20 space-y-8 mx-auto sm:max-w-screen-sm md:max-w-screen-md">
+    <header class="space-y-2">
+      <h1 class="text-3xl font-bold text-red-500 tracking-tight">narakode<span class="text-neutral-400">.id</span></h1>
+      <p class="text-lg leading-relaxed text-neutral-400">{config.description}.</p>
+    </header>
 
-			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-				{videos.map(video => <VideoCard video={video} />)}
-			</div>
-		</Section> -->
-		<Section title='Baca Artikel Terbaru' description='Terus update dengan membaca artikel-artikel seputar pemrograman dan teknologi.'>
-			<Button slot="action" class="hidden md:inline-flex" customDisplay tag='a' href='/articles' icon='tabler:arrow-right'>Lihat Semua</Button>
+    <main class="space-y-4">
+      <h2 class="text-sm font-medium tracking-wider text-neutral-400 uppercase">Layanan</h2>
+      <div class="space-y-4">
+        {services.map(service => <article class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 flex items-center justify-between">
+          <div class="space-y-1">
+            <h3 class="font-medium">{service.name}</h3>
+            <p class="text-sm text-neutral-400">Mulai dari <strong class="text-white">{service.startFrom}</strong></p>
+          </div>
+          <a href="" class="text-red-500 flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
+            <span class="hidden sm:block">Pesan</span> 
+            <Icon name="tabler:arrow-right" class="size-4" />
+          </a>
+        </article>)}
+      </div>
+    </main>
 
-			<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-				{articles.map(article => <ArticleCard article={article} />)}
-			</div>
-
-			<Button class='md:hidden' fullwidth tag='a' href='/courses' icon='tabler:arrow-right'>Lihat Semua</Button>
-		</Section>
-	</Container>
-</Layout>
+    <footer class="flex items-center justify-center gap-4">
+      {socials.map(social => <a href={social.url} class="text-neutral-400 transition hover:text-red-500" title={social.name}>
+        <Icon name={social.icon} class="size-5" />
+      </a>)}
+    </footer>
+  </body>
+</html>
