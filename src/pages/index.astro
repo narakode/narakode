@@ -10,9 +10,9 @@ const config = {
 }
 
 const services = [
-  { id: 'web-development', name: 'Pembuatan Website', startFrom: '300.000' },
-  { id: 'app-development', name: 'Pembuatan Aplikasi', startFrom: '1.000.000' },
-  { id: 'server-management', name: 'Pengelolaan Server', startFrom: '1.000.000' },
+  { id: 'web-development', name: 'Pembuatan Website', startFrom: '300.000', url: 'https://forms.gle/dHExo76zNqscGvSSA' },
+  { id: 'app-development', name: 'Pembuatan Aplikasi', startFrom: '1.000.000', url: 'https://forms.gle/UT3Kr3yA7bihMwiK8' },
+  { id: 'server-management', name: 'Pengelolaan Server', startFrom: '1.000.000', url: 'https://forms.gle/5LBt6J4hnefSopbG8' },
 ]
 
 const socials = [
@@ -86,7 +86,7 @@ const socials = [
             <h3 class="font-medium">{service.name}</h3>
             <p class="text-sm text-neutral-400">Mulai dari <strong class="text-white">{service.startFrom}</strong></p>
           </div>
-          <a href="" class="text-red-500 flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
+          <a href={service.url} class="text-red-500 flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
             <span class="hidden sm:block">Pesan</span> 
             <Icon name="tabler:arrow-right" class="size-4" />
           </a>
