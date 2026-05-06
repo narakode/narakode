@@ -22,6 +22,24 @@ const socials = [
   { icon: 'tabler:brand-twitter', url: 'https://twitter.com/narakode', name: 'Twitter' },
   { icon: 'tabler:brand-youtube', url: 'https://youtube.com/@narakode_id', name: 'Youtube' }
 ]
+
+const posts = [
+  {
+    title: 'Membangun Website Modern dengan React & Tailwind',
+    date: '15 Jan 2025',
+    summary: 'Panduan lengkap membangun website modern yang cepat dan responsif menggunakan React dan Tailwind CSS.'
+  },
+  {
+    title: '5 Tips UI/UX untuk Meningkatkan Konversi',
+    date: '10 Jan 2025',
+    summary: 'Pelajari bagaimana desain yang baik dapat meningkatkan konversi bisnis online Anda secara signifikan.'
+  },
+  {
+    title: 'Optimasi Performa Website: Dari Lambat ke Kilat',
+    date: '5 Jan 2025',
+    summary: 'Teknik-teknik praktis untuk mempercepat loading website dan meningkatkan pengalaman pengguna.'
+  }
+]
 ---
 
 <!doctype html>
@@ -78,20 +96,42 @@ const socials = [
       <p class="text-lg leading-relaxed text-neutral-400">{config.description}.</p>
     </header>
 
-    <main class="space-y-4">
-      <h2 class="text-sm font-medium tracking-wider text-neutral-400 uppercase">Layanan</h2>
-      <div class="space-y-4">
-        {services.map(service => <article class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 flex items-center justify-between">
-          <div class="space-y-1">
-            <h3 class="font-medium">{service.name}</h3>
-            <p class="text-sm text-neutral-400">Mulai dari <strong class="text-white">{service.startFrom}</strong></p>
+    <main class="space-y-8">
+      <section class="space-y-4">
+        <h2 class="text-sm font-medium tracking-wider text-neutral-400 uppercase">Layanan</h2>
+        <div class="space-y-4">
+          {services.map(service => <article class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 flex items-center justify-between">
+            <div class="space-y-1">
+              <h3 class="font-medium">{service.name}</h3>
+              <p class="text-sm text-neutral-400">Mulai dari <strong class="text-white">{service.startFrom}</strong></p>
+            </div>
+            <a href={service.url} class="text-red-500 flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
+              <span class="hidden sm:block">Pesan</span> 
+              <Icon name="tabler:arrow-right" class="size-4" />
+            </a>
+          </article>)}
+        </div>
+      </section>
+      <section class="space-y-4">
+        <h2 class="text-sm font-medium tracking-wider text-neutral-400 uppercase">Post</h2>
+
+        <div class="space-y-4">
+          {posts.map(post => <article class="space-y-1">
+            <p class="text-sm text-neutral-400">{post.date}</p>
+            <h3 class="font-medium">
+              <a class="hover:text-red-500" href="">{post.title}</a>
+            </h3>
+            <p class="text-sm text-neutral-400">{post.summary}</p>
+          </article>)}
+
+          <div class="flex justify-center">
+            <a href="" class="text-red-500 inline-flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
+              <span class="hidden sm:block">Lihat Semua Artikel</span> 
+              <Icon name="tabler:arrow-right" class="size-4" />
+            </a>
           </div>
-          <a href={service.url} class="text-red-500 flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
-            <span class="hidden sm:block">Pesan</span> 
-            <Icon name="tabler:arrow-right" class="size-4" />
-          </a>
-        </article>)}
-      </div>
+        </div>
+      </section>
     </main>
 
     <footer class="flex items-center justify-center gap-4">
