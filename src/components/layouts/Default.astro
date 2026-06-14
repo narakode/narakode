@@ -1,0 +1,80 @@
+---
+import { Icon } from 'astro-icon/components';
+import "../../styles/global.css";
+import { SEO } from "astro-seo";
+import { site } from '../../site';
+
+const props = Astro.props
+
+const config = {
+    title: props.title ?? site.title,
+    description: props.description ?? site.description,
+    image: props.image ?? site.image
+}
+const socials = [
+  { icon: 'tabler:mail', url: 'mailto:info@narakode.id', name: 'Email' },
+  { icon: 'tabler:brand-facebook', url: 'https://facebook.com/narakode.id', name: 'Facebook' },
+  { icon: 'tabler:brand-instagram', url: 'https://instagram.com/narakode.id', name: 'Instagram' },
+  { icon: 'tabler:brand-twitter', url: 'https://twitter.com/narakode', name: 'Twitter' },
+  { icon: 'tabler:brand-youtube', url: 'https://youtube.com/@narakode_id', name: 'Youtube' }
+]
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/site.webmanifest">
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<SEO
+			title={config.title}
+			description={config.description}
+			openGraph={{
+				basic: {
+					title: config.title,
+					type: "website",
+					image: config.image,
+				},
+				optional: {
+					description: config.description
+				}
+			}}
+			twitter={{
+				card: 'summary',
+				site: '@narakode',
+				creator: "@narakode",
+				title: config.title,
+				description: config.description,
+				image: config.image,
+				imageAlt: config.title
+			}}
+		/>
+
+    {import.meta.env.PROD && <script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-KXZJ6HNC09"></script>}
+
+		{import.meta.env.PROD && <script is:inline type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-KXZJ6HNC09");
+    </script>}
+	</head>
+
+  <body class="bg-neutral-900 text-white px-6 py-20 space-y-8 mx-auto sm:max-w-screen-sm md:max-w-screen-md">
+    <slot />
+
+    <footer class="flex items-center justify-center gap-4">
+      {socials.map(social => <a href={social.url} class="text-neutral-400 transition hover:text-red-500" title={social.name}>
+        <Icon name={social.icon} class="size-5" />
+      </a>)}
+    </footer>
+  </body>
+</html>
