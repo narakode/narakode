@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets"
+
+const { tag: Tag, class: classList = '', image, title } = Astro.props
+---
+
+<Tag class={`bg-neutral-800 border border-neutral-700 rounded-lg ${classList} ${image ? '' : 'p-4'}`}>
+    {image && <Image src={image} alt={title} class="aspect-[16/9] object-cover rounded-t-lg" />}
+    {image ? <div class="p-4"><slot /></div> : <slot />}
+</Tag>

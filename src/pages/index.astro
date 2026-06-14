@@ -1,13 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
-import "../styles/global.css";
-import { SEO } from "astro-seo";
-
-const config = {
-  title: 'Narakode - Penyedia layanan dan produk digital untuk bisnis',
-  description: 'Solusi untuk bisnis melalui layanan dan produk digital',
-  image: 'https://narakode.id/banner.png'
-}
+import Default from '../components/layouts/Default.astro';
+import { site } from '../site';
+import Section from '../components/base/Section.astro';
+import Card from '../components/base/Card.astro';
+import VTodo from '../data/products/v-todo/v-todo.png'
 
 const services = [
   { id: 'web-development', name: 'Pembuatan Website', startFrom: '300.000', url: 'https://forms.gle/dHExo76zNqscGvSSA' },
@@ -15,73 +12,43 @@ const services = [
   { id: 'server-management', name: 'Pengelolaan Server', startFrom: '1.000.000', url: 'https://forms.gle/5LBt6J4hnefSopbG8' },
 ]
 
-const socials = [
-  { icon: 'tabler:mail', url: 'mailto:info@narakode.id', name: 'Email' },
-  { icon: 'tabler:brand-facebook', url: 'https://facebook.com/narakode.id', name: 'Facebook' },
-  { icon: 'tabler:brand-instagram', url: 'https://instagram.com/narakode.id', name: 'Instagram' },
-  { icon: 'tabler:brand-twitter', url: 'https://twitter.com/narakode', name: 'Twitter' },
-  { icon: 'tabler:brand-youtube', url: 'https://youtube.com/@narakode_id', name: 'Youtube' }
+const posts = [
+  {
+    title: 'Membangun Website Modern dengan React & Tailwind',
+    date: '15 Jan 2025',
+    summary: 'Panduan lengkap membangun website modern yang cepat dan responsif menggunakan React dan Tailwind CSS.'
+  },
+  {
+    title: '5 Tips UI/UX untuk Meningkatkan Konversi',
+    date: '10 Jan 2025',
+    summary: 'Pelajari bagaimana desain yang baik dapat meningkatkan konversi bisnis online Anda secara signifikan.'
+  },
+  {
+    title: 'Optimasi Performa Website: Dari Lambat ke Kilat',
+    date: '5 Jan 2025',
+    summary: 'Teknik-teknik praktis untuk mempercepat loading website dan meningkatkan pengalaman pengguna.'
+  }
+]
+
+const products = [
+  {
+    name: 'V-Todo - Board Based Task Management',
+    description: 'Simple but powerfull board based task management.',
+    price: 'free',
+    image: VTodo,
+    url: '/v-todo'
+  }
 ]
 ---
 
-<!doctype html>
-<html lang="id">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-		<link rel="manifest" href="/favicon/site.webmanifest">
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<SEO
-			title={config.title}
-			description={config.description}
-			openGraph={{
-				basic: {
-					title: config.title,
-					type: "website",
-					image: config.image,
-				},
-				optional: {
-					description: config.description
-				}
-			}}
-			twitter={{
-				card: 'summary',
-				site: '@narakode',
-				creator: "@narakode",
-				title: config.title,
-				description: config.description,
-				image: config.image,
-				imageAlt: config.title
-			}}
-		/>
-
-    {import.meta.env.PROD && <script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-KXZJ6HNC09"></script>}
-
-		{import.meta.env.PROD && <script is:inline type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-KXZJ6HNC09");
-    </script>}
-	</head>
-
-  <body class="bg-neutral-900 text-white px-6 py-20 space-y-8 mx-auto sm:max-w-screen-sm md:max-w-screen-md">
-    <header class="space-y-2">
+<Default>
+<header class="space-y-2">
       <h1 class="text-3xl font-bold text-red-500 tracking-tight">narakode<span class="text-neutral-400">.id</span></h1>
-      <p class="text-lg leading-relaxed text-neutral-400">{config.description}.</p>
+      <p class="text-lg leading-relaxed text-neutral-400">{site.description}.</p>
     </header>
-
-    <main class="space-y-4">
-      <h2 class="text-sm font-medium tracking-wider text-neutral-400 uppercase">Layanan</h2>
-      <div class="space-y-4">
-        {services.map(service => <article class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 flex items-center justify-between">
+    <main class="space-y-8">
+      <Section title="Layanan">
+        {services.map(service => <Card tag="article" class="flex items-center justify-between">
           <div class="space-y-1">
             <h3 class="font-medium">{service.name}</h3>
             <p class="text-sm text-neutral-400">Mulai dari <strong class="text-white">{service.startFrom}</strong></p>
@@ -90,14 +57,40 @@ const socials = [
             <span class="hidden sm:block">Pesan</span> 
             <Icon name="tabler:arrow-right" class="size-4" />
           </a>
-        </article>)}
-      </div>
-    </main>
+        </Card>)}
+      </Section>
+      <Section title="Produk">
+        <div class="grid sm:grid-cols-2">
+          {products.map(product => <Card tag="article" image={product.image} title={product.name}>
+            <div class="space-y-1">
+              <h3 class="font-medium">
+                <a href={product.url} class="hover:underline">{product.name}</a>
+              </h3>
+              <p class="text-sm text-neutral-400">{product.description}</p>
+            </div>
+          </Card>)}
+        </div>
+      </Section>
+      <!-- <section class="space-y-4">
+        <h2 class="text-sm font-medium tracking-wider text-neutral-400 uppercase">Post</h2>
 
-    <footer class="flex items-center justify-center gap-4">
-      {socials.map(social => <a href={social.url} class="text-neutral-400 transition hover:text-red-500" title={social.name}>
-        <Icon name={social.icon} class="size-5" />
-      </a>)}
-    </footer>
-  </body>
-</html>
+        <div class="space-y-4">
+          {posts.map(post => <article class="space-y-1">
+            <p class="text-sm text-neutral-400">{post.date}</p>
+            <h3 class="font-medium">
+              <a class="hover:text-red-500" href="">{post.title}</a>
+            </h3>
+            <p class="text-sm text-neutral-400">{post.summary}</p>
+          </article>)}
+
+          <div class="flex justify-center">
+            <a href="" class="text-red-500 inline-flex items-center gap-2 font-medium transition px-3 h-9 rounded-md hover:bg-red-500/20 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:outline-none">
+              <span class="hidden sm:block">Lihat Semua Artikel</span> 
+              <Icon name="tabler:arrow-right" class="size-4" />
+            </a>
+          </div>
+        </div>
+      </section> -->
+    </main>
+    
+    </Default>

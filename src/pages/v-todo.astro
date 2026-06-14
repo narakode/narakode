@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import Default from "../components/layouts/Default.astro";
+import VTodoBanner from '../data/products/v-todo/v-todo.png'
+import { Icon } from "astro-icon/components";
+---
+
+<Default title="V-Todo - Simple But Powerfull Board Based Task Management" description="V-Todo is a simple but powerfull board based task management. It is free to use" image="https://narakode.id/v-todo.png">
+    <article class="space-y-8">
+        <p class="text-center">
+            Coba gratis di <a href="https://v-todo.narakode.id" class="text-red-500 font-medium hover:underline">v-todo.narakode.id</a>
+        </p>
+        <h1 class="text-3xl font-bold tracking-tight text-center max-w-md mx-auto">V-Todo - Simple But Powerfull Board Based Task Management</h1>
+        <Image src={VTodoBanner} alt="V-Todo Screenshot" class="rounded-lg" />
+        <p>Ingin mengelola tugas harian lebih mudah? Coba <a href="https://v-todo.narakode.id" class="text-red-500 font-medium hover:underline"><strong>v-todo</strong></a>, solusi untukmu.</p>
+        <ul class="space-y-6">
+            <li class="flex gap-3">
+                <Icon name={'tabler:checklist'} class="text-red-500 mt-1 size-4 shrink-0" />
+                Kamu bisa membagi tugas ke dalam beberapa kartu, daftar tugas menjadi lebih rapi.</li>
+            <li class="flex gap-3">
+                <Icon name={'tabler:circle-check'} class="text-red-500 mt-1 size-4 shrink-0" />
+                Kalau tugas sudah selesai, tandai dengan centang</li>
+            <li class="flex gap-3">
+                <Icon name={'tabler:trash'} class="text-red-500 mt-1 size-4 shrink-0" />
+                Hapus tugas yang sudah selesai agar tampilan menjadi lebih rapi.</li>
+            <li class="flex gap-3">
+                <Icon name={'tabler:cards'} class="text-red-500 mt-1 size-4 shrink-0" />
+                Kamu bisa menambahkan kartu dan tugas sebanyak yang kamu mau.</li>
+        </ul>
+        <p>Tertarik? Coba sekarang <a href="https://v-todo.narakode.id" class="text-red-500 font-medium hover:underline"><strong>v-todo.narakode.id</strong></a>.</p>
+    </article>
+</Default>
